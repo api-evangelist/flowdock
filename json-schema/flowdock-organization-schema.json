@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-organization-schema.json",
+  "title": "Flowdock Organization",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "parameterized_name": { "type": "string" },
+    "name": { "type": "string" },
+    "user_limit": { "type": "integer", "minimum": 0 },
+    "user_count": { "type": "integer", "minimum": 0 },
+    "active": { "type": "boolean" },
+    "url": { "type": "string", "format": "uri" },
+    "subscription": {
+      "type": "object",
+      "properties": {
+        "trial": { "type": "boolean" },
+        "trial_ends": { "type": "string", "format": "date" },
+        "billing_date": { "type": "string", "format": "date" }
+      }
+    },
+    "users": {
+      "type": "array",
+      "items": { "$ref": "flowdock-user-schema.json" }
+    }
+  },
+  "required": ["id", "parameterized_name", "name"]
+}

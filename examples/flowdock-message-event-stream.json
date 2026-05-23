@@ -1,0 +1,13 @@
+{
+  "app": "chat",
+  "event": "message",
+  "tags": [],
+  "uuid": "4W_LQEybVaX-gJmi",
+  "id": 45590,
+  "flow": "deadbeefdeadbeef",
+  "content": "Hello World",
+  "sent": 1317715340213,
+  "attachments": [],
+  "user": "2",
+  "created_at": "2011-10-04T08:02:20.213Z"
+}

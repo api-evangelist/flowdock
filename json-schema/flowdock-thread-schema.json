@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-thread-schema.json",
+  "title": "Flowdock Thread",
+  "description": "A thread groups a series of messages and integration updates around a single subject (issue, build, ticket, etc.).",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "body": { "type": "string" },
+    "external_url": { "type": "string", "format": "uri" },
+    "status": {
+      "type": "object",
+      "properties": {
+        "color": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "actions": { "type": "array", "items": { "type": "object" } },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "avatar": { "type": "string", "format": "uri" }
+      }
+    }
+  },
+  "required": ["id", "title"]
+}

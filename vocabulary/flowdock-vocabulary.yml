@@ -1,0 +1,71 @@
+name: Flowdock Vocabulary
+description: |
+  Historical domain vocabulary for CA Flowdock, a team chat and shared
+  team-inbox product discontinued on 2023-08-15. Captures the core concepts
+  exposed by the public REST, Push, Streaming, and SCIM APIs.
+created: '2026-05-22'
+modified: '2026-05-22'
+status: discontinued
+shutdownDate: '2023-08-15'
+
+terms:
+  - term: Flow
+    definition: A team workspace that contains both a chat room and a shared team inbox. The primary container for collaboration in Flowdock.
+    aliases: [Room, Channel]
+
+  - term: Organization
+    definition: The billing and tenancy account that owns flows and users. Identified by a parameterized name used as a subdomain.
+
+  - term: User
+    definition: A human (or bot) account that may belong to one or more organizations and join multiple flows.
+
+  - term: Team Inbox
+    definition: The mail-like half of a flow — a chronological feed of integration activity, emailed-in items, and discussion threads, side-by-side with chat.
+
+  - term: Chat
+    definition: The conversational half of a flow — real-time messages, status updates, and threaded replies.
+
+  - term: Source
+    definition: An authorized external integration (GitHub, Jira, Zendesk, Rally, etc.) that posts activity into a flow's team inbox using a flow-scoped token.
+
+  - term: Application
+    definition: A registered OAuth 2.0 client representing the integration (the vendor's app) that creates sources on behalf of users.
+
+  - term: Thread
+    definition: A grouping of messages around a single subject (issue, ticket, build). Threads carry title, body, status, fields, and actions.
+
+  - term: Message
+    definition: A single event in a flow. Discriminated by `event` (message, status, comment, action, activity, discussion, file, tag-change, message-edit, activity.user).
+
+  - term: Private Conversation
+    definition: A persistent one-to-one direct message channel between two users in the same organization.
+
+  - term: Invitation
+    definition: A pending or accepted offer to join a flow, sent to an email address.
+
+  - term: Flow Token
+    definition: A flow-scoped API token used by the Push API and by source-token authentication to post into a flow without acting as a user.
+
+  - term: Push API
+    definition: Legacy post-only HTTP endpoints (`/v1/messages/team_inbox/:token`, `/v1/messages/chat/:token`) for sending content into a flow. Deprecated in favor of the Messages endpoint.
+
+  - term: Streaming API
+    definition: Long-lived HTTP connection to `stream.flowdock.com` that delivers real-time events from one or more flows as newline-delimited JSON or Server-Sent Events.
+
+  - term: SCIM
+    definition: System for Cross-Domain Identity Management — the SSO-gated user provisioning surface for CA Flowdock Enterprise tenants.
+
+  - term: Hashtag
+    definition: A `#tag` extracted from message content used to categorize and filter messages.
+
+  - term: Usertag
+    definition: A `@user` mention that notifies the referenced user.
+
+  - term: Meta tag
+    definition: A system-generated tag (e.g. `:file`, `:influx:id`) used to mark messages with structural attributes.
+
+  - term: Access Mode
+    definition: How users discover and join a flow. One of `invitation`, `link`, or `organization`.
+
+  - term: Discontinued
+    definition: Status applied to all Flowdock APIs as of 2023-08-15. The hosted service was shut down by Broadcom; no migration API is available.

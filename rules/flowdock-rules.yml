@@ -1,0 +1,62 @@
+extends: spectral:oas
+rules:
+  flowdock-title-case-summary:
+    description: Operation summaries must be Title Case.
+    given: $.paths.*[?(@property === 'get' || @property === 'post' || @property === 'put' || @property === 'patch' || @property === 'delete' || @property === 'head' || @property === 'options')].summary
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([A-Z][A-Za-z0-9]*)(\\s[A-Z][A-Za-z0-9]*)*$"
+
+  flowdock-resource-naming-snake-case:
+    description: Path segments should be lowercase snake_case (Flowdock convention).
+    given: $.paths
+    severity: warn
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^/[a-z0-9_{}/:\\.-]*$"
+
+  flowdock-no-trailing-slash:
+    description: Paths must not end with a trailing slash.
+    given: $.paths
+    severity: error
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        notMatch: ".+/$"
+
+  flowdock-org-flow-parameters:
+    description: Flow-scoped paths must declare `organization` and `flow` path parameters.
+    given: "$.paths[?(@property =~ /^\\/flows\\/\\{organization\\}\\/\\{flow\\}/)].parameters[*].name"
+    severity: warn
+    then:
+      function: truthy
+
+  flowdock-operationid-camel-case:
+    description: operationId must be camelCase.
+    given: "$.paths.*.*.operationId"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][A-Za-z0-9]*$"
+
+  flowdock-status-banner-required:
+    description: Top-level info.description should disclose discontinued status.
+    given: "$.info.description"
+    severity: hint
+    then:
+      function: pattern
+      functionOptions:
+        match: "(?i)discontinued|sunset|retired|offline"
+
+  flowdock-auth-documented:
+    description: A securityScheme must exist (OAuth2 + Basic for REST, bearer for SCIM, flow_api_token path-param for Push).
+    given: "$.components.securitySchemes"
+    severity: warn
+    then:
+      function: truthy

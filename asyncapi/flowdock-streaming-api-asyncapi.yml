@@ -1,0 +1,119 @@
+asyncapi: 2.6.0
+info:
+  title: Flowdock Streaming API
+  version: "1.0"
+  x-status: discontinued
+  x-shutdown-date: "2023-08-15"
+  description: |
+    Historical streaming surface for CA Flowdock. Long-lived HTTP connection
+    that emitted real-time message events from one or more flows. Two content
+    types were supported: a newline-delimited JSON stream
+    (`application/json`, delimited by `\r`) and HTML5 Server-Sent Events
+    (`text/event-stream`). Discontinued with the rest of Flowdock on
+    August 15, 2023.
+
+    Reconstructed from
+    https://github.com/flowdock/api-docs/blob/master/docs/streaming.md.
+servers:
+  production:
+    url: stream.flowdock.com
+    protocol: https
+    description: Long-lived HTTP streaming endpoint (offline since 2023-08-15).
+    security:
+      - basicAuth: []
+      - oauth2: []
+channels:
+  /flows:
+    description: Streams messages from a comma-separated list of flows specified via the `filter` query parameter, or private messages when `user=1`.
+    bindings:
+      http:
+        type: request
+        method: GET
+        query:
+          type: object
+          properties:
+            filter:
+              type: string
+              description: Comma-separated list of `org/flow` slugs or flow ids.
+            user:
+              type: string
+              enum: ["1"]
+              description: When `1`, stream private messages to the authenticated user.
+            accept:
+              type: string
+              enum: [application/json, text/event-stream]
+            active:
+              type: string
+              enum: ["true", "idle"]
+              description: Whether to show user presence as active or idle. Absent = offline.
+    subscribe:
+      operationId: subscribeFlows
+      summary: Subscribe To Flow Events
+      message:
+        $ref: "#/components/messages/FlowEvent"
+  /flows/{organization}/{flow}:
+    description: Convenience stream for a single flow.
+    parameters:
+      organization:
+        schema: { type: string }
+      flow:
+        schema: { type: string }
+    bindings:
+      http:
+        type: request
+        method: GET
+    subscribe:
+      operationId: subscribeFlow
+      summary: Subscribe To Single Flow Events
+      message:
+        $ref: "#/components/messages/FlowEvent"
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.flowdock.com/oauth/authorize
+          tokenUrl: https://api.flowdock.com/oauth/token
+          scopes:
+            flow: Read flow content.
+            private: Read private conversations.
+  messages:
+    FlowEvent:
+      name: FlowEvent
+      contentType: application/json
+      summary: One event from a flow (message, status, comment, file, activity, discussion, tag-change, message-edit, activity.user, action).
+      payload:
+        type: object
+        properties:
+          id: { type: integer }
+          app: { type: string }
+          event:
+            type: string
+            enum:
+              - message
+              - status
+              - comment
+              - action
+              - tag-change
+              - message-edit
+              - activity.user
+              - file
+              - activity
+              - discussion
+          flow: { type: string }
+          content: {}
+          sent: { type: integer, format: int64 }
+          created_at: { type: string, format: date-time }
+          user: { type: string }
+          tags:
+            type: array
+            items: { type: string }
+          attachments:
+            type: array
+            items: { type: object }
+          thread_id: { type: string }
+          uuid: { type: string }

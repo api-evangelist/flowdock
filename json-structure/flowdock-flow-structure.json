@@ -1,0 +1,18 @@
+{
+  "name": "Flow",
+  "description": "Top-level workspace combining a chat room and a shared team inbox. Owned by an Organization. Joined by Users either by invitation, a join link, or organization-wide visibility.",
+  "fields": [
+    {"name": "id", "type": "string", "role": "identifier"},
+    {"name": "parameterized_name", "type": "string", "role": "slug"},
+    {"name": "name", "type": "string", "role": "label"},
+    {"name": "organization", "type": "reference", "ref": "Organization"},
+    {"name": "open", "type": "boolean", "role": "visibility"},
+    {"name": "joined", "type": "boolean", "role": "membership"},
+    {"name": "access_mode", "type": "enum", "values": ["invitation", "link", "organization"]},
+    {"name": "unread_mentions", "type": "integer", "role": "counter"},
+    {"name": "url", "type": "uri", "role": "api"},
+    {"name": "web_url", "type": "uri", "role": "ui"},
+    {"name": "join_url", "type": "uri", "role": "share"}
+  ],
+  "children": ["Message", "Thread", "Source", "Invitation"]
+}

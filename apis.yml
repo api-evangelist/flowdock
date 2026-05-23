@@ -1,0 +1,304 @@
+aid: flowdock
+name: Flowdock (Discontinued)
+description: |
+  CA Flowdock was a team chat and shared team-inbox product originally
+  founded as Flowdock in Helsinki / Tampere, Finland (Nodeta Oy spin-off,
+  ~2010), acquired by CA Technologies in 2013, and operated under Broadcom
+  after Broadcom's 2018 acquisition of CA. The hosted service and all
+  public APIs (REST, Push, Streaming, SCIM) were discontinued on
+  August 15, 2023. Broadcom's sunset notice directed customers to
+  Microsoft Teams or Slack as successor products. This profile is an
+  archival record assembled from the public api-docs repository and
+  archived snapshots of the developer portal.
+type: Index
+image: https://raw.githubusercontent.com/api-evangelist/flowdock/main/icon.png
+url: https://raw.githubusercontent.com/api-evangelist/flowdock/main/apis.yml
+humanURL: https://www.flowdock.com
+created: '2026-05-22'
+modified: '2026-05-22'
+specificationVersion: '0.19'
+x-status: discontinued
+x-shutdown-date: '2023-08-15'
+x-vendor-history:
+  - '~2010: Founded as Flowdock (spin-off from Nodeta Oy), Helsinki / Tampere, Finland.'
+  - '2013: Acquired by CA Technologies; rebranded "CA Flowdock".'
+  - '2018: Broadcom acquires CA Technologies; Flowdock falls under Broadcom Enterprise Software.'
+  - '2023-08-15: Hosted service and all public APIs discontinued; customers directed to Microsoft Teams or Slack.'
+tags:
+  - Team Chat
+  - Team Inbox
+  - Collaboration
+  - Real-Time Messaging
+  - Integrations
+  - Discontinued
+
+apis:
+  - aid: flowdock:rest-api
+    name: Flowdock REST API
+    description: |
+      The primary developer surface for Flowdock. Read-write JSON over HTTPS
+      for flows, messages, threads, private conversations, users,
+      organizations, sources, invitations, and files. Authenticated via
+      OAuth 2.0 (authorization-code), HTTP Basic with email+password, or
+      personal API token. Now offline.
+    humanURL: https://github.com/flowdock/api-docs
+    baseURL: https://api.flowdock.com
+    image: https://raw.githubusercontent.com/api-evangelist/flowdock/main/icon.png
+    x-status: discontinued
+    properties:
+      - type: Documentation
+        url: https://github.com/flowdock/api-docs
+      - type: APIReference
+        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+      - type: Authentication
+        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+      - type: OpenAPI
+        url: openapi/flowdock-rest-api-openapi.yml
+      - type: SpectralRules
+        url: rules/flowdock-rules.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/flowdock-rest-api.yaml
+      - type: NaftikoCapability
+        url: capabilities/post-to-flow.yaml
+      - type: NaftikoCapability
+        url: capabilities/integration-source.yaml
+      - type: JSONSchema
+        url: json-schema/flowdock-flow-schema.json
+      - type: JSONSchema
+        url: json-schema/flowdock-message-schema.json
+      - type: JSONSchema
+        url: json-schema/flowdock-user-schema.json
+      - type: JSONSchema
+        url: json-schema/flowdock-organization-schema.json
+      - type: JSONSchema
+        url: json-schema/flowdock-source-schema.json
+      - type: JSONSchema
+        url: json-schema/flowdock-thread-schema.json
+      - type: JSONSchema
+        url: json-schema/flowdock-invitation-schema.json
+      - type: JSONStructure
+        url: json-structure/flowdock-flow-structure.json
+      - type: JSONStructure
+        url: json-structure/flowdock-message-structure.json
+      - type: JSONStructure
+        url: json-structure/flowdock-organization-structure.json
+      - type: Example
+        url: examples/flowdock-list-flows-response.json
+      - type: Example
+        url: examples/flowdock-send-message-request.json
+      - type: Example
+        url: examples/flowdock-list-sources-response.json
+      - type: Example
+        url: examples/flowdock-private-conversation-response.json
+      - type: Example
+        url: examples/flowdock-invitation-response.json
+    tags:
+      - Team Chat
+      - Team Inbox
+      - REST
+      - Discontinued
+
+  - aid: flowdock:push-api
+    name: Flowdock Push API (Deprecated)
+    description: |
+      Legacy write-only HTTP API for posting content into a Flow's Team
+      Inbox or Chat using a per-flow API token (no user authentication).
+      Deprecated by the vendor in favor of the REST Messages endpoint
+      well before the 2023-08-15 shutdown.
+    humanURL: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+    baseURL: https://api.flowdock.com
+    x-status: discontinued
+    properties:
+      - type: Documentation
+        url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+      - type: APIReference
+        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+      - type: OpenAPI
+        url: openapi/flowdock-push-api-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/flowdock-push-api.yaml
+      - type: Example
+        url: examples/flowdock-team-inbox-push-request.json
+      - type: Example
+        url: examples/flowdock-chat-push-request.json
+    tags:
+      - Push
+      - Webhook
+      - Team Inbox
+      - Discontinued
+
+  - aid: flowdock:streaming-api
+    name: Flowdock Streaming API
+    description: |
+      Long-lived HTTP connection to stream.flowdock.com delivering real-time
+      flow events. Two content types: newline-delimited JSON
+      (`application/json`, `\r` delimited) or HTML5 Server-Sent Events
+      (`text/event-stream`). Now offline.
+    humanURL: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
+    baseURL: https://stream.flowdock.com
+    x-status: discontinued
+    properties:
+      - type: Documentation
+        url: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
+      - type: APIReference
+        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/streaming
+      - type: AsyncAPI
+        url: asyncapi/flowdock-streaming-api-asyncapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/flowdock-streaming-api.yaml
+      - type: Example
+        url: examples/flowdock-message-event-stream.json
+    tags:
+      - Streaming
+      - Real-Time
+      - Server Sent Events
+      - Discontinued
+
+  - aid: flowdock:scim-api
+    name: Flowdock SCIM Provisioning API
+    description: |
+      Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise
+      customers with Single Sign-On configured. Bearer-token authenticated.
+      Now offline.
+    humanURL: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
+    baseURL: https://api.flowdock.com
+    x-status: discontinued
+    properties:
+      - type: Documentation
+        url: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
+      - type: OpenAPI
+        url: openapi/flowdock-scim-api-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/flowdock-scim-api.yaml
+      - type: Example
+        url: examples/flowdock-scim-user-response.json
+    tags:
+      - SCIM
+      - SSO
+      - Provisioning
+      - Enterprise
+      - Discontinued
+
+common:
+  - type: Portal
+    url: https://web.archive.org/web/2022/https://www.flowdock.com/
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: Blog
+    url: https://web.archive.org/web/2022/https://blog.flowdock.com/
+  - type: GitHub
+    url: https://github.com/flowdock
+  - type: Twitter
+    url: https://twitter.com/flowdock
+  - type: Facebook
+    url: https://www.facebook.com/flowdock
+  - type: ParentCompany
+    url: https://www.broadcom.com
+    title: Broadcom (via CA Technologies acquisition)
+  - type: SunsetNotice
+    url: https://www.broadcom.com
+    title: Flowdock end-of-life 2023-08-15
+  - type: Vocabulary
+    url: vocabulary/flowdock-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/flowdock-context.jsonld
+
+  # Official / org-published client libraries (all archived as of 2023)
+  - type: SDK
+    url: https://github.com/flowdock/flowdock-api
+    title: Ruby gem (flowdock-api)
+  - type: SDK
+    url: https://github.com/flowdock/node-flowdock
+    title: Node.js client (node-flowdock)
+  - type: SDK
+    url: https://github.com/flowdock/flowdock-text
+    title: JavaScript text/tag parser (flowdock-text)
+  - type: SDK
+    url: https://github.com/flowdock/flowdock-text-rb
+    title: Ruby text/tag parser (flowdock-text-rb)
+  - type: SDK
+    url: https://github.com/flowdock/markdown-it-flowdock
+    title: markdown-it Flowdock #hashtag/@mention plugin
+  - type: SDK
+    url: https://github.com/flowdock/omniauth-flowdock
+    title: Ruby OmniAuth strategy (omniauth-flowdock)
+  - type: SDK
+    url: https://github.com/flowdock/hubot-flowdock
+    title: Hubot adapter for Flowdock
+
+  # Official / org-published integrations
+  - type: Integration
+    url: https://github.com/flowdock/jenkins-flowdock-plugin
+    title: Jenkins notifier
+  - type: Integration
+    url: https://github.com/flowdock/flowdock-jira-plugin
+    title: JIRA notifier
+  - type: Integration
+    url: https://github.com/flowdock/flowdock-git-hook
+    title: Git post-receive hook
+  - type: Integration
+    url: https://github.com/flowdock/flowdock-svn-hook
+    title: Subversion hook
+  - type: Integration
+    url: https://github.com/flowdock/flowdock-confluence-plugin
+    title: Confluence integration
+  - type: Integration
+    url: https://github.com/flowdock/capistrano-flowdock
+    title: Capistrano notifier
+  - type: Integration
+    url: https://github.com/flowdock/dropbox-flowdock
+    title: Dropbox integration
+  - type: Integration
+    url: https://github.com/flowdock/redmine_flowdock
+    title: Redmine integration (unmaintained)
+  - type: Integration
+    url: https://github.com/flowdock/oulu
+    title: Oulu — Flowdock IRC Gateway
+  - type: Integration
+    url: https://github.com/flowdock/flowdock-example-integration
+    title: Example integration scaffold
+
+  # Third-party libraries listed in the official Libraries doc
+  - type: SDK
+    url: https://github.com/RallySoftware/clj-flowdock
+    title: Clojure (clj-flowdock)
+  - type: SDK
+    url: https://github.com/0xAX/eflowdock
+    title: Erlang (eflowdock)
+  - type: SDK
+    url: https://github.com/wm/go-flowdock
+    title: Go (wm/go-flowdock)
+  - type: SDK
+    url: https://github.com/njern/flowdock
+    title: Go (njern/flowdock)
+  - type: SDK
+    url: https://hackage.haskell.org/package/flowdock
+    title: Haskell (flowdock)
+  - type: SDK
+    url: https://hackage.haskell.org/package/flowdock-api
+    title: Haskell (flowdock-api)
+  - type: SDK
+    url: https://github.com/mremi/Flowdock
+    title: PHP (mremi/Flowdock)
+  - type: SDK
+    url: https://github.com/flim/PHPFlow
+    title: PHP (flim/PHPFlow)
+  - type: SDK
+    url: https://bitbucket.org/j00bar/python-flowdock
+    title: Python (python-flowdock)
+  - type: SDK
+    url: https://github.com/Aeron/PyFlowdock
+    title: Python (PyFlowdock)
+  - type: SDK
+    url: https://github.com/hrbrmstr/flowdockr
+    title: R (flowdockr)
+  - type: SDK
+    url: https://github.com/gphat/net-flowdock
+    title: Perl (Net::Flowdock)
+  - type: SDK
+    url: https://github.com/samvtran/p5-Flowdock
+    title: Perl (p5-Flowdock)
+
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com

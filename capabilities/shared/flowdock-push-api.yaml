@@ -1,0 +1,43 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flowdock Push API (Shared)
+  description: |
+    Shared Naftiko capability for the legacy Flowdock Push API.
+    Two write-only endpoints scoped by flow API token, for posting into
+    a flow's Team Inbox or Chat as an external (non-user) sender.
+    Deprecated by the vendor in favor of the REST Messages endpoint and
+    fully retired with Flowdock on 2023-08-15.
+  tags:
+    - Flowdock
+    - Push
+    - Webhook
+    - Discontinued
+  created: '2026-05-22'
+  modified: '2026-05-22'
+status: discontinued
+binds:
+  - namespace: env
+    keys:
+      FLOWDOCK_FLOW_TOKEN: FLOWDOCK_FLOW_TOKEN
+capability:
+  consumes:
+    - type: http
+      namespace: flowdock-push
+      baseUri: https://api.flowdock.com
+      resources:
+        - name: teamInbox
+          path: /v1/messages/team_inbox/{flow_api_token}
+          operations:
+            - name: pushTeamInbox
+              method: POST
+              description: Post a mail-like message into a flow's team inbox.
+              outputRawFormat: json
+        - name: chat
+          path: /v1/messages/chat/{flow_api_token}
+          operations:
+            - name: pushChat
+              method: POST
+              description: Post a chat message as an external user.
+              outputRawFormat: json
+  exposes:
+    - type: rest

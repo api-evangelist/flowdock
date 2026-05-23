@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-user-schema.json",
+  "title": "Flowdock User",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "email": { "type": "string", "format": "email" },
+    "name": { "type": "string" },
+    "nick": { "type": "string" },
+    "avatar": { "type": "string", "format": "uri" },
+    "website": { "type": "string", "format": "uri" },
+    "admin": { "type": "boolean" }
+  },
+  "required": ["id", "email", "name"]
+}

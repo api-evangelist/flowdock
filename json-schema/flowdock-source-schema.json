@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-source-schema.json",
+  "title": "Flowdock Source",
+  "description": "An external integration (GitHub, Jira, Zendesk, etc.) attached to a flow and authorized to post messages.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "external_url": { "type": "string", "format": "uri" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "application": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "icon_url": { "type": "string", "format": "uri" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "creator": { "$ref": "flowdock-user-schema.json" }
+  },
+  "required": ["id", "name", "application"]
+}

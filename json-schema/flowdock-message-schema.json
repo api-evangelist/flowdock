@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-message-schema.json",
+  "title": "Flowdock Message",
+  "description": "A single event in a Flowdock flow. Multiple `event` values represent chat, comments, status updates, file uploads, integration activity, and discussion.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "uuid": { "type": "string" },
+    "app": { "type": "string" },
+    "event": {
+      "type": "string",
+      "enum": ["message", "status", "comment", "action", "tag-change", "message-edit", "activity.user", "file", "activity", "discussion"]
+    },
+    "flow": { "type": "string" },
+    "content": {},
+    "sent": { "type": "integer" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "edited": { "type": "string", "format": "date-time" },
+    "user": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "attachments": { "type": "array", "items": { "type": "object" } },
+    "thread_id": { "type": "string" },
+    "thread": { "type": "object" }
+  },
+  "required": ["event", "content"]
+}

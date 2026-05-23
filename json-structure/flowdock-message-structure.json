@@ -1,0 +1,17 @@
+{
+  "name": "Message",
+  "description": "An event in a flow. `event` discriminates between chat messages, status updates, comments, integration activity/discussion, file uploads, tag changes, and message edits.",
+  "fields": [
+    {"name": "id", "type": "integer", "role": "identifier"},
+    {"name": "uuid", "type": "string", "role": "client-id"},
+    {"name": "event", "type": "enum", "values": ["message", "status", "comment", "action", "tag-change", "message-edit", "activity.user", "file", "activity", "discussion"]},
+    {"name": "flow", "type": "reference", "ref": "Flow"},
+    {"name": "user", "type": "reference", "ref": "User"},
+    {"name": "content", "type": "polymorphic", "note": "string for chat/status, object for activity/discussion/comment"},
+    {"name": "tags", "type": "array<string>", "role": "labels"},
+    {"name": "attachments", "type": "array<object>", "role": "files"},
+    {"name": "thread_id", "type": "string", "ref": "Thread"},
+    {"name": "sent", "type": "integer", "role": "timestamp-ms"},
+    {"name": "created_at", "type": "datetime"}
+  ]
+}

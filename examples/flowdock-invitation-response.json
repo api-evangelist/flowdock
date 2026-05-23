@@ -1,0 +1,7 @@
+{
+  "id": 14,
+  "state": "pending",
+  "email": "person@example.com",
+  "flow": "05654aa3-3b13-4a79-8cea-92ed45bdc9a5",
+  "url": "https://api.flowdock.com/flows/acme/my-flow/invitations/14"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-invitation-schema.json",
+  "title": "Flowdock Invitation",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "state": { "type": "string", "enum": ["pending", "accepted"] },
+    "email": { "type": "string", "format": "email" },
+    "flow": { "type": "string" },
+    "url": { "type": "string", "format": "uri" }
+  },
+  "required": ["id", "state", "email", "flow"]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowdock/main/json-schema/flowdock-flow-schema.json",
+  "title": "Flowdock Flow",
+  "description": "A flow in CA Flowdock — a team workspace containing a chat room and a shared inbox. Historical schema; Flowdock was discontinued 2023-08-15.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "parameterized_name": { "type": "string" },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "parameterized_name": { "type": "string" }
+      }
+    },
+    "unread_mentions": { "type": "integer", "minimum": 0 },
+    "open": { "type": "boolean" },
+    "joined": { "type": "boolean" },
+    "url": { "type": "string", "format": "uri" },
+    "web_url": { "type": "string", "format": "uri" },
+    "join_url": { "type": "string", "format": "uri" },
+    "access_mode": {
+      "type": "string",
+      "enum": ["invitation", "link", "organization"]
+    }
+  },
+  "required": ["id", "name", "parameterized_name", "organization"]
+}

@@ -1,0 +1,22 @@
+{
+  "Resources": [
+    {
+      "id": 1,
+      "externalId": "johndoe@example.com",
+      "userName": "johndoe@example.com",
+      "name": {
+        "givenName": "John",
+        "familyName": "Doe"
+      },
+      "meta": {
+        "location": "https://api.flowdock.com/scim/123456/Users/1",
+        "created": "2018-04-12T10:14:00Z",
+        "lastModified": "2020-09-01T16:22:00Z"
+      },
+      "emails": [
+        { "value": "johndoe@example.com" }
+      ],
+      "nickName": "John"
+    }
+  ]
+}

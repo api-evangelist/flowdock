@@ -1,0 +1,16 @@
+{
+  "name": "Organization",
+  "description": "Billing and tenancy container. Owns flows and a roster of users; carries the subscription state (trial vs. active billing).",
+  "fields": [
+    {"name": "id", "type": "integer", "role": "identifier"},
+    {"name": "parameterized_name", "type": "string", "role": "subdomain"},
+    {"name": "name", "type": "string", "role": "label"},
+    {"name": "user_limit", "type": "integer", "role": "quota"},
+    {"name": "user_count", "type": "integer", "role": "metric"},
+    {"name": "active", "type": "boolean", "role": "status"},
+    {"name": "subscription.trial", "type": "boolean"},
+    {"name": "subscription.trial_ends", "type": "date"},
+    {"name": "subscription.billing_date", "type": "date"}
+  ],
+  "children": ["Flow", "User", "Invitation"]
+}
