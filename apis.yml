@@ -31,7 +31,6 @@ tags:
   - Real-Time Messaging
   - Integrations
   - Discontinued
-
 apis:
   - aid: flowdock:rest-api
     name: Flowdock REST API
@@ -56,12 +55,6 @@ apis:
         url: openapi/flowdock-rest-api-openapi.yml
       - type: SpectralRules
         url: rules/flowdock-rules.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/flowdock-rest-api.yaml
-      - type: NaftikoCapability
-        url: capabilities/post-to-flow.yaml
-      - type: NaftikoCapability
-        url: capabilities/integration-source.yaml
       - type: JSONSchema
         url: json-schema/flowdock-flow-schema.json
       - type: JSONSchema
@@ -97,7 +90,6 @@ apis:
       - Team Inbox
       - REST
       - Discontinued
-
   - aid: flowdock:push-api
     name: Flowdock Push API (Deprecated)
     description: |
@@ -115,8 +107,6 @@ apis:
         url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
       - type: OpenAPI
         url: openapi/flowdock-push-api-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/flowdock-push-api.yaml
       - type: Example
         url: examples/flowdock-team-inbox-push-request.json
       - type: Example
@@ -126,7 +116,6 @@ apis:
       - Webhook
       - Team Inbox
       - Discontinued
-
   - aid: flowdock:streaming-api
     name: Flowdock Streaming API
     description: |
@@ -144,8 +133,6 @@ apis:
         url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/streaming
       - type: AsyncAPI
         url: asyncapi/flowdock-streaming-api-asyncapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/flowdock-streaming-api.yaml
       - type: Example
         url: examples/flowdock-message-event-stream.json
     tags:
@@ -153,7 +140,6 @@ apis:
       - Real-Time
       - Server Sent Events
       - Discontinued
-
   - aid: flowdock:scim-api
     name: Flowdock SCIM Provisioning API
     description: |
@@ -168,8 +154,6 @@ apis:
         url: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
       - type: OpenAPI
         url: openapi/flowdock-scim-api-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/flowdock-scim-api.yaml
       - type: Example
         url: examples/flowdock-scim-user-response.json
     tags:
@@ -178,7 +162,6 @@ apis:
       - Provisioning
       - Enterprise
       - Discontinued
-
 common:
   - type: Portal
     url: https://web.archive.org/web/2022/https://www.flowdock.com/
@@ -202,8 +185,6 @@ common:
     url: vocabulary/flowdock-vocabulary.yml
   - type: JSONLD
     url: json-ld/flowdock-context.jsonld
-
-  # Official / org-published client libraries (all archived as of 2023)
   - type: SDK
     url: https://github.com/flowdock/flowdock-api
     title: Ruby gem (flowdock-api)
@@ -218,15 +199,13 @@ common:
     title: Ruby text/tag parser (flowdock-text-rb)
   - type: SDK
     url: https://github.com/flowdock/markdown-it-flowdock
-    title: markdown-it Flowdock #hashtag/@mention plugin
+    title: markdown-it Flowdock
   - type: SDK
     url: https://github.com/flowdock/omniauth-flowdock
     title: Ruby OmniAuth strategy (omniauth-flowdock)
   - type: SDK
     url: https://github.com/flowdock/hubot-flowdock
     title: Hubot adapter for Flowdock
-
-  # Official / org-published integrations
   - type: Integration
     url: https://github.com/flowdock/jenkins-flowdock-plugin
     title: Jenkins notifier
@@ -257,8 +236,6 @@ common:
   - type: Integration
     url: https://github.com/flowdock/flowdock-example-integration
     title: Example integration scaffold
-
-  # Third-party libraries listed in the official Libraries doc
   - type: SDK
     url: https://github.com/RallySoftware/clj-flowdock
     title: Clojure (clj-flowdock)
@@ -298,7 +275,6 @@ common:
   - type: SDK
     url: https://github.com/samvtran/p5-Flowdock
     title: Perl (p5-Flowdock)
-
 maintainers:
   - FN: API Evangelist
     url: https://apievangelist.com
