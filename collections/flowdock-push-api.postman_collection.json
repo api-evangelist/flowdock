@@ -1,0 +1,448 @@
+{
+  "item": [
+    {
+      "id": "42142c16-b573-4fe2-8421-b347f5c391b4",
+      "name": "Team Inbox",
+      "description": {
+        "content": "Mail-like messages posted into a flow's team inbox.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e6d668b-d544-4281-9628-0620e2de40a3",
+          "name": "Push Team Inbox Message",
+          "request": {
+            "name": "Push Team Inbox Message",
+            "description": {
+              "content": "Send a mail-like message into a flow's team inbox using its API token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "messages",
+                "team_inbox",
+                ":flow_api_token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow_api_token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "source",
+                  "value": "<string>",
+                  "description": "(Required) Human readable identifier of the application that uses the Push API."
+                },
+                {
+                  "disabled": false,
+                  "key": "from_address",
+                  "value": "<email>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "subject",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "content",
+                  "value": "<string>",
+                  "description": "(Required) HTML body of the inbox message."
+                },
+                {
+                  "disabled": false,
+                  "key": "from_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reply_to",
+                  "value": "<email>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "link",
+                  "value": "<uri>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d274d770-d430-4ff6-bb8d-9fccd8e4107c",
+              "name": "Message accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "messages",
+                    "team_inbox",
+                    ":flow_api_token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow_api_token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Human readable identifier of the application that uses the Push API.",
+                        "type": "text/plain"
+                      },
+                      "key": "source",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "from_address",
+                      "value": "<email>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "subject",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) HTML body of the inbox message.",
+                        "type": "text/plain"
+                      },
+                      "key": "content",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "from_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "reply_to",
+                      "value": "<email>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "project",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "link",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tags",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f4576a05-881e-4e2d-b0fe-a1b4eec5dbd9",
+      "name": "Chat",
+      "description": {
+        "content": "Chat-style messages posted as an external user.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15882857-86d3-4aab-826a-5ac6ded5dfb2",
+          "name": "Push Chat Message",
+          "request": {
+            "name": "Push Chat Message",
+            "description": {
+              "content": "Post a chat message to a flow as an \"external user\".",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "messages",
+                "chat",
+                ":flow_api_token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow_api_token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "content",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "external_user_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "message_id",
+                  "value": "<integer>",
+                  "description": "ID of the parent message when sending a comment."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d340277d-c89c-4391-807e-fb893207494e",
+              "name": "Message accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "messages",
+                    "chat",
+                    ":flow_api_token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow_api_token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "content",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "external_user_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "ID of the parent message when sending a comment.",
+                        "type": "text/plain"
+                      },
+                      "key": "message_id",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f82fc667-5027-4a22-822c-24dc9eac3f26",
+    "name": "Flowdock Push API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

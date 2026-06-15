@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock Push API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team Inbox",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Push Team Inbox Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/v1/messages/team_inbox/:flow_api_token",
+            "params": [
+              {
+                "name": "flow_api_token",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a mail-like message into a flow's team inbox using its API token."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Push Chat Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/v1/messages/chat/:flow_api_token",
+            "params": [
+              {
+                "name": "flow_api_token",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Post a chat message to a flow as an \"external user\"."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

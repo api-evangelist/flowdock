@@ -1,0 +1,1284 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock REST API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.flowdock.com/oauth/authorize",
+      "accessTokenUrl": "https://api.flowdock.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Begin OAuth 2.0 Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/oauth/authorize",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "response_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "redirect_uri",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Begin OAuth 2.0 Authorization"
+        },
+        {
+          "info": {
+            "name": "Exchange Authorization Code for Access Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/oauth/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "client_secret",
+                  "value": ""
+                },
+                {
+                  "name": "code",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uri",
+                  "value": ""
+                },
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "refresh_token",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Exchange Authorization Code for Access Token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Flows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flows For Authenticated User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows",
+            "params": [
+              {
+                "name": "users",
+                "value": "",
+                "type": "query",
+                "description": "Set to 1 to include the list of users with each flow."
+              }
+            ]
+          },
+          "docs": "List Flows For Authenticated User"
+        },
+        {
+          "info": {
+            "name": "List All Flows Visible To User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/all"
+          },
+          "docs": "List All Flows Visible To User"
+        },
+        {
+          "info": {
+            "name": "Get Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ]
+          },
+          "docs": "Get Flow"
+        },
+        {
+          "info": {
+            "name": "Update Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/flows/:organization/:flow",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Flow"
+        },
+        {
+          "info": {
+            "name": "Get Flow By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/find",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Flow By Id"
+        },
+        {
+          "info": {
+            "name": "Create Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Flow"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/messages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send Message"
+        },
+        {
+          "info": {
+            "name": "List Flow Messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "event",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "since_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Flow Messages"
+        },
+        {
+          "info": {
+            "name": "Send Message To Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send Message To Flow"
+        },
+        {
+          "info": {
+            "name": "Show Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Message"
+        },
+        {
+          "info": {
+            "name": "Edit Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit Message"
+        },
+        {
+          "info": {
+            "name": "Delete Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Message"
+        },
+        {
+          "info": {
+            "name": "Comment On Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/comments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Comment On Message"
+        },
+        {
+          "info": {
+            "name": "Post Message To Thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/threads/:id/messages",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Post Message To Thread"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Threads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flow Threads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/threads",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "application",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Flow Threads"
+        },
+        {
+          "info": {
+            "name": "Get Thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/threads/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Thread"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Private Conversations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Private Conversations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/private"
+          },
+          "docs": "List Private Conversations"
+        },
+        {
+          "info": {
+            "name": "Get Private Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/private/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Private Conversation"
+        },
+        {
+          "info": {
+            "name": "Update Private Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/private/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Private Conversation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Private Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Private Messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/private/:id/messages",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "since_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Private Messages"
+        },
+        {
+          "info": {
+            "name": "Send Private Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/private/:id/messages",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send Private Message"
+        },
+        {
+          "info": {
+            "name": "Show Private Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/private/:id/messages/:message_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Private Message"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Visible Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/users"
+          },
+          "docs": "List All Visible Users"
+        },
+        {
+          "info": {
+            "name": "Get User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get User"
+        },
+        {
+          "info": {
+            "name": "Update User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update User"
+        },
+        {
+          "info": {
+            "name": "List Flow Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/users",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ]
+          },
+          "docs": "List Flow Users"
+        },
+        {
+          "info": {
+            "name": "Add User To Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/users",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add User To Flow"
+        },
+        {
+          "info": {
+            "name": "Remove User From Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/users/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove User From Flow"
+        },
+        {
+          "info": {
+            "name": "Remove User From Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/organizations/:organization/users/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove User From Organization"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/organizations"
+          },
+          "docs": "List Organizations"
+        },
+        {
+          "info": {
+            "name": "Get Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/organizations/:parameterized_name",
+            "params": [
+              {
+                "name": "parameterized_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Organization"
+        },
+        {
+          "info": {
+            "name": "Update Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/organizations/:parameterized_name",
+            "params": [
+              {
+                "name": "parameterized_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Organization"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/sources"
+          },
+          "docs": "List Sources"
+        },
+        {
+          "info": {
+            "name": "List Flow Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/sources",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ]
+          },
+          "docs": "List Flow Sources"
+        },
+        {
+          "info": {
+            "name": "Create Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/sources",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Source"
+        },
+        {
+          "info": {
+            "name": "Get Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/sources/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Source"
+        },
+        {
+          "info": {
+            "name": "Update Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/sources/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Source"
+        },
+        {
+          "info": {
+            "name": "Delete Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/sources/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Source"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Invitations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flow Invitations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ]
+          },
+          "docs": "List Flow Invitations"
+        },
+        {
+          "info": {
+            "name": "Create Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Invitation"
+        },
+        {
+          "info": {
+            "name": "Get Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Invitation"
+        },
+        {
+          "info": {
+            "name": "Delete Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Invitation"
+        },
+        {
+          "info": {
+            "name": "Import Address List",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations/import",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import Address List"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/files/:organization/:hash/:filename",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "hash",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filename",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download File"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

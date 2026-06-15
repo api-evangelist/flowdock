@@ -1,0 +1,5296 @@
+{
+  "item": [
+    {
+      "id": "01b0e21b-f0c1-405f-990c-bf3af0eb4912",
+      "name": "Flows",
+      "description": {
+        "content": "Team workspaces combining chat and a shared team inbox.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "db60e4c5-e7ce-4446-80cc-c52f049d3066",
+          "name": "List Flows For Authenticated User",
+          "request": {
+            "name": "List Flows For Authenticated User",
+            "description": {},
+            "url": {
+              "path": [
+                "flows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "users",
+                  "value": "<integer>",
+                  "description": "Set to 1 to include the list of users with each flow."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29f1efb2-153b-4799-979d-0fdac9cef880",
+              "name": "List of joined flows.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "users",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 8982,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 8909,\n      \"user_count\": 9105,\n      \"active\": false,\n      \"url\": \"http://JASsvroDFduiU.djflokehbenlyFrC5xWY8WNmn4c\",\n      \"subscription\": {\n        \"trial\": true,\n        \"trial_ends\": \"1974-12-19\",\n        \"billing_date\": \"1954-02-04\"\n      }\n    },\n    \"unread_mentions\": 8027,\n    \"open\": true,\n    \"joined\": false,\n    \"url\": \"https://QVLCghJDWlFpDnTUXJfyAttyLltSwyc.gmPTjv9RDztZVxxBRDvGjnmETU4qRjdck6MhrUyU9MG7octhzPKwM2-JafyjEmOVcaXkRe9\",\n    \"web_url\": \"https://EbNmPOqPPQbAECefuMAEIAwQScSriN.hagz+Fb3amS9fLYMdXG-Vmils3nET4m31YFKOPMVPbhTDtId2w.emspdInmaGh2\",\n    \"join_url\": \"http://EGBNtnFwrhbPTi.iqctMFqdPlaHy.bf\",\n    \"access_mode\": \"invitation\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 6834,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 3490,\n      \"user_count\": 1931,\n      \"active\": true,\n      \"url\": \"http://LFcrQFqFlUegSXjZSBZbTM.ujltnEJ,NARvUKJavj0RpHjb6E3VoesQzv78hf4fjxGRcN5uotrUFP3gwXipJqQPXt7iO\",\n      \"subscription\": {\n        \"trial\": true,\n        \"trial_ends\": \"1957-10-19\",\n        \"billing_date\": \"1974-07-16\"\n      }\n    },\n    \"unread_mentions\": 8533,\n    \"open\": false,\n    \"joined\": true,\n    \"url\": \"http://DTZtXdRvxZcksQCLdUazWADPIZ.aeal1pRKm0BgLo9nnRk,4U8OOHB1yKQEg55k\",\n    \"web_url\": \"https://CLoXPKWlpMZPmgFzIUwGpQWZNOAaox.hqoG2Od2\",\n    \"join_url\": \"http://LcymGgQRusRCFcXo.devaVwf0tKTUe19F+bRKPEKdHVtQ1waIy0nE2VvGbQqCXbX1L\",\n    \"access_mode\": \"organization\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ece7bed-649e-4a4a-b08a-df72582357e2",
+          "name": "List All Flows Visible To User",
+          "request": {
+            "name": "List All Flows Visible To User",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e5a06ae-7930-4588-bbe2-0bd9537484f9",
+              "name": "All flows the user can see (including organization-mode flows not joined).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 8982,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 8909,\n      \"user_count\": 9105,\n      \"active\": false,\n      \"url\": \"http://JASsvroDFduiU.djflokehbenlyFrC5xWY8WNmn4c\",\n      \"subscription\": {\n        \"trial\": true,\n        \"trial_ends\": \"1974-12-19\",\n        \"billing_date\": \"1954-02-04\"\n      }\n    },\n    \"unread_mentions\": 8027,\n    \"open\": true,\n    \"joined\": false,\n    \"url\": \"https://QVLCghJDWlFpDnTUXJfyAttyLltSwyc.gmPTjv9RDztZVxxBRDvGjnmETU4qRjdck6MhrUyU9MG7octhzPKwM2-JafyjEmOVcaXkRe9\",\n    \"web_url\": \"https://EbNmPOqPPQbAECefuMAEIAwQScSriN.hagz+Fb3amS9fLYMdXG-Vmils3nET4m31YFKOPMVPbhTDtId2w.emspdInmaGh2\",\n    \"join_url\": \"http://EGBNtnFwrhbPTi.iqctMFqdPlaHy.bf\",\n    \"access_mode\": \"invitation\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 6834,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 3490,\n      \"user_count\": 1931,\n      \"active\": true,\n      \"url\": \"http://LFcrQFqFlUegSXjZSBZbTM.ujltnEJ,NARvUKJavj0RpHjb6E3VoesQzv78hf4fjxGRcN5uotrUFP3gwXipJqQPXt7iO\",\n      \"subscription\": {\n        \"trial\": true,\n        \"trial_ends\": \"1957-10-19\",\n        \"billing_date\": \"1974-07-16\"\n      }\n    },\n    \"unread_mentions\": 8533,\n    \"open\": false,\n    \"joined\": true,\n    \"url\": \"http://DTZtXdRvxZcksQCLdUazWADPIZ.aeal1pRKm0BgLo9nnRk,4U8OOHB1yKQEg55k\",\n    \"web_url\": \"https://CLoXPKWlpMZPmgFzIUwGpQWZNOAaox.hqoG2Od2\",\n    \"join_url\": \"http://LcymGgQRusRCFcXo.devaVwf0tKTUe19F+bRKPEKdHVtQ1waIy0nE2VvGbQqCXbX1L\",\n    \"access_mode\": \"organization\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71c43587-ed6b-494f-b71d-942cb13aec8c",
+          "name": "Get Flow",
+          "request": {
+            "name": "Get Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "186920fe-c26c-4349-9d39-1a6be72586de",
+              "name": "Flow object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"parameterized_name\": \"string\",\n  \"organization\": {\n    \"id\": 1551,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 7324,\n    \"user_count\": 4976,\n    \"active\": true,\n    \"url\": \"http://epZPzKbscYIZvKPhydimHAUYOvflmL.xxeMINogBcaR\",\n    \"subscription\": {\n      \"trial\": false,\n      \"trial_ends\": \"1998-10-13\",\n      \"billing_date\": \"1995-02-10\"\n    }\n  },\n  \"unread_mentions\": 3575,\n  \"open\": false,\n  \"joined\": false,\n  \"url\": \"https://BqvpHTVjEmyPKEmwCVk.coMu-zKPDoZgyUD+EuwGE5DAdkMfB\",\n  \"web_url\": \"https://muiePLcpcbExJTwRAmnhgkoycmH.jbrksYU38XQqB70slK6AQKk+PaDn1QcsGOUKVQLspdOfCoMk+XEv,rSwG8jgfalcTUk0tyiywnHyGo7xUHtSH\",\n  \"join_url\": \"https://VMDwmsnbrfow.shuszrkDbTXm0sWyJAEAKdNhb64wc15no7XulAC,Vd\",\n  \"access_mode\": \"invitation\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "386a2315-7005-4625-8e7f-3a61ef377600",
+          "name": "Update Flow",
+          "request": {
+            "name": "Update Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"open\": \"<boolean>\",\n  \"access_mode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ae37af0d-6510-4dc5-858a-aa57329e8063",
+              "name": "Updated flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"open\": \"<boolean>\",\n  \"access_mode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "435ea203-af1d-4d56-9240-c3f0ab12b997",
+          "name": "Get Flow By Id",
+          "request": {
+            "name": "Get Flow By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                "find"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6a15e4d-d5da-4a63-ad10-f7685e1d3f40",
+              "name": "Flow object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    "find"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f5d93ac-9677-45df-b13d-0db5d1c0af07",
+          "name": "Create Flow",
+          "request": {
+            "name": "Create Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1cadb67b-53b1-411e-aebb-def2b9079769",
+              "name": "Flow created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"parameterized_name\": \"string\",\n  \"organization\": {\n    \"id\": 1551,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 7324,\n    \"user_count\": 4976,\n    \"active\": true,\n    \"url\": \"http://epZPzKbscYIZvKPhydimHAUYOvflmL.xxeMINogBcaR\",\n    \"subscription\": {\n      \"trial\": false,\n      \"trial_ends\": \"1998-10-13\",\n      \"billing_date\": \"1995-02-10\"\n    }\n  },\n  \"unread_mentions\": 3575,\n  \"open\": false,\n  \"joined\": false,\n  \"url\": \"https://BqvpHTVjEmyPKEmwCVk.coMu-zKPDoZgyUD+EuwGE5DAdkMfB\",\n  \"web_url\": \"https://muiePLcpcbExJTwRAmnhgkoycmH.jbrksYU38XQqB70slK6AQKk+PaDn1QcsGOUKVQLspdOfCoMk+XEv,rSwG8jgfalcTUk0tyiywnHyGo7xUHtSH\",\n  \"join_url\": \"https://VMDwmsnbrfow.shuszrkDbTXm0sWyJAEAKdNhb64wc15no7XulAC,Vd\",\n  \"access_mode\": \"invitation\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7d67a0cd-d958-4fca-a730-736c7b0f64c6",
+      "name": "Messages",
+      "description": {
+        "content": "Chat messages, comments, status, activity, discussion, and file events posted to a flow.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "859b8a93-c5ac-4003-a38f-1517ea5c6c21",
+          "name": "Send Message",
+          "request": {
+            "name": "Send Message",
+            "description": {},
+            "url": {
+              "path": [
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "25b62431-bb4f-4bb0-a644-407165cfd6a3",
+              "name": "Message accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2000,\n  \"app\": \"string\",\n  \"event\": \"string\",\n  \"flow\": \"string\",\n  \"content\": \"\",\n  \"sent\": 8442,\n  \"user\": \"string\",\n  \"created_at\": \"1954-04-09T06:52:01.114Z\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"thread_id\": \"string\",\n  \"thread\": {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"status\": {\n      \"color\": \"string\",\n      \"value\": \"string\"\n    },\n    \"fields\": [\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"external_url\": \"http://HVbfZjEfYEViiQPONCYhkqkYARapKBF.ddiaNVtSAU0q8GsNy7FU4s,JWrFt3-K,FUdF9lgvyc6tf,qClju4fPItKzfrdbD-ymQcLQ\",\n    \"actor\": {\n      \"name\": \"string\",\n      \"avatar\": \"https://zTQzUO.msrWctnD6,vYMoPQmZySLQFwasIwxkqWW1hRacVMD\"\n    }\n  },\n  \"uuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "943afc92-bf41-4124-8638-6d8f21b8076b",
+          "name": "List Flow Messages",
+          "request": {
+            "name": "List Flow Messages",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "until_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c445046-e7c8-411b-b396-44979055d9e6",
+              "name": "List of message events.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "since_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 511,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 7214,\n    \"user\": \"string\",\n    \"created_at\": \"1993-10-11T15:01:08.034Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"https://Qgsj.xqb6h7uru,YPCaA+MA,eqoppzw4Rqx.zBPW3JfYsgzDoIES\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"https://UBfkqYSObQWwbiy.hdqaj6WGIhZtYDRvWiA4mY6ITuERuXIeX.nUvF\"\n      }\n    },\n    \"uuid\": \"string\"\n  },\n  {\n    \"id\": 5986,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 3394,\n    \"user\": \"string\",\n    \"created_at\": \"1991-05-03T16:32:34.486Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"https://yCRQVSF.grh0eowuxoWxYI5TnlneFPJ1iET3XJduJ+HkBVTDKXvqOjaIeXaQ81lIJN,N9bwkXSHtT\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://CAaOzUcgQfkdYCLHK.kbknBXA,t2sj+Nx-gU5MxEXdF8ydP2Nlo-\"\n      }\n    },\n    \"uuid\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66e27e7c-5f68-495e-94dc-350455a3098d",
+          "name": "Send Message To Flow",
+          "request": {
+            "name": "Send Message To Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d932a05-ea53-4755-b0fa-93757b6767ca",
+              "name": "Message accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30a1cd24-16ec-480d-874a-9eeda9d1f330",
+          "name": "Show Message",
+          "request": {
+            "name": "Show Message",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "313a5dc7-a9ab-4875-8a4c-3cb295b7bc9f",
+              "name": "Single message.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2000,\n  \"app\": \"string\",\n  \"event\": \"string\",\n  \"flow\": \"string\",\n  \"content\": \"\",\n  \"sent\": 8442,\n  \"user\": \"string\",\n  \"created_at\": \"1954-04-09T06:52:01.114Z\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"thread_id\": \"string\",\n  \"thread\": {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"status\": {\n      \"color\": \"string\",\n      \"value\": \"string\"\n    },\n    \"fields\": [\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"external_url\": \"http://HVbfZjEfYEViiQPONCYhkqkYARapKBF.ddiaNVtSAU0q8GsNy7FU4s,JWrFt3-K,FUdF9lgvyc6tf,qClju4fPItKzfrdbD-ymQcLQ\",\n    \"actor\": {\n      \"name\": \"string\",\n      \"avatar\": \"https://zTQzUO.msrWctnD6,vYMoPQmZySLQFwasIwxkqWW1hRacVMD\"\n    }\n  },\n  \"uuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "052b79c9-fd2e-428b-af3b-0dcd7cc46883",
+          "name": "Edit Message",
+          "request": {
+            "name": "Edit Message",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c1a0ebf8-bdeb-473c-8969-dfe00cf76c94",
+              "name": "Message updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "832cd5d9-6902-4d45-8801-ed8f0085e3dc",
+          "name": "Delete Message",
+          "request": {
+            "name": "Delete Message",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ccd2061-c6c2-4704-8e98-773935c2d14b",
+              "name": "Message deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab2ac796-3272-4326-8534-fd6723e19e23",
+          "name": "Comment On Message",
+          "request": {
+            "name": "Comment On Message",
+            "description": {},
+            "url": {
+              "path": [
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6089ff0-b51a-4a40-8d80-496b191b9725",
+              "name": "Comment posted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b89e14b-17ff-4539-bc56-4e18db082c71",
+          "name": "Post Message To Thread",
+          "request": {
+            "name": "Post Message To Thread",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "threads",
+                ":id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0b3c40c-57cd-427a-ad50-9d6f72dbea2f",
+              "name": "Message posted to thread.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "threads",
+                    ":id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d7541e9b-25bf-4e68-8a4f-e44667267198",
+      "name": "Private Conversations",
+      "description": {
+        "content": "One-to-one direct message channels between two users.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "68c00f73-6bb8-488e-8834-7a43a0555d9c",
+          "name": "List Private Conversations",
+          "request": {
+            "name": "List Private Conversations",
+            "description": {},
+            "url": {
+              "path": [
+                "private"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d23d4ebb-5501-4385-a5b7-1eda60d05861",
+              "name": "List of private conversations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9752,\n    \"url\": \"https://lOVsOfgNIFQXK.hmerB6bC7e9BAOEOQriT9euym4\",\n    \"name\": \"string\",\n    \"open\": true,\n    \"activity\": {\n      \"inbox\": false,\n      \"mentions\": 5521,\n      \"chat\": true\n    },\n    \"users\": [\n      {\n        \"id\": 6206,\n        \"email\": \"oA3e@PhcGCjuR.tt\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"https://iQgATXdWzFshnwRtqJYVDf.yywnus\",\n        \"website\": \"http://axWUJIuNZElxprAwHiFnHovkWsGp.pknnfSHrEpYbV6BQLOhkSraWkCETsjPmPzsOiFqNug72n9,Aj1efZJru.7meyWbH0WnQhHR\",\n        \"admin\": false\n      },\n      {\n        \"id\": 5570,\n        \"email\": \"fB9CNvzO3myY@jBuOjtMRbbPUviINOrEgGSaoFR.klr\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"https://UeOgVxtIyuFWuFrHRtjK.dziAuC4fJnpVXgFQUc7FJwhGQ0cfwyFapFmCOBLxGdFMSH2Y5hhyflorVYBRn45FwlX\",\n        \"website\": \"http://rRSsfIex.cwW..Dr6.UXrGXbecsPVA7cWTxPyVdJHnhGSAYbPgDjKa+SrDRpxBUrke\",\n        \"admin\": true\n      }\n    ]\n  },\n  {\n    \"id\": 7208,\n    \"url\": \"http://RTjWtiyZIhRFGSqDBT.keL2JK1vQLoyz8XvaxmwzPl,WEZuWcSeMvVldZLYOkLwNwUCEjiFTlEVok\",\n    \"name\": \"string\",\n    \"open\": true,\n    \"activity\": {\n      \"inbox\": true,\n      \"mentions\": 1068,\n      \"chat\": true\n    },\n    \"users\": [\n      {\n        \"id\": 8641,\n        \"email\": \"07r@pRkfIzbGJNisqUDj.ygt\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"http://rTDBTmCTGkwy.fcnS5rt5tToFF2BfPE4TW3ioWLxu\",\n        \"website\": \"http://azmUbYXDNuyKAagkIkZIuyyGfmt.foslLgygdkxWnoEk2Ttmip2unZtveSgwCK\",\n        \"admin\": false\n      },\n      {\n        \"id\": 1681,\n        \"email\": \"yuUO8Ug@KFhYlXIwezpfuclpPoDNt.puua\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"http://QbswfvCCXlvfJJspZFdz.qzoLePbC-2a8DVl8QHWIyZL0DQtq4ZEN1P+RPl3s\",\n        \"website\": \"http://ULlfuHW.pscefN7ddTUliFLhgKAdiVD8OKUXcLC-t\",\n        \"admin\": true\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a64227d6-6cb4-47f8-bd90-63ac7ddbf8ad",
+          "name": "Get Private Conversation",
+          "request": {
+            "name": "Get Private Conversation",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7eb7a30d-d28a-43ca-9481-6a8c73515182",
+              "name": "Private conversation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8859,\n  \"url\": \"https://Fyxt.nfkUhuKriaC50o\",\n  \"name\": \"string\",\n  \"open\": false,\n  \"activity\": {\n    \"inbox\": true,\n    \"mentions\": 5266,\n    \"chat\": true\n  },\n  \"users\": [\n    {\n      \"id\": 3302,\n      \"email\": \"APx@gpOlfKLeZ.utqy\",\n      \"name\": \"string\",\n      \"nick\": \"string\",\n      \"avatar\": \"http://QEPEBsd.ydZEcKK1YcGiO,z.ooJBeqoGKxAQZSce2XCCBxcBIxUkCqIm2w\",\n      \"website\": \"https://ZkkTsitoYbJXKtYKdOFB.zvsyuQoU0POtTafdBRGWH\",\n      \"admin\": false\n    },\n    {\n      \"id\": 5800,\n      \"email\": \"zgu@PhGeEXmHPZFiFWNglKMfcjPSG.oent\",\n      \"name\": \"string\",\n      \"nick\": \"string\",\n      \"avatar\": \"https://rvhlatx.biSD9D5BPSenzqkaVf6ZjY-rAQe+4\",\n      \"website\": \"http://nIqcoRUKrWadcoepaCRltce.fcjdM-XvfXaghthhwbWNflwVYJ6.UdUaS2v1zN3o8s\",\n      \"admin\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f9b5e84-4c53-4b76-a203-e0a6b9176e88",
+          "name": "Update Private Conversation",
+          "request": {
+            "name": "Update Private Conversation",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"open\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a5230844-39a3-4077-b01b-3d84b19f7485",
+              "name": "Conversation updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"open\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c139ad32-baef-4943-a997-dfe4caec2267",
+      "name": "Private Messages",
+      "description": {
+        "content": "Messages within a private conversation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a756d35a-fe6e-4d1f-a86a-ca7bbd89929f",
+          "name": "List Private Messages",
+          "request": {
+            "name": "List Private Messages",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "until_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5649cbba-aa61-4bea-8cc9-d2fd66dac6e7",
+              "name": "List of private messages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "since_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2331,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 8297,\n    \"user\": \"string\",\n    \"created_at\": \"1997-10-14T13:10:43.855Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"http://ha.iqissbVENHcIrjgFVEiLEniZDefcQzzVP5STzjoURCNW-8PodmBwLwb0kGvFox0XoHS0vFz\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://jnRsTMhkOQniObxTBsjqy.bpncOAe5AqGaMv6r4Vjn3qpPd3Svjxq1fOk3Ky\"\n      }\n    },\n    \"uuid\": \"string\"\n  },\n  {\n    \"id\": 3864,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 6378,\n    \"user\": \"string\",\n    \"created_at\": \"2016-05-05T17:08:31.776Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"http://Flum.feeuZmv-lueDD.o3KFJ.cVGM5W\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://W.jgonsVCdHIqsvLXkDV61ffulUY.HcYI-Mi3gPNDy9Qh\"\n      }\n    },\n    \"uuid\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0aac6aeb-5bc3-4918-b176-1cbc8b5c519c",
+          "name": "Send Private Message",
+          "request": {
+            "name": "Send Private Message",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6a1ccd4f-2178-411e-a88f-5332a5972ae8",
+              "name": "Private message sent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29f927f6-48cc-43ca-8454-dd85d499a24c",
+          "name": "Show Private Message",
+          "request": {
+            "name": "Show Private Message",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id",
+                "messages",
+                ":message_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2c3fe31-c8d6-4bde-951e-16c45b0fcf0e",
+              "name": "Single private message.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id",
+                    "messages",
+                    ":message_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0248a559-b165-4e03-813d-c9f158970bc6",
+      "name": "Users",
+      "description": {
+        "content": "User accounts that may belong to multiple organizations and flows.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "901e4131-5092-402d-af96-2403a46b61b6",
+          "name": "List All Visible Users",
+          "request": {
+            "name": "List All Visible Users",
+            "description": {},
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25984917-1d59-4b63-a28f-39f5bc26fbe0",
+              "name": "List of users.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2245,\n    \"email\": \"UOXwlbaDOuo@VfqxvTzFjVpZZfRLXPdgqU.prhr\",\n    \"name\": \"string\",\n    \"nick\": \"string\",\n    \"avatar\": \"http://dgoBwRmMsjryQvuWuPDFdFNhTNg.cpftJn3iI+F+7gREhGYGg72zv-cAfTl9+H3S\",\n    \"website\": \"https://ZfF.jzktU-uvhS4uP3uaQdLXN5KwpMIAffBHQIH4v7TmQfurlpAKcL5yfzGfUBk\",\n    \"admin\": false\n  },\n  {\n    \"id\": 9275,\n    \"email\": \"EfaHe@oLqtrvvLUfazhLvbKbxczQdOaGtkyF.cvp\",\n    \"name\": \"string\",\n    \"nick\": \"string\",\n    \"avatar\": \"http://KOxSoiGpNGjIP.rzajpcLatcDdWoi2r5+v4rIAkEoX0EwUnw75wXxU0xKud+2Z.I8kJMbAkA,P0MDPGFmUCcBORALqw71rolj+-49\",\n    \"website\": \"http://lDrwldoutjZeOHGtSfWOXD.qfkezZnbJJAmPpZzTTCJ.NXt0PYYEqpLK5wTxXzGOe4L25PBtd5tRjVpO44P\",\n    \"admin\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ddb88c3e-2ee2-4516-a448-7dda120b1480",
+          "name": "Get User",
+          "request": {
+            "name": "Get User",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b735b60a-7e11-4eb7-ae43-a837f3ffe681",
+              "name": "User.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1608,\n  \"email\": \"S3wWWSyb4Dh@PRfnXMBUnplnRclSq.vef\",\n  \"name\": \"string\",\n  \"nick\": \"string\",\n  \"avatar\": \"http://SJRXULrjXei.zpstRkEk7vUPJzlpzBqzmjZYsDkWv+VrrXcCHIuDzjoGWkRDJMXMuEicudvwNlE\",\n  \"website\": \"http://PoMpPDjejqhsQiBdwaMtnRfVR.knoDZ.Z3rW6R7JXkn4IiQVyLDbQ0psr5r.VAArDryNFuuYD0OHKsSur1HpepYdTPISr1gOC8oHsHnD\",\n  \"admin\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12ee683b-38e5-4d4a-b6d3-1ffccf354a1e",
+          "name": "Update User",
+          "request": {
+            "name": "Update User",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nick\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "537986ff-61bd-4975-b7a9-c8c395ee4563",
+              "name": "User updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nick\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed7cdd08-9ea0-4617-8478-cec50a0d944a",
+          "name": "List Flow Users",
+          "request": {
+            "name": "List Flow Users",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f838b8e-099f-4c89-a770-e4c0fc0b8bb7",
+              "name": "List of flow users.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55023d7c-d4b8-4b79-a340-af114aaa8f93",
+          "name": "Add User To Flow",
+          "request": {
+            "name": "Add User To Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f49c052-0e57-47c7-941a-d32a567afd29",
+              "name": "User added to flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "052c8bec-bcd0-4594-9862-027c3e6cc6aa",
+          "name": "Remove User From Flow",
+          "request": {
+            "name": "Remove User From Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "201198ee-fe8e-4e87-a424-dd71e2d617c0",
+              "name": "User removed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3c70916-284c-4e58-8fe4-35343266844b",
+          "name": "Remove User From Organization",
+          "request": {
+            "name": "Remove User From Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations",
+                ":organization",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe479d91-551e-4d87-973f-2a7109597f9c",
+              "name": "User removed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a1c71e9b-3196-4773-9f38-b714b6740ac6",
+      "name": "Organizations",
+      "description": {
+        "content": "Account-level container that owns flows and bills users.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "99ba490c-6b05-4c83-a93b-611d06ea0b57",
+          "name": "List Organizations",
+          "request": {
+            "name": "List Organizations",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7641468f-a578-4a0a-956e-2e1b56a3bc66",
+              "name": "List of organizations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8903,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 4028,\n    \"user_count\": 2725,\n    \"active\": false,\n    \"url\": \"http://xydUVpE.gfqxE.nrHAjf\",\n    \"subscription\": {\n      \"trial\": true,\n      \"trial_ends\": \"1973-07-07\",\n      \"billing_date\": \"1985-05-26\"\n    }\n  },\n  {\n    \"id\": 8334,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 637,\n    \"user_count\": 2164,\n    \"active\": false,\n    \"url\": \"https://pAQzlcLSXeUeRCBNCWvBCUZRfhNzLPs.uswJmjJ62py7Vfvr4u,0v5H2+nK06-3W\",\n    \"subscription\": {\n      \"trial\": true,\n      \"trial_ends\": \"1980-11-04\",\n      \"billing_date\": \"2020-08-31\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe703adb-dd1e-4ea8-9fdc-c667e0890df5",
+          "name": "Get Organization",
+          "request": {
+            "name": "Get Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations",
+                ":parameterized_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parameterized_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c91a7119-d013-4f64-bc46-ffb2ac0a8b34",
+              "name": "Organization.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":parameterized_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parameterized_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7693,\n  \"parameterized_name\": \"string\",\n  \"name\": \"string\",\n  \"user_limit\": 6991,\n  \"user_count\": 6023,\n  \"active\": false,\n  \"url\": \"https://dTuUmawicAwBQDGtfreutpetjMhkkblJD.nvnldHubhXqxa8ndhXaUtz2PkzSF-qlRgH9mlXoTsxpzZr2OmBFlKoY\",\n  \"subscription\": {\n    \"trial\": false,\n    \"trial_ends\": \"1968-05-05\",\n    \"billing_date\": \"1957-11-03\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ef53dc9-d04b-45ad-ab5d-27e2c69c66a1",
+          "name": "Update Organization",
+          "request": {
+            "name": "Update Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations",
+                ":parameterized_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parameterized_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"parameterized_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6febbbf3-c25e-410a-af5a-9846bb4921db",
+              "name": "Organization updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":parameterized_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parameterized_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"parameterized_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ab5e2578-84a4-4917-bf55-e6f82fb6c0b8",
+      "name": "Sources",
+      "description": {
+        "content": "External integrations (GitHub, Jira, Zendesk, etc.) that post into a flow.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "088a5794-3425-45c9-9c39-9971b10ba521",
+          "name": "List Sources",
+          "request": {
+            "name": "List Sources",
+            "description": {},
+            "url": {
+              "path": [
+                "sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6de85ae4-111a-43de-a728-2b8ee18e980b",
+              "name": "List of sources visible to the user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3738,\n    \"name\": \"string\",\n    \"url\": \"https://OPvtjRtO.bhSLzylqb5.sv6M5xNEj,QePaLn7Jk4ocT53uJtBJ,hpNKO\",\n    \"external_url\": \"http://DGfaLezjSGrusakoekDZXPLcfU.pdWOxwUMxQw-J0Z6\",\n    \"created_at\": \"1949-05-01T04:33:08.796Z\",\n    \"updated_at\": \"1988-07-02T22:56:17.222Z\",\n    \"application\": {\n      \"id\": 1708,\n      \"name\": \"string\",\n      \"icon_url\": \"http://SJTpicPequNaSMs.tghzB5jtPIfs1KWZo9+xLxUodpVtNqNvtZyLS9BFOqKuxTMO0WxLsMxHy\",\n      \"url\": \"http://nfoRYmv.guyXHBugqOA4aNY5O1jEY6ob+oPi4nrH93REwqxOUYEqCcD\"\n    },\n    \"creator\": {\n      \"id\": 3138,\n      \"email\": \"63LbfRJrlEL29S@eZgxLboukEbguvdosdfkvoZUI.ogba\",\n      \"name\": \"string\",\n      \"nick\": \"string\",\n      \"avatar\": \"https://viAmzmCQsRDgsk.ptzqIrWVDTsVKUITOTdmOmpTST-CL.ZeZE\",\n      \"website\": \"https://WcAIVZJJDJsqdPiTJqBPn.yfJH4B+F5X.ObL3Qi0wpgXbICZWLZ-HIqOPJiSKa-dfARx\",\n      \"admin\": false\n    }\n  },\n  {\n    \"id\": 3905,\n    \"name\": \"string\",\n    \"url\": \"http://EMV.xexH.+iGyXtuwB\",\n    \"external_url\": \"http://SQlOA.yrutWPOX3gDLDBc1BxBF+\",\n    \"created_at\": \"1947-03-01T16:55:51.331Z\",\n    \"updated_at\": \"1975-09-28T00:54:50.145Z\",\n    \"application\": {\n      \"id\": 3050,\n      \"name\": \"string\",\n      \"icon_url\": \"http://YunNxseXeTPVbbLXBIjNLgleiTtL.fyllbmb+kL4vkFivjloI-8YeZ0Br.r9ztMcOCBGCJYzQyhwGK1uaP1f,mGXehVig-JM\",\n      \"url\": \"https://cZCLElLgJwtxoOHBDuhZlXbCzX.fkdxl,XFHUH-gfJb+FYQxxtNy\"\n    },\n    \"creator\": {\n      \"id\": 8707,\n      \"email\": \"5MrD@KQuNCkoKnI.tktd\",\n      \"name\": \"string\",\n      \"nick\": \"string\",\n      \"avatar\": \"http://dVuzlMpgPwQOqdZdNbmLWYGdZxujKNlX.zxaKkdEtgECInHh-wqRF9R\",\n      \"website\": \"http://ZcZExvlRRKqtAHyMwMzsEXHAOtZqs.bruJhcexxYWIKNfakvYrrFhwmxHveJrrOumCChS\",\n      \"admin\": true\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8253c8b2-a2f6-4f8f-9929-55cda937a535",
+          "name": "List Flow Sources",
+          "request": {
+            "name": "List Flow Sources",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "430e64a5-82e4-45f9-b133-d60369d672b4",
+              "name": "List of sources attached to the flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7454267-393a-45a7-b1d7-22197c195657",
+          "name": "Create Source",
+          "request": {
+            "name": "Create Source",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"external_url\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9ed14c46-59b5-42ae-a342-162d53adac40",
+              "name": "Source created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"external_url\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8373,\n  \"name\": \"string\",\n  \"url\": \"https://BTIahik.rgOSlyFmHoNXFlE1H4,TEqJjnzSZVTljoTElqgPMmSsO5p,oiWIhMh\",\n  \"external_url\": \"http://jaCdUzMaoyfRqqgIBbTcjryiESzJcqc.mfpTUjbOPmDBb3cK2oabAXZWR,ceuYNlaU9q9lBl-nYxU\",\n  \"created_at\": \"1964-01-10T10:55:07.346Z\",\n  \"updated_at\": \"1957-12-03T19:07:01.463Z\",\n  \"application\": {\n    \"id\": 4590,\n    \"name\": \"string\",\n    \"icon_url\": \"http://ogVbyuhekTTItVMStbqpZaCmJBVj.ixpu20Nu5YDk42oy\",\n    \"url\": \"http://VjmitzjBHoAihWJRvFnghzFoPmxqAhlPd.xsbkEjHWTY0OXDFPvfxT-3YRMy9xUDOTN\"\n  },\n  \"creator\": {\n    \"id\": 4416,\n    \"email\": \"3xe9UWlUE26vAI@GixCmRcQJadNDiSCE.otk\",\n    \"name\": \"string\",\n    \"nick\": \"string\",\n    \"avatar\": \"https://fFQeArEMs.nkYafYGnOK-hsVdj4tK\",\n    \"website\": \"https://LYhPpIwsrmEb.ezcKrS\",\n    \"admin\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b4cfffd-8569-4a7a-9e50-e15791c1bb88",
+          "name": "Get Source",
+          "request": {
+            "name": "Get Source",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "sources",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75c89f3b-cf33-482c-a149-eedc870f1204",
+              "name": "Source.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "sources",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2e28cb7-b324-42d7-bd1c-372383584372",
+          "name": "Update Source",
+          "request": {
+            "name": "Update Source",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "sources",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"external_url\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ea0e24e7-1c4c-4a76-a171-34b0a65a3f4b",
+              "name": "Source updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "sources",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"external_url\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b49e01d-13f1-4e04-b3b8-b8a7b712be37",
+          "name": "Delete Source",
+          "request": {
+            "name": "Delete Source",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "sources",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0977644f-1bd3-4f91-b07e-264a84d81eb4",
+              "name": "Source deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "sources",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7e4710ea-ebd7-4880-a072-32b7b0bbd897",
+      "name": "Invitations",
+      "description": {
+        "content": "Open and accepted invitations to join a flow.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f3191089-6a4e-4cec-ad00-4793895fdf32",
+          "name": "List Flow Invitations",
+          "request": {
+            "name": "List Flow Invitations",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e58e6418-03c1-49f5-83c9-4c2a30281998",
+              "name": "List of pending and accepted invitations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2750,\n    \"state\": \"accepted\",\n    \"email\": \"vZ8CWB@szNtOpWgiXDMeteNeowypXTPNTBdTLdl.kr\",\n    \"flow\": \"string\",\n    \"url\": \"https://FAVFJOkOeesbRzsJDb.kyWwUNeAotwrl4-6u4XQJtvtPN\"\n  },\n  {\n    \"id\": 6124,\n    \"state\": \"pending\",\n    \"email\": \"0MC5GdU6tIMw@AsDNRbIbzvfSiuly.ex\",\n    \"flow\": \"string\",\n    \"url\": \"http://wOgnOZkbuXIUJJfedcSfE.taExFLXRhrf.jd.jUnxLm6Zf-ywzrylh0sFc2cnQqh3Rv65+1dFQRgjFmmSJDJpT2\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6617ccb-6e76-4a70-bda2-ccec6c993a6d",
+          "name": "Create Invitation",
+          "request": {
+            "name": "Create Invitation",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"message\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b9683da6-3bea-443a-beea-86ab1b43860a",
+              "name": "Invitation created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5423,\n  \"state\": \"pending\",\n  \"email\": \"Vh0sQBUPqz@nhYKwPzrRVqadxKZTTEcvLrTk.mhcn\",\n  \"flow\": \"string\",\n  \"url\": \"https://RckwLTJpbA.vxngwuWjCFM3PaJUIcY2LYX,ZIcSvArD\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d19540c-3092-41b9-abbc-427b9d72148a",
+          "name": "Get Invitation",
+          "request": {
+            "name": "Get Invitation",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "305da2ab-cf68-4f40-8a3f-6351e768d85c",
+              "name": "Invitation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46d2d6c5-5a70-486d-b22b-d718da3a54ac",
+          "name": "Delete Invitation",
+          "request": {
+            "name": "Delete Invitation",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43e9cf09-d569-4234-a2a2-477387ff4ab6",
+              "name": "Invitation revoked.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe052c6b-b08d-4d60-a690-b380f75c1ae0",
+          "name": "Import Address List",
+          "request": {
+            "name": "Import Address List",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations",
+                "import"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"addresses\": [\n    \"<email>\",\n    \"<email>\"\n  ],\n  \"message\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e59f7030-9758-4673-a8ef-f40b92bb66f5",
+              "name": "Addresses imported.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations",
+                    "import"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addresses\": [\n    \"<email>\",\n    \"<email>\"\n  ],\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3bcd4f36-a682-46de-814c-6adc2840567b",
+      "name": "Files",
+      "description": {
+        "content": "File uploads and downloads attached to messages.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6bce4b57-5502-4927-9a53-9d8abf795a98",
+          "name": "Download File",
+          "request": {
+            "name": "Download File",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                ":organization",
+                ":hash",
+                ":filename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hash",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filename",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bc12037-72ed-4a79-91a0-64f86bcd3e35",
+              "name": "Redirect to a short-lived S3 download URL.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    ":organization",
+                    ":hash",
+                    ":filename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hash",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filename",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Location",
+                  "value": "https://SCodnpgLzvBacRPeyAeRC.eoutvVcnGfqHE8AyyIdTU6P6rH",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2bcb0e93-03ed-4e93-8cfe-5782897ed63a",
+      "name": "Threads",
+      "description": {
+        "content": "Threaded conversations rooted on a parent message.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "577ff060-af6e-4158-9fe4-c1c4cadcb0a3",
+          "name": "List Flow Threads",
+          "request": {
+            "name": "List Flow Threads",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "threads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "application",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "84169640-d7b3-43e2-91af-74b72695e33d",
+              "name": "List of threads.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "threads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "application",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"status\": {\n      \"color\": \"string\",\n      \"value\": \"string\"\n    },\n    \"fields\": [\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"external_url\": \"http://nkwsTTipnHOzXgrDnTz.bgoTHVLn-SZMIkS\",\n    \"actor\": {\n      \"name\": \"string\",\n      \"avatar\": \"https://pCPtImrCKiIIXseETObYXI.oeFGsuDd3.EoB,rOph.XxQIgRSH\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"status\": {\n      \"color\": \"string\",\n      \"value\": \"string\"\n    },\n    \"fields\": [\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"external_url\": \"https://bjrMZpnndhgwySMcTMUGQCWOkNW.hhdfKCBNK-g5aW5YW.VW\",\n    \"actor\": {\n      \"name\": \"string\",\n      \"avatar\": \"http://TLbwTQKIQImFrZEOeJLFYvW.ohsmQ0.JlPwva7cDf4C1gruYVbSYHLzSl90HDu9HJo7St4\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8410ee64-e1f6-4cd7-9329-46acdb06835a",
+          "name": "Get Thread",
+          "request": {
+            "name": "Get Thread",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "threads",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "038856c5-0ef6-4db1-b48d-f9de1f78523c",
+              "name": "Thread object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "threads",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"body\": \"string\",\n  \"status\": {\n    \"color\": \"string\",\n    \"value\": \"string\"\n  },\n  \"fields\": [\n    {\n      \"label\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"label\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"external_url\": \"https://bnKzEhz.oadgCyiUExX-vuYgT5vLyz6PxhqZm-7GTNA4WEqCKCTpGcMWwwQIf2rQFxHuExGozvVLY,pFAKgobW\",\n  \"actor\": {\n    \"name\": \"string\",\n    \"avatar\": \"https://fUPRsmBueOWzyyAGOIMUHueNGGQp.zlkdHyo69ocoZJBGzHf6oojXcwasciNSAU640,BFospt+bI5dqO8f-6UvrvXPcU\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "31269ed3-1e9f-4160-944d-896d3295b9ef",
+      "name": "Authentication",
+      "description": {
+        "content": "OAuth 2.0 authorization-code grant for user delegation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cefd7386-e69e-4a17-92c2-1ae50d4c83e0",
+          "name": "Begin OAuth 2.0 Authorization",
+          "request": {
+            "name": "Begin OAuth 2.0 Authorization",
+            "description": {},
+            "url": {
+              "path": [
+                "oauth",
+                "authorize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "response_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<uri>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec053529-12dc-4d92-9abe-023d12a115b5",
+              "name": "Redirect back to redirect_uri with an authorization code.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth",
+                    "authorize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "response_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df689514-47ce-40f0-8fe4-78ef908cb50d",
+          "name": "Exchange Authorization Code for Access Token",
+          "request": {
+            "name": "Exchange Authorization Code for Access Token",
+            "description": {},
+            "url": {
+              "path": [
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<uri>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "refresh_token",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "67b84825-70d6-405c-93e0-c8af02fc856f",
+              "name": "Access token issued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "refresh_token",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"refresh_token\": \"string\",\n  \"token_type\": \"string\",\n  \"scope\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "flow private profile"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.flowdock.com/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://api.flowdock.com/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e26a940b-2542-4c95-afa4-13cc6f8f272d",
+    "name": "Flowdock REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Historical REST API surface for CA Flowdock, a team chat and shared-inbox\nproduct originally built by Flowdock (Helsinki / Tampere, Finland), acquired\nby CA Technologies (2013), and later operated under Broadcom. The product\nand all hosted APIs were discontinued on August 15, 2023. Broadcom's\nsunset notice recommended Microsoft Teams or Slack as successors.\n\nThis document is reconstructed from the public api-docs repository\n(https://github.com/flowdock/api-docs) and archived copies of\nhttps://www.flowdock.com/api on the Internet Archive\n(https://web.archive.org/web/20211206180655/https://www.flowdock.com/api).\nAll endpoints below are now offline; this file exists for historical\nand archival purposes.\n\n\nContact Support:\n Name: Flowdock (discontinued)",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,825 @@
+{
+  "item": [
+    {
+      "id": "88dc05ef-f8fc-4c48-9022-fca0da06c176",
+      "name": "SCIM",
+      "description": {
+        "content": "SCIM 1.x user provisioning for SSO-enabled Flowdock organizations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97b116a6-2579-4962-99fb-fa1174c67ce5",
+          "name": "Verify SCIM Authorization",
+          "request": {
+            "name": "Verify SCIM Authorization",
+            "description": {},
+            "url": {
+              "path": [
+                "scim",
+                ":uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) SSO organization UID issued during SSO setup."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e520cf06-8622-4eea-a53f-a41533741f13",
+              "name": "Authorization OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b977b88-f69e-44b5-96ca-733dea7d543b",
+              "name": "Missing authorization header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "77aee755-316f-4a04-8a09-3acbc706cac3",
+              "name": "Invalid or wrong-token authorization header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "93506b85-1987-4c23-a393-ccb066b50cc3",
+              "name": "Rate-limited; retry later.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d75ae06-f84a-4cd9-b614-9b2a31df5ea9",
+          "name": "List SCIM Users",
+          "request": {
+            "name": "List SCIM Users",
+            "description": {},
+            "url": {
+              "path": [
+                "scim",
+                ":uid",
+                "Users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) SSO organization UID issued during SSO setup."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6b547ed-c3d8-40e5-9b91-e3189bf3c819",
+              "name": "SCIM Users collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid",
+                    "Users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Resources\": [\n    {\n      \"id\": 7811,\n      \"externalId\": \"string\",\n      \"userName\": \"Lf0Aq@RxsxFVUGLGLwEGAMTIoafcmMasWz.ghai\",\n      \"nickName\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\"\n      },\n      \"emails\": [\n        {\n          \"value\": \"4e1bIdCO8-q@HYgnh.ta\"\n        },\n        {\n          \"value\": \"jpJYWXEhPJP@PsrfJEQhleGMdnWzt.oy\"\n        }\n      ],\n      \"meta\": {\n        \"location\": \"https://XqRk.noUvnNvzKPzsLSSiYgh1fJ-KUp-JuXt2FQtrzuP0amlehI\",\n        \"created\": \"1958-03-25T18:45:41.460Z\",\n        \"lastModified\": \"1964-02-16T09:23:26.697Z\"\n      }\n    },\n    {\n      \"id\": 2265,\n      \"externalId\": \"string\",\n      \"userName\": \"8oWnu3FDh@bVYHhsDM.ucd\",\n      \"nickName\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\"\n      },\n      \"emails\": [\n        {\n          \"value\": \"Vlyg02ZO@OaT.za\"\n        },\n        {\n          \"value\": \"9Zt34jURiip@IXInITM.vlsb\"\n        }\n      ],\n      \"meta\": {\n        \"location\": \"http://cISIY.hvbLG+K5Cn3jqI,LTqhos\",\n        \"created\": \"2017-10-06T04:59:19.205Z\",\n        \"lastModified\": \"1987-04-15T16:01:55.941Z\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "715dc2c0-d03b-4c9e-99f5-4b7158c86998",
+          "name": "Provision SCIM User",
+          "request": {
+            "name": "Provision SCIM User",
+            "description": {},
+            "url": {
+              "path": [
+                "scim",
+                ":uid",
+                "Users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) SSO organization UID issued during SSO setup."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"externalId\": \"<string>\",\n  \"userName\": \"<email>\",\n  \"nickName\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"<email>\"\n    },\n    {\n      \"value\": \"<email>\"\n    }\n  ],\n  \"meta\": {\n    \"location\": \"<uri>\",\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d117b8d7-e6a5-482b-b89e-4beec6190229",
+              "name": "User provisioned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid",
+                    "Users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"externalId\": \"<string>\",\n  \"userName\": \"<email>\",\n  \"nickName\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"<email>\"\n    },\n    {\n      \"value\": \"<email>\"\n    }\n  ],\n  \"meta\": {\n    \"location\": \"<uri>\",\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<integer>\",\n  \"externalId\": \"<string>\",\n  \"userName\": \"<email>\",\n  \"nickName\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"<email>\"\n    },\n    {\n      \"value\": \"<email>\"\n    }\n  ],\n  \"meta\": {\n    \"location\": \"<uri>\",\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<dateTime>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0affd825-0cd2-4af5-94a2-0c9e859e82fb",
+          "name": "Get SCIM User",
+          "request": {
+            "name": "Get SCIM User",
+            "description": {},
+            "url": {
+              "path": [
+                "scim",
+                ":uid",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) SSO organization UID issued during SSO setup."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80a0f1de-d88a-4e5f-b403-4e95c9d0005a",
+              "name": "User resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<integer>\",\n  \"externalId\": \"<string>\",\n  \"userName\": \"<email>\",\n  \"nickName\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"<email>\"\n    },\n    {\n      \"value\": \"<email>\"\n    }\n  ],\n  \"meta\": {\n    \"location\": \"<uri>\",\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<dateTime>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60fcd3f6-3724-419f-bbf8-1ce10e0d9e49",
+          "name": "Update SCIM User",
+          "request": {
+            "name": "Update SCIM User",
+            "description": {},
+            "url": {
+              "path": [
+                "scim",
+                ":uid",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) SSO organization UID issued during SSO setup."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"externalId\": \"<string>\",\n  \"userName\": \"<email>\",\n  \"nickName\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"<email>\"\n    },\n    {\n      \"value\": \"<email>\"\n    }\n  ],\n  \"meta\": {\n    \"location\": \"<uri>\",\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "48640e52-06f1-487e-abd0-8e0c08c5bf42",
+              "name": "User updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"externalId\": \"<string>\",\n  \"userName\": \"<email>\",\n  \"nickName\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"<email>\"\n    },\n    {\n      \"value\": \"<email>\"\n    }\n  ],\n  \"meta\": {\n    \"location\": \"<uri>\",\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32102221-ffd9-4bf3-bf15-84a23196c39c",
+          "name": "Deactivate SCIM User",
+          "request": {
+            "name": "Deactivate SCIM User",
+            "description": {},
+            "url": {
+              "path": [
+                "scim",
+                ":uid",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) SSO organization UID issued during SSO setup."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b1e4117-15ff-4027-8f04-d522a5218f4a",
+              "name": "User deactivated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scim",
+                    ":uid",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) SSO organization UID issued during SSO setup."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4beeb05c-d87e-4365-9532-364e268a0791",
+    "name": "Flowdock SCIM Provisioning API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Partial SCIM (System for Cross-Domain Identity Management) provisioning\nAPI for CA Flowdock Enterprise customers with Single Sign-On configured.\nUsed by IdP-side provisioning connectors to create, read, update, and\ndeactivate SSO-linked user accounts in a Flowdock organization.\n\nDiscontinued with the rest of Flowdock on August 15, 2023.\nReconstructed from https://github.com/flowdock/api-docs/blob/master/docs/scim.md.\n",
+      "type": "text/plain"
+    }
+  }
+}

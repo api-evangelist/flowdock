@@ -1,0 +1,161 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock SCIM Provisioning API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SCIM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Verify SCIM Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/scim/:uid",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "SSO organization UID issued during SSO setup."
+              }
+            ]
+          },
+          "docs": "Verify SCIM Authorization"
+        },
+        {
+          "info": {
+            "name": "List SCIM Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/scim/:uid/Users",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "SSO organization UID issued during SSO setup."
+              }
+            ]
+          },
+          "docs": "List SCIM Users"
+        },
+        {
+          "info": {
+            "name": "Provision SCIM User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/scim/:uid/Users",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "SSO organization UID issued during SSO setup."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Provision SCIM User"
+        },
+        {
+          "info": {
+            "name": "Get SCIM User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/scim/:uid/Users/:id",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "SSO organization UID issued during SSO setup."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get SCIM User"
+        },
+        {
+          "info": {
+            "name": "Update SCIM User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/scim/:uid/Users/:id",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "SSO organization UID issued during SSO setup."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update SCIM User"
+        },
+        {
+          "info": {
+            "name": "Deactivate SCIM User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/scim/:uid/Users/:id",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "SSO organization UID issued during SSO setup."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deactivate SCIM User"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
