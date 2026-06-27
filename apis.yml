@@ -75,15 +75,15 @@ apis:
         url: json-structure/flowdock-message-structure.json
       - type: JSONStructure
         url: json-structure/flowdock-organization-structure.json
-      - type: Example
+      - type: Examples
         url: examples/flowdock-list-flows-response.json
-      - type: Example
+      - type: Examples
         url: examples/flowdock-send-message-request.json
-      - type: Example
+      - type: Examples
         url: examples/flowdock-list-sources-response.json
-      - type: Example
+      - type: Examples
         url: examples/flowdock-private-conversation-response.json
-      - type: Example
+      - type: Examples
         url: examples/flowdock-invitation-response.json
     tags:
       - Team Chat
@@ -107,9 +107,9 @@ apis:
         url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
       - type: OpenAPI
         url: openapi/flowdock-push-api-openapi.yml
-      - type: Example
+      - type: Examples
         url: examples/flowdock-team-inbox-push-request.json
-      - type: Example
+      - type: Examples
         url: examples/flowdock-chat-push-request.json
     tags:
       - Push
@@ -133,7 +133,7 @@ apis:
         url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/streaming
       - type: AsyncAPI
         url: asyncapi/flowdock-streaming-api-asyncapi.yml
-      - type: Example
+      - type: Examples
         url: examples/flowdock-message-event-stream.json
     tags:
       - Streaming
@@ -154,7 +154,7 @@ apis:
         url: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
       - type: OpenAPI
         url: openapi/flowdock-scim-api-openapi.yml
-      - type: Example
+      - type: Examples
         url: examples/flowdock-scim-user-response.json
     tags:
       - SCIM
@@ -185,94 +185,94 @@ common:
     url: vocabulary/flowdock-vocabulary.yml
   - type: JSONLD
     url: json-ld/flowdock-context.jsonld
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/flowdock-api
     title: Ruby gem (flowdock-api)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/node-flowdock
     title: Node.js client (node-flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/flowdock-text
     title: JavaScript text/tag parser (flowdock-text)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/flowdock-text-rb
     title: Ruby text/tag parser (flowdock-text-rb)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/markdown-it-flowdock
     title: markdown-it Flowdock
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/omniauth-flowdock
     title: Ruby OmniAuth strategy (omniauth-flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flowdock/hubot-flowdock
     title: Hubot adapter for Flowdock
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/jenkins-flowdock-plugin
     title: Jenkins notifier
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/flowdock-jira-plugin
     title: JIRA notifier
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/flowdock-git-hook
     title: Git post-receive hook
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/flowdock-svn-hook
     title: Subversion hook
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/flowdock-confluence-plugin
     title: Confluence integration
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/capistrano-flowdock
     title: Capistrano notifier
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/dropbox-flowdock
     title: Dropbox integration
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/redmine_flowdock
     title: Redmine integration (unmaintained)
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/oulu
     title: Oulu — Flowdock IRC Gateway
-  - type: Integration
+  - type: Integrations
     url: https://github.com/flowdock/flowdock-example-integration
     title: Example integration scaffold
-  - type: SDK
+  - type: SDKs
     url: https://github.com/RallySoftware/clj-flowdock
     title: Clojure (clj-flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/0xAX/eflowdock
     title: Erlang (eflowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/wm/go-flowdock
     title: Go (wm/go-flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/njern/flowdock
     title: Go (njern/flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://hackage.haskell.org/package/flowdock
     title: Haskell (flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://hackage.haskell.org/package/flowdock-api
     title: Haskell (flowdock-api)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/mremi/Flowdock
     title: PHP (mremi/Flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/flim/PHPFlow
     title: PHP (flim/PHPFlow)
-  - type: SDK
+  - type: SDKs
     url: https://bitbucket.org/j00bar/python-flowdock
     title: Python (python-flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/Aeron/PyFlowdock
     title: Python (PyFlowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/hrbrmstr/flowdockr
     title: R (flowdockr)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/gphat/net-flowdock
     title: Perl (Net::Flowdock)
-  - type: SDK
+  - type: SDKs
     url: https://github.com/samvtran/p5-Flowdock
     title: Perl (p5-Flowdock)
 maintainers:
