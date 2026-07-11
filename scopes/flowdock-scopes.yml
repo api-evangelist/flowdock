@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/flowdock-rest-api-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/flowdock-rest-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.flowdock.com/oauth/authorize
+    tokenUrl: https://api.flowdock.com/oauth/token
+scopes:
+- scope: flow
+  description: Read and write flow content.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/flowdock-rest-api-openapi.yml
+- scope: private
+  description: Read and write private conversations.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/flowdock-rest-api-openapi.yml
+- scope: profile
+  description: Read user profile.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/flowdock-rest-api-openapi.yml

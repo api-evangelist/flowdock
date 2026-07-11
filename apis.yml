@@ -163,6 +163,8 @@ apis:
       - Enterprise
       - Discontinued
 common:
+  - type: OAuthScopes
+    url: scopes/flowdock-scopes.yml
   - type: Portal
     url: https://web.archive.org/web/2022/https://www.flowdock.com/
   - type: Documentation
