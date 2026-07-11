@@ -163,6 +163,12 @@ apis:
       - Enterprise
       - Discontinued
 common:
+  - type: VulnerabilityDisclosure
+    url: security/flowdock-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/flowdock-domain-security.yml
+  - type: Authentication
+    url: authentication/flowdock-authentication.yml
   - type: OAuthScopes
     url: scopes/flowdock-scopes.yml
   - type: Portal
