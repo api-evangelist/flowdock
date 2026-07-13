@@ -2,11 +2,13 @@
   "repo": "flowdock",
   "feeds": [
     {
-      "source": "https://web.archive.org/web/2022/https://blog.flowdock.com/",
+      "source": "https://github.com/flowdock/api-docs",
+      "feed_url": "https://github.com/flowdock/api-docs",
+      "title": "",
       "saved": 0,
-      "error": "web.archive.org not fetchable; defunct product"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:42:58Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
