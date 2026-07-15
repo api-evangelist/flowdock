@@ -163,6 +163,8 @@ apis:
       - Enterprise
       - Discontinued
 common:
+  - type: AgenticAccess
+    url: agentic-access/flowdock-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/flowdock-vulnerability-disclosure.yml
   - type: DomainSecurity
