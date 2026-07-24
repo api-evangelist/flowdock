@@ -1,0 +1,232 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Flows API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Flows
+  description: Team workspaces combining chat and a shared team inbox.
+paths:
+  /flows:
+    get:
+      tags:
+      - Flows
+      summary: List Flows For Authenticated User
+      operationId: listFlows
+      parameters:
+      - name: users
+        in: query
+        description: Set to 1 to include the list of users with each flow.
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      responses:
+        '200':
+          description: List of joined flows.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Flow'
+  /flows/all:
+    get:
+      tags:
+      - Flows
+      summary: List All Flows Visible To User
+      operationId: listAllFlows
+      responses:
+        '200':
+          description: All flows the user can see (including organization-mode flows not joined).
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Flow'
+  /flows/{organization}/{flow}:
+    get:
+      tags:
+      - Flows
+      summary: Get Flow
+      operationId: getFlow
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      responses:
+        '200':
+          description: Flow object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Flow'
+    put:
+      tags:
+      - Flows
+      summary: Update Flow
+      operationId: updateFlow
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                open:
+                  type: boolean
+                access_mode:
+                  type: string
+                  enum:
+                  - invitation
+                  - link
+                  - organization
+      responses:
+        '200':
+          description: Updated flow.
+  /flows/find:
+    get:
+      tags:
+      - Flows
+      summary: Get Flow By Id
+      operationId: getFlowById
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Flow object.
+  /flows/{organization}:
+    post:
+      tags:
+      - Flows
+      summary: Create Flow
+      operationId: createFlow
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Flow created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Flow'
+components:
+  parameters:
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+  schemas:
+    Organization:
+      type: object
+      properties:
+        id:
+          type: integer
+        parameterized_name:
+          type: string
+        name:
+          type: string
+        user_limit:
+          type: integer
+        user_count:
+          type: integer
+        active:
+          type: boolean
+        url:
+          type: string
+          format: uri
+        subscription:
+          type: object
+          properties:
+            trial:
+              type: boolean
+            trial_ends:
+              type: string
+              format: date
+            billing_date:
+              type: string
+              format: date
+    Flow:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        parameterized_name:
+          type: string
+        organization:
+          $ref: '#/components/schemas/Organization'
+        unread_mentions:
+          type: integer
+        open:
+          type: boolean
+        joined:
+          type: boolean
+        url:
+          type: string
+          format: uri
+        web_url:
+          type: string
+          format: uri
+        join_url:
+          type: string
+          format: uri
+        access_mode:
+          type: string
+          enum:
+          - invitation
+          - link
+          - organization

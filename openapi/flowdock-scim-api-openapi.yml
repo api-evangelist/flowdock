@@ -1,54 +1,67 @@
 openapi: 3.0.3
 info:
-  title: Flowdock SCIM Provisioning API
-  version: "1.0"
+  title: Flowdock Push Authentication SCIM API
+  version: '1.0'
   x-status: discontinued
-  x-shutdown-date: "2023-08-15"
-  description: |
-    Partial SCIM (System for Cross-Domain Identity Management) provisioning
-    API for CA Flowdock Enterprise customers with Single Sign-On configured.
-    Used by IdP-side provisioning connectors to create, read, update, and
-    deactivate SSO-linked user accounts in a Flowdock organization.
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
 
-    Discontinued with the rest of Flowdock on August 15, 2023.
-    Reconstructed from https://github.com/flowdock/api-docs/blob/master/docs/scim.md.
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
 servers:
-  - url: https://api.flowdock.com
-    description: Historical production base URL (offline since 2023-08-15)
-security:
-  - bearerAuth: []
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
 tags:
-  - name: SCIM
-    description: SCIM 1.x user provisioning for SSO-enabled Flowdock organizations.
+- name: SCIM
+  description: SCIM 1.x user provisioning for SSO-enabled Flowdock organizations.
 paths:
   /scim/{uid}:
     get:
-      tags: [SCIM]
+      tags:
+      - SCIM
       summary: Verify SCIM Authorization
       operationId: scimRoot
       parameters:
-        - $ref: "#/components/parameters/Uid"
+      - $ref: '#/components/parameters/Uid'
       responses:
-        "200":
+        '200':
           description: Authorization OK.
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  message: { type: string }
-        "401": { description: Missing authorization header. }
-        "403": { description: Invalid or wrong-token authorization header. }
-        "429": { description: Rate-limited; retry later. }
+                  message:
+                    type: string
+        '401':
+          description: Missing authorization header.
+        '403':
+          description: Invalid or wrong-token authorization header.
+        '429':
+          description: Rate-limited; retry later.
   /scim/{uid}/Users:
     get:
-      tags: [SCIM]
+      tags:
+      - SCIM
       summary: List SCIM Users
       operationId: scimListUsers
       parameters:
-        - $ref: "#/components/parameters/Uid"
+      - $ref: '#/components/parameters/Uid'
       responses:
-        "200":
+        '200':
           description: SCIM Users collection.
           content:
             application/json:
@@ -57,70 +70,84 @@ paths:
                 properties:
                   Resources:
                     type: array
-                    items: { $ref: "#/components/schemas/ScimUser" }
+                    items:
+                      $ref: '#/components/schemas/ScimUser'
     post:
-      tags: [SCIM]
+      tags:
+      - SCIM
       summary: Provision SCIM User
       operationId: scimCreateUser
       parameters:
-        - $ref: "#/components/parameters/Uid"
+      - $ref: '#/components/parameters/Uid'
       requestBody:
         required: true
         content:
           application/json:
-            schema: { $ref: "#/components/schemas/ScimUser" }
+            schema:
+              $ref: '#/components/schemas/ScimUser'
       responses:
-        "201":
+        '201':
           description: User provisioned.
           content:
             application/json:
-              schema: { $ref: "#/components/schemas/ScimUser" }
+              schema:
+                $ref: '#/components/schemas/ScimUser'
   /scim/{uid}/Users/{id}:
     get:
-      tags: [SCIM]
+      tags:
+      - SCIM
       summary: Get SCIM User
       operationId: scimGetUser
       parameters:
-        - $ref: "#/components/parameters/Uid"
-        - name: id
-          in: path
-          required: true
-          schema: { type: integer }
+      - $ref: '#/components/parameters/Uid'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
       responses:
-        "200":
+        '200':
           description: User resource.
           content:
             application/json:
-              schema: { $ref: "#/components/schemas/ScimUser" }
+              schema:
+                $ref: '#/components/schemas/ScimUser'
     put:
-      tags: [SCIM]
+      tags:
+      - SCIM
       summary: Update SCIM User
       operationId: scimUpdateUser
       parameters:
-        - $ref: "#/components/parameters/Uid"
-        - name: id
-          in: path
-          required: true
-          schema: { type: integer }
+      - $ref: '#/components/parameters/Uid'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
       requestBody:
         required: true
         content:
           application/json:
-            schema: { $ref: "#/components/schemas/ScimUser" }
+            schema:
+              $ref: '#/components/schemas/ScimUser'
       responses:
-        "200": { description: User updated. }
+        '200':
+          description: User updated.
     delete:
-      tags: [SCIM]
+      tags:
+      - SCIM
       summary: Deactivate SCIM User
       operationId: scimDeleteUser
       parameters:
-        - $ref: "#/components/parameters/Uid"
-        - name: id
-          in: path
-          required: true
-          schema: { type: integer }
+      - $ref: '#/components/parameters/Uid'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
       responses:
-        "204": { description: User deactivated. }
+        '204':
+          description: User deactivated.
 components:
   parameters:
     Uid:
@@ -128,34 +155,45 @@ components:
       in: path
       required: true
       description: SSO organization UID issued during SSO setup.
-      schema: { type: string }
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      description: SCIM bearer token issued during SSO setup.
+      schema:
+        type: string
   schemas:
     ScimUser:
       type: object
       properties:
-        id: { type: integer }
-        externalId: { type: string }
-        userName: { type: string, format: email }
-        nickName: { type: string }
+        id:
+          type: integer
+        externalId:
+          type: string
+        userName:
+          type: string
+          format: email
+        nickName:
+          type: string
         name:
           type: object
           properties:
-            givenName: { type: string }
-            familyName: { type: string }
+            givenName:
+              type: string
+            familyName:
+              type: string
         emails:
           type: array
           items:
             type: object
             properties:
-              value: { type: string, format: email }
+              value:
+                type: string
+                format: email
         meta:
           type: object
           properties:
-            location: { type: string, format: uri }
-            created: { type: string, format: date-time }
-            lastModified: { type: string, format: date-time }
+            location:
+              type: string
+              format: uri
+            created:
+              type: string
+              format: date-time
+            lastModified:
+              type: string
+              format: date-time

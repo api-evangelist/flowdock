@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Organizations API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Organizations
+  description: Account-level container that owns flows and bills users.
+paths:
+  /organizations:
+    get:
+      tags:
+      - Organizations
+      summary: List Organizations
+      operationId: listOrganizations
+      responses:
+        '200':
+          description: List of organizations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Organization'
+  /organizations/{parameterized_name}:
+    get:
+      tags:
+      - Organizations
+      summary: Get Organization
+      operationId: getOrganization
+      parameters:
+      - name: parameterized_name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Organization.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+    put:
+      tags:
+      - Organizations
+      summary: Update Organization
+      operationId: updateOrganization
+      parameters:
+      - name: parameterized_name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                parameterized_name:
+                  type: string
+      responses:
+        '200':
+          description: Organization updated.
+components:
+  schemas:
+    Organization:
+      type: object
+      properties:
+        id:
+          type: integer
+        parameterized_name:
+          type: string
+        name:
+          type: string
+        user_limit:
+          type: integer
+        user_count:
+          type: integer
+        active:
+          type: boolean
+        url:
+          type: string
+          format: uri
+        subscription:
+          type: object
+          properties:
+            trial:
+              type: boolean
+            trial_ends:
+              type: string
+              format: date
+            billing_date:
+              type: string
+              format: date

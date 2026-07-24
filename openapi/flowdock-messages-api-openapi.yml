@@ -1,0 +1,359 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Messages API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Messages
+  description: Chat messages, comments, status, activity, discussion, and file events posted to a flow.
+paths:
+  /messages:
+    post:
+      tags:
+      - Messages
+      summary: Send Message
+      operationId: sendMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+      responses:
+        '201':
+          description: Message accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+  /flows/{organization}/{flow}/messages:
+    get:
+      tags:
+      - Messages
+      summary: List Flow Messages
+      operationId: listFlowMessages
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: event
+        in: query
+        schema:
+          type: string
+          description: Filter by event type (message
+          status: null
+          comment: null
+          file: null
+          activity: null
+          discussion: null
+          message-edit: null
+          tag-change).: null
+      - name: tags
+        in: query
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          maximum: 100
+      - name: since_id
+        in: query
+        schema:
+          type: integer
+      - name: until_id
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of message events.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+    post:
+      tags:
+      - Messages
+      summary: Send Message To Flow
+      operationId: sendFlowMessage
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+      responses:
+        '201':
+          description: Message accepted.
+  /flows/{organization}/{flow}/messages/{id}:
+    get:
+      tags:
+      - Messages
+      summary: Show Message
+      operationId: showMessage
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Single message.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    put:
+      tags:
+      - Messages
+      summary: Edit Message
+      operationId: editMessage
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Message updated.
+    delete:
+      tags:
+      - Messages
+      summary: Delete Message
+      operationId: deleteMessage
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Message deleted.
+  /comments:
+    post:
+      tags:
+      - Messages
+      summary: Comment On Message
+      operationId: createComment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - flow
+              - message
+              - content
+              properties:
+                flow:
+                  type: string
+                message:
+                  type: integer
+                content:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Comment posted.
+  /flows/{organization}/{flow}/threads/{id}/messages:
+    post:
+      tags:
+      - Messages
+      summary: Post Message To Thread
+      operationId: postThreadMessage
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+      responses:
+        '201':
+          description: Message posted to thread.
+components:
+  schemas:
+    Thread:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        status:
+          type: object
+          properties:
+            color:
+              type: string
+            value:
+              type: string
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              value:
+                type: string
+        actions:
+          type: array
+          items:
+            type: object
+        external_url:
+          type: string
+          format: uri
+        actor:
+          type: object
+          properties:
+            name:
+              type: string
+            avatar:
+              type: string
+              format: uri
+    MessageInput:
+      type: object
+      required:
+      - event
+      - content
+      properties:
+        event:
+          type: string
+          enum:
+          - message
+          - status
+          - comment
+          - action
+          - activity
+          - discussion
+          - file
+        content:
+          oneOf:
+          - type: string
+          - type: object
+        flow:
+          type: string
+        message:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+        external_user_name:
+          type: string
+        uuid:
+          type: string
+        thread_id:
+          type: string
+        external_thread_id:
+          type: string
+    Message:
+      type: object
+      properties:
+        id:
+          type: integer
+        app:
+          type: string
+        event:
+          type: string
+        flow:
+          type: string
+        content: {}
+        sent:
+          type: integer
+          format: int64
+        user:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        tags:
+          type: array
+          items:
+            type: string
+        attachments:
+          type: array
+          items:
+            type: object
+        thread_id:
+          type: string
+        thread:
+          $ref: '#/components/schemas/Thread'
+        uuid:
+          type: string
+  parameters:
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string

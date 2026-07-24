@@ -1,0 +1,218 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Sources API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Sources
+  description: External integrations (GitHub, Jira, Zendesk, etc.) that post into a flow.
+paths:
+  /sources:
+    get:
+      tags:
+      - Sources
+      summary: List Sources
+      operationId: listSources
+      responses:
+        '200':
+          description: List of sources visible to the user.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Source'
+  /flows/{organization}/{flow}/sources:
+    get:
+      tags:
+      - Sources
+      summary: List Flow Sources
+      operationId: listFlowSources
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      responses:
+        '200':
+          description: List of sources attached to the flow.
+    post:
+      tags:
+      - Sources
+      summary: Create Source
+      operationId: createSource
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+                external_url:
+                  type: string
+                  format: uri
+      responses:
+        '201':
+          description: Source created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Source'
+  /flows/{organization}/{flow}/sources/{id}:
+    get:
+      tags:
+      - Sources
+      summary: Get Source
+      operationId: getSource
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Source.
+    put:
+      tags:
+      - Sources
+      summary: Update Source
+      operationId: updateSource
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                external_url:
+                  type: string
+                  format: uri
+      responses:
+        '200':
+          description: Source updated.
+    delete:
+      tags:
+      - Sources
+      summary: Delete Source
+      operationId: deleteSource
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Source deleted.
+components:
+  schemas:
+    Source:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        url:
+          type: string
+          format: uri
+        external_url:
+          type: string
+          format: uri
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        application:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            icon_url:
+              type: string
+              format: uri
+            url:
+              type: string
+              format: uri
+        creator:
+          $ref: '#/components/schemas/User'
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        nick:
+          type: string
+        avatar:
+          type: string
+          format: uri
+        website:
+          type: string
+          format: uri
+        admin:
+          type: boolean
+  parameters:
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string

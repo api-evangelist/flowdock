@@ -1,0 +1,119 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Authentication
+  description: OAuth 2.0 authorization-code grant for user delegation.
+paths:
+  /oauth/authorize:
+    get:
+      tags:
+      - Authentication
+      summary: Begin OAuth 2.0 Authorization
+      operationId: oauthAuthorize
+      parameters:
+      - name: client_id
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: response_type
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - code
+      - name: redirect_uri
+        in: query
+        schema:
+          type: string
+          format: uri
+      - name: scope
+        in: query
+        schema:
+          type: string
+          description: Space-delimited list of scopes (flow
+          private: null
+          profile).: null
+      - name: state
+        in: query
+        schema:
+          type: string
+      responses:
+        '302':
+          description: Redirect back to redirect_uri with an authorization code.
+  /oauth/token:
+    post:
+      tags:
+      - Authentication
+      summary: Exchange Authorization Code for Access Token
+      operationId: oauthToken
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - client_id
+              - client_secret
+              - code
+              - redirect_uri
+              - grant_type
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                code:
+                  type: string
+                redirect_uri:
+                  type: string
+                  format: uri
+                grant_type:
+                  type: string
+                  enum:
+                  - authorization_code
+                  - refresh_token
+                refresh_token:
+                  type: string
+      responses:
+        '200':
+          description: Access token issued.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  refresh_token:
+                    type: string
+                  token_type:
+                    type: string
+                  scope:
+                    type: string

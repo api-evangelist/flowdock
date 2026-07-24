@@ -1,0 +1,134 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Threads API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Threads
+  description: Threaded conversations rooted on a parent message.
+paths:
+  /flows/{organization}/{flow}/threads:
+    get:
+      tags:
+      - Threads
+      summary: List Flow Threads
+      operationId: listFlowThreads
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: application
+        in: query
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of threads.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Thread'
+  /flows/{organization}/{flow}/threads/{id}:
+    get:
+      tags:
+      - Threads
+      summary: Get Thread
+      operationId: getThread
+      parameters:
+      - $ref: '#/components/parameters/Organization'
+      - $ref: '#/components/parameters/FlowName'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Thread object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thread'
+components:
+  schemas:
+    Thread:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        status:
+          type: object
+          properties:
+            color:
+              type: string
+            value:
+              type: string
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              value:
+                type: string
+        actions:
+          type: array
+          items:
+            type: object
+        external_url:
+          type: string
+          format: uri
+        actor:
+          type: object
+          properties:
+            name:
+              type: string
+            avatar:
+              type: string
+              format: uri
+  parameters:
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string

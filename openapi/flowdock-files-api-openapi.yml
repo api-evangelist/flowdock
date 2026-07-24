@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Files API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Files
+  description: File uploads and downloads attached to messages.
+paths:
+  /files/{organization}/{hash}/{filename}:
+    get:
+      tags:
+      - Files
+      summary: Download File
+      operationId: downloadFile
+      parameters:
+      - name: organization
+        in: path
+        required: true
+        schema:
+          type: integer
+          description: Numeric organization id used in file paths.
+      - name: hash
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: filename
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '302':
+          description: Redirect to a short-lived S3 download URL.
+          headers:
+            Location:
+              schema:
+                type: string
+                format: uri

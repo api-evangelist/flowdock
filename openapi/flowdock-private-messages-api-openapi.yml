@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  title: Flowdock Push Authentication Private Messages API
+  version: '1.0'
+  x-status: discontinued
+  x-deprecated-by-vendor: true
+  x-shutdown-date: '2023-08-15'
+  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+
+    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+
+    token (no user authentication). It was deprecated in favor of the
+
+    Messages endpoint of the REST API and was retired with the rest of
+
+    Flowdock on August 15, 2023.
+
+
+    Reconstructed from the historical https://github.com/flowdock/api-docs
+
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
+
+    '
+servers:
+- url: https://api.flowdock.com
+  description: Historical production base URL (offline since 2023-08-15)
+tags:
+- name: Private Messages
+  description: Messages within a private conversation.
+paths:
+  /private/{id}/messages:
+    get:
+      tags:
+      - Private Messages
+      summary: List Private Messages
+      operationId: listPrivateMessages
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: since_id
+        in: query
+        schema:
+          type: integer
+      - name: until_id
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of private messages.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+    post:
+      tags:
+      - Private Messages
+      summary: Send Private Message
+      operationId: sendPrivateMessage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+      responses:
+        '201':
+          description: Private message sent.
+  /private/{id}/messages/{message_id}:
+    get:
+      tags:
+      - Private Messages
+      summary: Show Private Message
+      operationId: showPrivateMessage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: message_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Single private message.
+components:
+  schemas:
+    Thread:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        status:
+          type: object
+          properties:
+            color:
+              type: string
+            value:
+              type: string
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              value:
+                type: string
+        actions:
+          type: array
+          items:
+            type: object
+        external_url:
+          type: string
+          format: uri
+        actor:
+          type: object
+          properties:
+            name:
+              type: string
+            avatar:
+              type: string
+              format: uri
+    Message:
+      type: object
+      properties:
+        id:
+          type: integer
+        app:
+          type: string
+        event:
+          type: string
+        flow:
+          type: string
+        content: {}
+        sent:
+          type: integer
+          format: int64
+        user:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        tags:
+          type: array
+          items:
+            type: string
+        attachments:
+          type: array
+          items:
+            type: object
+        thread_id:
+          type: string
+        thread:
+          $ref: '#/components/schemas/Thread'
+        uuid:
+          type: string
+    MessageInput:
+      type: object
+      required:
+      - event
+      - content
+      properties:
+        event:
+          type: string
+          enum:
+          - message
+          - status
+          - comment
+          - action
+          - activity
+          - discussion
+          - file
+        content:
+          oneOf:
+          - type: string
+          - type: object
+        flow:
+          type: string
+        message:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+        external_user_name:
+          type: string
+        uuid:
+          type: string
+        thread_id:
+          type: string
+        external_thread_id:
+          type: string
