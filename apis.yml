@@ -11,6 +11,18 @@ description: |
   archival record assembled from the public api-docs repository and
   archived snapshots of the developer portal.
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://raw.githubusercontent.com/api-evangelist/flowdock/main/icon.png
 url: https://raw.githubusercontent.com/api-evangelist/flowdock/main/apis.yml
 humanURL: https://www.flowdock.com
@@ -32,136 +44,785 @@ tags:
   - Integrations
   - Discontinued
 apis:
-  - aid: flowdock:rest-api
-    name: Flowdock REST API
-    description: |
-      The primary developer surface for Flowdock. Read-write JSON over HTTPS
-      for flows, messages, threads, private conversations, users,
-      organizations, sources, invitations, and files. Authenticated via
-      OAuth 2.0 (authorization-code), HTTP Basic with email+password, or
-      personal API token. Now offline.
-    humanURL: https://github.com/flowdock/api-docs
-    baseURL: https://api.flowdock.com
-    image: https://raw.githubusercontent.com/api-evangelist/flowdock/main/icon.png
-    x-status: discontinued
-    properties:
-      - type: Documentation
-        url: https://github.com/flowdock/api-docs
-      - type: APIReference
-        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
-      - type: Authentication
-        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
-      - type: OpenAPI
-        url: openapi/flowdock-rest-api-openapi.yml
-      - type: SpectralRules
-        url: rules/flowdock-rules.yml
-      - type: JSONSchema
-        url: json-schema/flowdock-flow-schema.json
-      - type: JSONSchema
-        url: json-schema/flowdock-message-schema.json
-      - type: JSONSchema
-        url: json-schema/flowdock-user-schema.json
-      - type: JSONSchema
-        url: json-schema/flowdock-organization-schema.json
-      - type: JSONSchema
-        url: json-schema/flowdock-source-schema.json
-      - type: JSONSchema
-        url: json-schema/flowdock-thread-schema.json
-      - type: JSONSchema
-        url: json-schema/flowdock-invitation-schema.json
-      - type: JSONStructure
-        url: json-structure/flowdock-flow-structure.json
-      - type: JSONStructure
-        url: json-structure/flowdock-message-structure.json
-      - type: JSONStructure
-        url: json-structure/flowdock-organization-structure.json
-      - type: Examples
-        url: examples/flowdock-list-flows-response.json
-      - type: Examples
-        url: examples/flowdock-send-message-request.json
-      - type: Examples
-        url: examples/flowdock-list-sources-response.json
-      - type: Examples
-        url: examples/flowdock-private-conversation-response.json
-      - type: Examples
-        url: examples/flowdock-invitation-response.json
-    tags:
-      - Team Chat
-      - Team Inbox
-      - REST
-      - Discontinued
-  - aid: flowdock:push-api
-    name: Flowdock Push API (Deprecated)
-    description: |
-      Legacy write-only HTTP API for posting content into a Flow's Team
-      Inbox or Chat using a per-flow API token (no user authentication).
-      Deprecated by the vendor in favor of the REST Messages endpoint
-      well before the 2023-08-15 shutdown.
-    humanURL: https://github.com/flowdock/api-docs/blob/master/docs/push.md
-    baseURL: https://api.flowdock.com
-    x-status: discontinued
-    properties:
-      - type: Documentation
-        url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
-      - type: APIReference
-        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
-      - type: OpenAPI
-        url: openapi/flowdock-push-api-openapi.yml
-      - type: Examples
-        url: examples/flowdock-team-inbox-push-request.json
-      - type: Examples
-        url: examples/flowdock-chat-push-request.json
-    tags:
-      - Push
-      - Webhook
-      - Team Inbox
-      - Discontinued
-  - aid: flowdock:streaming-api
-    name: Flowdock Streaming API
-    description: |
-      Long-lived HTTP connection to stream.flowdock.com delivering real-time
-      flow events. Two content types: newline-delimited JSON
-      (`application/json`, `\r` delimited) or HTML5 Server-Sent Events
-      (`text/event-stream`). Now offline.
-    humanURL: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
-    baseURL: https://stream.flowdock.com
-    x-status: discontinued
-    properties:
-      - type: Documentation
-        url: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
-      - type: APIReference
-        url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/streaming
-      - type: AsyncAPI
-        url: asyncapi/flowdock-streaming-api-asyncapi.yml
-      - type: Examples
-        url: examples/flowdock-message-event-stream.json
-    tags:
-      - Streaming
-      - Real-Time
-      - Server Sent Events
-      - Discontinued
-  - aid: flowdock:scim-api
-    name: Flowdock SCIM Provisioning API
-    description: |
-      Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise
-      customers with Single Sign-On configured. Bearer-token authenticated.
-      Now offline.
-    humanURL: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
-    baseURL: https://api.flowdock.com
-    x-status: discontinued
-    properties:
-      - type: Documentation
-        url: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
-      - type: OpenAPI
-        url: openapi/flowdock-scim-api-openapi.yml
-      - type: Examples
-        url: examples/flowdock-scim-user-response.json
-    tags:
-      - SCIM
-      - SSO
-      - Provisioning
-      - Enterprise
-      - Discontinued
+- aid: flowdock:streaming-api
+  name: Flowdock Streaming API
+  description: >
+    Long-lived HTTP connection to stream.flowdock.com delivering real-time
+
+    flow events. Two content types: newline-delimited JSON
+
+    (`application/json`, `\r` delimited) or HTML5 Server-Sent Events
+
+    (`text/event-stream`). Now offline.
+  humanURL: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
+  baseURL: https://stream.flowdock.com
+  x-status: discontinued
+  properties:
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/streaming
+  - type: AsyncAPI
+    url: asyncapi/flowdock-streaming-api-asyncapi.yml
+  - type: Examples
+    url: examples/flowdock-message-event-stream.json
+  tags:
+  - Streaming
+  - Real-Time
+  - Server Sent Events
+  - Discontinued
+- aid: flowdock:scim-api
+  name: Flowdock SCIM Provisioning API
+  description: >
+    Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise
+
+    customers with Single Sign-On configured. Bearer-token authenticated.
+
+    Now offline.
+  humanURL: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
+  baseURL: https://api.flowdock.com
+  x-status: discontinued
+  properties:
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
+  - type: OpenAPI
+    url: openapi/flowdock-scim-api-openapi.yml
+  - type: Examples
+    url: examples/flowdock-scim-user-response.json
+  tags:
+  - SCIM
+  - SSO
+  - Provisioning
+  - Enterprise
+  - Discontinued
+- aid: flowdock:flowdock-authentication-api
+  name: Flowdock (Discontinued) Authentication API
+  description: OAuth 2.0 authorization-code grant for user delegation.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-chat-api
+  name: Flowdock (Discontinued) Chat API
+  description: Chat-style messages posted as an external user.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-chat-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-files-api
+  name: Flowdock (Discontinued) Files API
+  description: File uploads and downloads attached to messages.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-files-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-flows-api
+  name: Flowdock (Discontinued) Flows API
+  description: Team workspaces combining chat and a shared team inbox.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-flows-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-invitations-api
+  name: Flowdock (Discontinued) Invitations API
+  description: Open and accepted invitations to join a flow.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Invitations
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-invitations-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-messages-api
+  name: Flowdock (Discontinued) Messages API
+  description: Chat messages, comments, status, activity, discussion, and file events posted to a flow.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-messages-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-organizations-api
+  name: Flowdock (Discontinued) Organizations API
+  description: Account-level container that owns flows and bills users.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-organizations-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-private-conversations-api
+  name: Flowdock (Discontinued) Private Conversations API
+  description: One-to-one direct message channels between two users.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Private Conversations
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-private-conversations-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-private-messages-api
+  name: Flowdock (Discontinued) Private Messages API
+  description: Messages within a private conversation.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Private Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-private-messages-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-sources-api
+  name: Flowdock (Discontinued) Sources API
+  description: External integrations (GitHub, Jira, Zendesk, etc.) that post into a flow.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-sources-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-team-inbox-api
+  name: Flowdock (Discontinued) Team Inbox API
+  description: Mail-like messages posted into a flow's team inbox.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Team Inbox
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-team-inbox-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-threads-api
+  name: Flowdock (Discontinued) Threads API
+  description: Threaded conversations rooted on a parent message.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Threads
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-threads-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
+- aid: flowdock:flowdock-users-api
+  name: Flowdock (Discontinued) Users API
+  description: User accounts that may belong to multiple organizations and flows.
+  humanURL: https://github.com/flowdock/api-docs
+  baseURL: https://api.flowdock.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/flowdock-users-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest
+  - type: Authentication
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication
+  - type: SpectralRules
+    url: rules/flowdock-rules.yml
+  - type: JSONSchema
+    url: json-schema/flowdock-flow-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-message-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-user-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-source-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-thread-schema.json
+  - type: JSONSchema
+    url: json-schema/flowdock-invitation-schema.json
+  - type: JSONStructure
+    url: json-structure/flowdock-flow-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-message-structure.json
+  - type: JSONStructure
+    url: json-structure/flowdock-organization-structure.json
+  - type: Examples
+    url: examples/flowdock-list-flows-response.json
+  - type: Examples
+    url: examples/flowdock-send-message-request.json
+  - type: Examples
+    url: examples/flowdock-list-sources-response.json
+  - type: Examples
+    url: examples/flowdock-private-conversation-response.json
+  - type: Examples
+    url: examples/flowdock-invitation-response.json
+  - type: Documentation
+    url: https://github.com/flowdock/api-docs/blob/master/docs/push.md
+  - type: APIReference
+    url: https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push
+  - type: Examples
+    url: examples/flowdock-team-inbox-push-request.json
+  - type: Examples
+    url: examples/flowdock-chat-push-request.json
 common:
   - type: AgenticAccess
     url: agentic-access/flowdock-agentic-access.yml
