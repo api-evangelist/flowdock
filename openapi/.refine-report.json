@@ -1,0 +1,40 @@
+{
+  "provider": "flowdock",
+  "sources": [
+    "flowdock-authentication-api-openapi.yml",
+    "flowdock-chat-api-openapi.yml",
+    "flowdock-files-api-openapi.yml",
+    "flowdock-flows-api-openapi.yml",
+    "flowdock-invitations-api-openapi.yml",
+    "flowdock-messages-api-openapi.yml",
+    "flowdock-organizations-api-openapi.yml",
+    "flowdock-private-conversations-api-openapi.yml",
+    "flowdock-private-messages-api-openapi.yml",
+    "flowdock-scim-api-openapi.yml",
+    "flowdock-sources-api-openapi.yml",
+    "flowdock-team-inbox-api-openapi.yml",
+    "flowdock-threads-api-openapi.yml",
+    "flowdock-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "flowdock-authentication-api-openapi.yml",
+    "flowdock-chat-api-openapi.yml",
+    "flowdock-files-api-openapi.yml",
+    "flowdock-flows-api-openapi.yml",
+    "flowdock-invitations-api-openapi.yml",
+    "flowdock-messages-api-openapi.yml",
+    "flowdock-organizations-api-openapi.yml",
+    "flowdock-private-conversations-api-openapi.yml",
+    "flowdock-private-messages-api-openapi.yml",
+    "flowdock-scim-api-openapi.yml",
+    "flowdock-sources-api-openapi.yml",
+    "flowdock-team-inbox-api-openapi.yml",
+    "flowdock-threads-api-openapi.yml",
+    "flowdock-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
