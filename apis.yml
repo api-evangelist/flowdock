@@ -28,7 +28,7 @@ url: https://raw.githubusercontent.com/api-evangelist/flowdock/main/apis.yml
 humanURL: https://www.flowdock.com
 created: '2026-05-22'
 modified: '2026-05-22'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 x-status: discontinued
 x-shutdown-date: '2023-08-15'
 x-vendor-history:
