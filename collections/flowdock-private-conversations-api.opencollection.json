@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock Push Authentication Private Conversations API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Private Conversations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Private Conversations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/private"
+          },
+          "docs": "List Private Conversations"
+        },
+        {
+          "info": {
+            "name": "Get Private Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/private/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Private Conversation"
+        },
+        {
+          "info": {
+            "name": "Update Private Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/private/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Private Conversation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

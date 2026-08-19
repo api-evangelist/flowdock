@@ -1,0 +1,143 @@
+{
+  "item": [
+    {
+      "id": "5caf3975-1c9b-4930-b552-39495876f80c",
+      "name": "Files",
+      "description": {
+        "content": "File uploads and downloads attached to messages.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1a8d1f06-f7ac-4bb1-901f-58051909620c",
+          "name": "Download File",
+          "request": {
+            "name": "Download File",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                ":organization",
+                ":hash",
+                ":filename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hash",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filename",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30df7134-99ab-4135-a146-a2941228268c",
+              "name": "Redirect to a short-lived S3 download URL.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    ":organization",
+                    ":hash",
+                    ":filename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hash",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filename",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Location",
+                  "value": "http://d.dqnMonMKCcOh993ACRfKvxBdTdw6V-6ZcdGNPHPNyu.59pZFfUGE-Y.RCn-nY0akgs6Pzzil3Gvltd",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e346cdee-2951-4359-9118-bb0114f07499",
+    "name": "Flowdock Push Authentication Files API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

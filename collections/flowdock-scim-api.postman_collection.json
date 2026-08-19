@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "88dc05ef-f8fc-4c48-9022-fca0da06c176",
+      "id": "a643c4d5-1df4-4002-991e-5283a384ca3b",
       "name": "SCIM",
       "description": {
         "content": "SCIM 1.x user provisioning for SSO-enabled Flowdock organizations.",
@@ -9,7 +9,7 @@
       },
       "item": [
         {
-          "id": "97b116a6-2579-4962-99fb-fa1174c67ce5",
+          "id": "c220413a-2939-4420-afcf-7c7f66261c18",
           "name": "Verify SCIM Authorization",
           "request": {
             "name": "Verify SCIM Authorization",
@@ -44,7 +44,7 @@
           },
           "response": [
             {
-              "id": "e520cf06-8622-4eea-a53f-a41533741f13",
+              "id": "587f6110-0b45-42c1-a1e5-c5e6c659a25b",
               "name": "Authorization OK.",
               "originalRequest": {
                 "url": {
@@ -68,14 +68,6 @@
                 },
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
                     "key": "Accept",
                     "value": "application/json"
                   }
@@ -96,7 +88,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "7b977b88-f69e-44b5-96ca-733dea7d543b",
+              "id": "29ee7a8c-222c-488b-97a3-0d95509467ad",
               "name": "Missing authorization header.",
               "originalRequest": {
                 "url": {
@@ -118,16 +110,6 @@
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  }
-                ],
                 "method": "GET",
                 "body": {}
               },
@@ -144,7 +126,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "77aee755-316f-4a04-8a09-3acbc706cac3",
+              "id": "49df53e7-a2df-49ee-bf67-1f0f66dd0fe9",
               "name": "Invalid or wrong-token authorization header.",
               "originalRequest": {
                 "url": {
@@ -166,16 +148,6 @@
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  }
-                ],
                 "method": "GET",
                 "body": {}
               },
@@ -192,7 +164,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "93506b85-1987-4c23-a393-ccb066b50cc3",
+              "id": "d1940f58-fcf8-4a2e-8986-8640f700110b",
               "name": "Rate-limited; retry later.",
               "originalRequest": {
                 "url": {
@@ -214,16 +186,6 @@
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  }
-                ],
                 "method": "GET",
                 "body": {}
               },
@@ -246,7 +208,7 @@
           }
         },
         {
-          "id": "8d75ae06-f84a-4cd9-b614-9b2a31df5ea9",
+          "id": "7a3651b2-b02a-4a95-a6cc-40596ad2e4db",
           "name": "List SCIM Users",
           "request": {
             "name": "List SCIM Users",
@@ -282,7 +244,7 @@
           },
           "response": [
             {
-              "id": "e6b547ed-c3d8-40e5-9b91-e3189bf3c819",
+              "id": "c5e937c1-a708-406b-b144-ed5075c0faf9",
               "name": "SCIM Users collection.",
               "originalRequest": {
                 "url": {
@@ -307,14 +269,6 @@
                 },
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
                     "key": "Accept",
                     "value": "application/json"
                   }
@@ -330,7 +284,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"Resources\": [\n    {\n      \"id\": 7811,\n      \"externalId\": \"string\",\n      \"userName\": \"Lf0Aq@RxsxFVUGLGLwEGAMTIoafcmMasWz.ghai\",\n      \"nickName\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\"\n      },\n      \"emails\": [\n        {\n          \"value\": \"4e1bIdCO8-q@HYgnh.ta\"\n        },\n        {\n          \"value\": \"jpJYWXEhPJP@PsrfJEQhleGMdnWzt.oy\"\n        }\n      ],\n      \"meta\": {\n        \"location\": \"https://XqRk.noUvnNvzKPzsLSSiYgh1fJ-KUp-JuXt2FQtrzuP0amlehI\",\n        \"created\": \"1958-03-25T18:45:41.460Z\",\n        \"lastModified\": \"1964-02-16T09:23:26.697Z\"\n      }\n    },\n    {\n      \"id\": 2265,\n      \"externalId\": \"string\",\n      \"userName\": \"8oWnu3FDh@bVYHhsDM.ucd\",\n      \"nickName\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\"\n      },\n      \"emails\": [\n        {\n          \"value\": \"Vlyg02ZO@OaT.za\"\n        },\n        {\n          \"value\": \"9Zt34jURiip@IXInITM.vlsb\"\n        }\n      ],\n      \"meta\": {\n        \"location\": \"http://cISIY.hvbLG+K5Cn3jqI,LTqhos\",\n        \"created\": \"2017-10-06T04:59:19.205Z\",\n        \"lastModified\": \"1987-04-15T16:01:55.941Z\"\n      }\n    }\n  ]\n}",
+              "body": "{\n  \"Resources\": [\n    {\n      \"id\": 4910,\n      \"externalId\": \"string\",\n      \"userName\": \"2qM@qbfMDmD.zf\",\n      \"nickName\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\"\n      },\n      \"emails\": [\n        {\n          \"value\": \"umRuc5cPdA7@segdhiqOMAdjwArjFNooiLjhIrzFGSf.mu\"\n        },\n        {\n          \"value\": \"0beNCkAYj4s9Ku@dzJrQCFLOvKLYdGNZgHJRGQhS.fn\"\n        }\n      ],\n      \"meta\": {\n        \"location\": \"http://lzDDhPkwYtaqCWXr.mdHWkSKICkDwpHFPDmAIlpsq45Wqy\",\n        \"created\": \"2006-07-03T15:11:01.318Z\",\n        \"lastModified\": \"2018-03-21T23:24:41.984Z\"\n      }\n    },\n    {\n      \"id\": 4435,\n      \"externalId\": \"string\",\n      \"userName\": \"vap2exx5t@SVZnEmBxqXSNadmgT.vhy\",\n      \"nickName\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\"\n      },\n      \"emails\": [\n        {\n          \"value\": \"Nzq@bsiqGTFZIZtyhfnPlqVhjmEnqYpE.fr\"\n        },\n        {\n          \"value\": \"M2RsDT@hL.zv\"\n        }\n      ],\n      \"meta\": {\n        \"location\": \"https://Zo.otvk+eeiD79.yfr0pphBrOofVdN5jMjC0rSvMMI,AF2qX5hj1fWZqM8sBI8lTC-HI6\",\n        \"created\": \"2005-11-21T10:40:59.939Z\",\n        \"lastModified\": \"1949-01-16T21:04:48.292Z\"\n      }\n    }\n  ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -341,7 +295,7 @@
           }
         },
         {
-          "id": "715dc2c0-d03b-4c9e-99f5-4b7158c86998",
+          "id": "d278c4db-600b-4363-81cc-334e77fa74e2",
           "name": "Provision SCIM User",
           "request": {
             "name": "Provision SCIM User",
@@ -390,7 +344,7 @@
           },
           "response": [
             {
-              "id": "d117b8d7-e6a5-482b-b89e-4beec6190229",
+              "id": "3866aa9c-c39e-4939-b7cd-0c86dbc22be3",
               "name": "User provisioned.",
               "originalRequest": {
                 "url": {
@@ -414,14 +368,6 @@
                   ]
                 },
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/json"
@@ -457,7 +403,7 @@
           }
         },
         {
-          "id": "0affd825-0cd2-4af5-94a2-0c9e859e82fb",
+          "id": "04894704-4df3-41d9-bef0-fb00b7dcd92f",
           "name": "Get SCIM User",
           "request": {
             "name": "Get SCIM User",
@@ -501,7 +447,7 @@
           },
           "response": [
             {
-              "id": "80a0f1de-d88a-4e5f-b403-4e95c9d0005a",
+              "id": "92591340-d570-4653-af31-d7dfebc27550",
               "name": "User resource.",
               "originalRequest": {
                 "url": {
@@ -534,14 +480,6 @@
                 },
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
                     "key": "Accept",
                     "value": "application/json"
                   }
@@ -568,7 +506,7 @@
           }
         },
         {
-          "id": "60fcd3f6-3724-419f-bbf8-1ce10e0d9e49",
+          "id": "8e539f16-e050-4d6c-8996-bd6f5f2fa342",
           "name": "Update SCIM User",
           "request": {
             "name": "Update SCIM User",
@@ -621,7 +559,7 @@
           },
           "response": [
             {
-              "id": "48640e52-06f1-487e-abd0-8e0c08c5bf42",
+              "id": "401408ff-fb4b-4c20-915f-80b5f6877a11",
               "name": "User updated.",
               "originalRequest": {
                 "url": {
@@ -652,16 +590,6 @@
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  }
-                ],
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
@@ -692,7 +620,7 @@
           }
         },
         {
-          "id": "32102221-ffd9-4bf3-bf15-84a23196c39c",
+          "id": "ecf79699-25f7-4789-b9d1-e4ccc52e7408",
           "name": "Deactivate SCIM User",
           "request": {
             "name": "Deactivate SCIM User",
@@ -730,7 +658,7 @@
           },
           "response": [
             {
-              "id": "0b1e4117-15ff-4027-8f04-d522a5218f4a",
+              "id": "970f2110-5c23-4700-b5d1-2fafaa6a7437",
               "name": "User deactivated.",
               "originalRequest": {
                 "url": {
@@ -761,16 +689,6 @@
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  }
-                ],
                 "method": "DELETE",
                 "body": {}
               },
@@ -804,21 +722,12 @@
       "key": "baseUrl"
     }
   ],
-  "auth": {
-    "type": "bearer",
-    "bearer": [
-      {
-        "key": "token",
-        "value": "{{bearerToken}}"
-      }
-    ]
-  },
   "info": {
-    "_postman_id": "4beeb05c-d87e-4365-9532-364e268a0791",
-    "name": "Flowdock SCIM Provisioning API",
+    "_postman_id": "de20caa9-1f5c-47df-8f6f-69aae7016a3b",
+    "name": "Flowdock Push Authentication SCIM API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
-      "content": "Partial SCIM (System for Cross-Domain Identity Management) provisioning\nAPI for CA Flowdock Enterprise customers with Single Sign-On configured.\nUsed by IdP-side provisioning connectors to create, read, update, and\ndeactivate SSO-linked user accounts in a Flowdock organization.\n\nDiscontinued with the rest of Flowdock on August 15, 2023.\nReconstructed from https://github.com/flowdock/api-docs/blob/master/docs/scim.md.\n",
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
       "type": "text/plain"
     }
   }

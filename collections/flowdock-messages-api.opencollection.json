@@ -1,0 +1,255 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock Push Authentication Messages API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/messages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send Message"
+        },
+        {
+          "info": {
+            "name": "List Flow Messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "event",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "since_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Flow Messages"
+        },
+        {
+          "info": {
+            "name": "Send Message To Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send Message To Flow"
+        },
+        {
+          "info": {
+            "name": "Show Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Show Message"
+        },
+        {
+          "info": {
+            "name": "Edit Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit Message"
+        },
+        {
+          "info": {
+            "name": "Delete Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/messages/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Message"
+        },
+        {
+          "info": {
+            "name": "Comment On Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/comments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Comment On Message"
+        },
+        {
+          "info": {
+            "name": "Post Message To Thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/threads/:id/messages",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Post Message To Thread"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

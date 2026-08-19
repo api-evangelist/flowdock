@@ -1,0 +1,589 @@
+{
+  "item": [
+    {
+      "id": "37e8702c-cd4f-4af4-8741-957a65650606",
+      "name": "Invitations",
+      "description": {
+        "content": "Open and accepted invitations to join a flow.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "99f3876a-f8dd-46ae-bf78-f6699fa06cae",
+          "name": "List Flow Invitations",
+          "request": {
+            "name": "List Flow Invitations",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28f59f0a-ff74-4e4f-97ee-71d71ae62cdf",
+              "name": "List of pending and accepted invitations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8336,\n    \"state\": \"accepted\",\n    \"email\": \"xOfB@TAtKmCqWL.tr\",\n    \"flow\": \"string\",\n    \"url\": \"http://JPgCpKVDmANhnqrLrlXBZeuuzVJSu.shupMGt7sS44HsVAwyC3-mSGol+gk6TEUKPL66WTwor8rykG73BBredhoSc\"\n  },\n  {\n    \"id\": 1697,\n    \"state\": \"pending\",\n    \"email\": \"Mj2kh@kqteRRXAqPUxyKLTtjZvKiAquiLwjqLa.wfq\",\n    \"flow\": \"string\",\n    \"url\": \"http://PVYCsKZbslOXEj.ninojJX7bCgrh.\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4cd8d357-5683-4ebe-b063-6f4530f08e7d",
+          "name": "Create Invitation",
+          "request": {
+            "name": "Create Invitation",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"message\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03cc7d02-0286-471c-894e-4c0b863bf4d8",
+              "name": "Invitation created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1093,\n  \"state\": \"accepted\",\n  \"email\": \"zFc@jBRXUafalZuAmTvNJpuPBAyxznwEfy.uqm\",\n  \"flow\": \"string\",\n  \"url\": \"https://wpachCimVXXqXHcpR.ncCrVwZbStEtUdRrcceS25\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d2141b5-1598-4c4c-8843-3aaae3ef83c1",
+          "name": "Get Invitation",
+          "request": {
+            "name": "Get Invitation",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dda7dd7f-95de-4729-87d9-861a97a457ee",
+              "name": "Invitation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a4f1183-0fa5-4ea0-a6e7-6d53bb1ae313",
+          "name": "Delete Invitation",
+          "request": {
+            "name": "Delete Invitation",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04d9b240-819f-4567-aa4d-5914ae499442",
+              "name": "Invitation revoked.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58d86667-85fd-4acd-9efc-ab7e30650d64",
+          "name": "Import Address List",
+          "request": {
+            "name": "Import Address List",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "invitations",
+                "import"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"addresses\": [\n    \"<email>\",\n    \"<email>\"\n  ],\n  \"message\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aaae5401-57a9-4555-a151-68878e60c670",
+              "name": "Addresses imported.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "invitations",
+                    "import"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addresses\": [\n    \"<email>\",\n    \"<email>\"\n  ],\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f4d4d640-8491-4b4a-9989-d7c171855c88",
+    "name": "Flowdock Push Authentication Invitations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

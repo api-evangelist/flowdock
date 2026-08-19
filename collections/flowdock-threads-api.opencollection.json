@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock Push Authentication Threads API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Threads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flow Threads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/threads",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "application",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Flow Threads"
+        },
+        {
+          "info": {
+            "name": "Get Thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/threads/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Thread"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

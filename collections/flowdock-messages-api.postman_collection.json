@@ -1,0 +1,950 @@
+{
+  "item": [
+    {
+      "id": "8c9c9653-8734-4b0a-81da-cb866c9b9eaf",
+      "name": "Messages",
+      "description": {
+        "content": "Chat messages, comments, status, activity, discussion, and file events posted to a flow.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7bb82dd-94cd-4561-9646-a2d754e9a443",
+          "name": "Send Message",
+          "request": {
+            "name": "Send Message",
+            "description": {},
+            "url": {
+              "path": [
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ad19af18-1198-411a-b8e8-c01e4011e518",
+              "name": "Message accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 406,\n  \"app\": \"string\",\n  \"event\": \"string\",\n  \"flow\": \"string\",\n  \"content\": \"\",\n  \"sent\": 6480,\n  \"user\": \"string\",\n  \"created_at\": \"1955-03-14T13:47:01.760Z\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"thread_id\": \"string\",\n  \"thread\": {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"status\": {\n      \"color\": \"string\",\n      \"value\": \"string\"\n    },\n    \"fields\": [\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"external_url\": \"http://pZYQNonOg.olvFzy\",\n    \"actor\": {\n      \"name\": \"string\",\n      \"avatar\": \"https://sjALlzKnuAbzeZ.zyqGvKp6mDQEuOiQRT.WoRrI\"\n    }\n  },\n  \"uuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c11bf01b-51e3-458b-adc5-a72cf3b1fca7",
+          "name": "List Flow Messages",
+          "request": {
+            "name": "List Flow Messages",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "until_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b819cd8d-2ba8-456f-bc01-956c8dd785a1",
+              "name": "List of message events.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "since_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3841,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 6741,\n    \"user\": \"string\",\n    \"created_at\": \"1948-06-07T11:09:32.441Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"http://GxErOSOPp.ptM4AQ5DpP86+dItJXdHQMZjU.qX4Qe1JnRn+N\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://McoMDjWNb.evtmO9KJ,H6nz.Lcgp.55AS3NnvyF3jn7vXehYeYz7g.VWalBhljC1ECsYro0f\"\n      }\n    },\n    \"uuid\": \"string\"\n  },\n  {\n    \"id\": 3801,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 3217,\n    \"user\": \"string\",\n    \"created_at\": \"1952-06-02T08:02:06.030Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"https://XnxJLJFrLuCDXlOPXnXyKGGxvQfF.oif+29Pm9eqtW3BoWuy-keHyxRx\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://umBwqDJsXDJNHIGVWSbHCgRNOw.ttHaAfCqDW+Ma0L9SQ0yAKEpGWNGF3nEbarX0u27\"\n      }\n    },\n    \"uuid\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97af23bb-66b9-4689-9948-f1f961b2f213",
+          "name": "Send Message To Flow",
+          "request": {
+            "name": "Send Message To Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "05a0f98d-1809-48ba-a9cd-cdf99db1b5cc",
+              "name": "Message accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dada7c97-5262-42ca-b045-ec9abb41a1d8",
+          "name": "Show Message",
+          "request": {
+            "name": "Show Message",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6729361-68f4-4341-97fc-6f955af96c72",
+              "name": "Single message.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5390,\n  \"app\": \"string\",\n  \"event\": \"string\",\n  \"flow\": \"string\",\n  \"content\": \"\",\n  \"sent\": 6046,\n  \"user\": \"string\",\n  \"created_at\": \"1984-10-15T09:37:30.452Z\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"thread_id\": \"string\",\n  \"thread\": {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"status\": {\n      \"color\": \"string\",\n      \"value\": \"string\"\n    },\n    \"fields\": [\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"label\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"external_url\": \"http://eOeWxLRXfxeLddEIEYkCmPKUihswvW.auiBy9T9czts6gUblGNnEfosyurUDuTM5LMYTxENfN5ocmVCVYce.e37qchImYn\",\n    \"actor\": {\n      \"name\": \"string\",\n      \"avatar\": \"https://owBdKOkCFwceTuqagUWVjjEnWEKeFLLfF.qjzJre6iZmEoddHqK4MzfDeKcUUexYS7ehi7uQ\"\n    }\n  },\n  \"uuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab6d29df-0870-4cbc-9733-595cef4db9c3",
+          "name": "Edit Message",
+          "request": {
+            "name": "Edit Message",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b54a4c8-9f80-4897-a845-d7086bd70453",
+              "name": "Message updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40b9c4e7-9ad6-494f-a3a5-0efdf3ed5994",
+          "name": "Delete Message",
+          "request": {
+            "name": "Delete Message",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "messages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cd70293c-c4b1-436a-be11-92de68e61d97",
+              "name": "Message deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "messages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "309da31f-a8c9-4281-9fe0-deaeb4e17738",
+          "name": "Comment On Message",
+          "request": {
+            "name": "Comment On Message",
+            "description": {},
+            "url": {
+              "path": [
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80d12844-1eb1-4e56-a160-9a8448eb1ef4",
+              "name": "Comment posted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"content\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec55eeef-32a9-4159-aae8-196d6212390f",
+          "name": "Post Message To Thread",
+          "request": {
+            "name": "Post Message To Thread",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow",
+                "threads",
+                ":id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7f397e80-cb59-40f7-860b-1d551821f13a",
+              "name": "Message posted to thread.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow",
+                    "threads",
+                    ":id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "076cf61f-8585-42d4-9866-f6a16305e740",
+    "name": "Flowdock Push Authentication Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

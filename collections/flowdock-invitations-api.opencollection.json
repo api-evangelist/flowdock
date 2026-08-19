@@ -1,0 +1,161 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowdock Push Authentication Invitations API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invitations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flow Invitations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ]
+          },
+          "docs": "List Flow Invitations"
+        },
+        {
+          "info": {
+            "name": "Create Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Invitation"
+        },
+        {
+          "info": {
+            "name": "Get Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Invitation"
+        },
+        {
+          "info": {
+            "name": "Delete Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations/:id",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Invitation"
+        },
+        {
+          "info": {
+            "name": "Import Address List",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flowdock.com/flows/:organization/:flow/invitations/import",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path",
+                "description": "Organization parameterized name."
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Flow parameterized name within the organization."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import Address List"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

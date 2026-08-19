@@ -1,0 +1,337 @@
+{
+  "item": [
+    {
+      "id": "a3b7759d-8e3d-4250-b756-53ad97452e31",
+      "name": "Private Messages",
+      "description": {
+        "content": "Messages within a private conversation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ddf6ba6-20c6-4b1d-b1ea-e1b746e58dca",
+          "name": "List Private Messages",
+          "request": {
+            "name": "List Private Messages",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "until_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "849899ee-9e9e-4e43-9571-7279d50147a6",
+              "name": "List of private messages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "since_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3673,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 788,\n    \"user\": \"string\",\n    \"created_at\": \"2007-09-21T13:40:53.808Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"http://fbswbu.oyTDy0Sm2mqSaKLfUgIVRTyuD0dgEjO62dgxG\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://hupgHxIzseQpYPoadrJrU.nmwKrNDz,g-bi1MY3Vawwz+eGNkijkqfIfDhy-Xc9jYppeG2EHi6U5\"\n      }\n    },\n    \"uuid\": \"string\"\n  },\n  {\n    \"id\": 5358,\n    \"app\": \"string\",\n    \"event\": \"string\",\n    \"flow\": \"string\",\n    \"content\": \"\",\n    \"sent\": 1969,\n    \"user\": \"string\",\n    \"created_at\": \"2014-05-10T13:14:38.200Z\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thread_id\": \"string\",\n    \"thread\": {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"status\": {\n        \"color\": \"string\",\n        \"value\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"external_url\": \"https://gcqiJyVga.grhD9fzfr4Sra2WGQdhT59plaRGDDfGFuFH6,Sx+NsMlCuVqhHenWKnv839Rwsq.-Safz0\",\n      \"actor\": {\n        \"name\": \"string\",\n        \"avatar\": \"http://tp.nwaZf,CnxswmXpU17GR,\"\n      }\n    },\n    \"uuid\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "610f3f1d-37b9-4a7b-997c-753748d2cdf7",
+          "name": "Send Private Message",
+          "request": {
+            "name": "Send Private Message",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cf54f585-5808-4a0b-94e2-be4c7bde20d5",
+              "name": "Private message sent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": \"<string>\",\n  \"content\": \"<string>\",\n  \"flow\": \"<string>\",\n  \"message\": \"<integer>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"external_user_name\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"external_thread_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6987fe75-5039-43de-ad12-a693b3efce92",
+          "name": "Show Private Message",
+          "request": {
+            "name": "Show Private Message",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id",
+                "messages",
+                ":message_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "064a8b5c-c24a-45b1-a30e-a4733d24a55b",
+              "name": "Single private message.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id",
+                    "messages",
+                    ":message_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7111a64c-6dda-4a28-be59-8f0b58e7b9f9",
+    "name": "Flowdock Push Authentication Private Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

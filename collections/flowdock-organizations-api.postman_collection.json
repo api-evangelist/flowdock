@@ -1,0 +1,280 @@
+{
+  "item": [
+    {
+      "id": "fd680d06-93c5-462e-9f8f-e426a7ce2a47",
+      "name": "Organizations",
+      "description": {
+        "content": "Account-level container that owns flows and bills users.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a4647c0e-a76f-4b09-b474-9eb370569ae3",
+          "name": "List Organizations",
+          "request": {
+            "name": "List Organizations",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "932c76df-dc9e-4ddb-8d3f-9c4b20892506",
+              "name": "List of organizations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 6875,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 4032,\n    \"user_count\": 9723,\n    \"active\": true,\n    \"url\": \"http://KhpGopeJkRxLgpPKHcXFhKwuvoiaj.ucxg148dVQnnDfxMWBW\",\n    \"subscription\": {\n      \"trial\": true,\n      \"trial_ends\": \"1997-12-11\",\n      \"billing_date\": \"2010-08-08\"\n    }\n  },\n  {\n    \"id\": 2590,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 2562,\n    \"user_count\": 8265,\n    \"active\": false,\n    \"url\": \"http://nYMkLKRqkoLlVz.owbwlmmYqHaQTGp90QMEd-xbHluYlgN2CVrdZrTS0hVt4SQWj74b,RpIBNCIbInS,9\",\n    \"subscription\": {\n      \"trial\": false,\n      \"trial_ends\": \"1973-04-09\",\n      \"billing_date\": \"2003-11-07\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "259d3bdb-ae3e-4813-91d5-f4aa83fa5640",
+          "name": "Get Organization",
+          "request": {
+            "name": "Get Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations",
+                ":parameterized_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parameterized_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7aa32b98-e362-49e5-aa60-e73da4f02715",
+              "name": "Organization.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":parameterized_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parameterized_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5385,\n  \"parameterized_name\": \"string\",\n  \"name\": \"string\",\n  \"user_limit\": 3992,\n  \"user_count\": 5339,\n  \"active\": true,\n  \"url\": \"https://trmZQrKaCT.hwhhDCByMBm1x\",\n  \"subscription\": {\n    \"trial\": true,\n    \"trial_ends\": \"2021-03-03\",\n    \"billing_date\": \"1987-06-24\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "327496b6-4189-46e3-879b-45c6011e9256",
+          "name": "Update Organization",
+          "request": {
+            "name": "Update Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations",
+                ":parameterized_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parameterized_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"parameterized_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0ec2bdc4-6f84-4812-9629-9fd7dfa2e162",
+              "name": "Organization updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":parameterized_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parameterized_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"parameterized_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1aa658e3-e46b-41dd-8eb0-f93e6023ef6e",
+    "name": "Flowdock Push Authentication Organizations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

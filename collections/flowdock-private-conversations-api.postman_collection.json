@@ -1,0 +1,280 @@
+{
+  "item": [
+    {
+      "id": "e2f7aa07-4b10-4086-8cab-a30c5455a667",
+      "name": "Private Conversations",
+      "description": {
+        "content": "One-to-one direct message channels between two users.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4bf38f85-be9b-4553-831e-1a4fa160748f",
+          "name": "List Private Conversations",
+          "request": {
+            "name": "List Private Conversations",
+            "description": {},
+            "url": {
+              "path": [
+                "private"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "988273bd-f89b-4c52-9cc3-0a1a7ec8b3b1",
+              "name": "List of private conversations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2315,\n    \"url\": \"http://RTpFkBtJOIrPzPRYmn.qjgnyvo3XJZhgCPxpJe7Xb2FUllaaZ+IymfQA3BljBm4z0yO3Q-nEpXh+cxQdYFj3EHB.qinonSf-rcf.\",\n    \"name\": \"string\",\n    \"open\": false,\n    \"activity\": {\n      \"inbox\": true,\n      \"mentions\": 4924,\n      \"chat\": false\n    },\n    \"users\": [\n      {\n        \"id\": 2961,\n        \"email\": \"12e5mw-c9b8wY@aefhpzjEJgZpDYsABUgZvPEUZmpfR.iju\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"https://z.alkeiTYc.LarHg4KHu8hBmp-m8gnaCWtPfX5tMpjZ+MaHtNbjxlQ5g9wDdyaZcCGSU26o9\",\n        \"website\": \"http://DuHp.lneoLmudsc64Wlatt.5xBK1XsbZ+PE5NxWU7ootDfpz7Rwr5ffVilaosApKIV\",\n        \"admin\": false\n      },\n      {\n        \"id\": 8369,\n        \"email\": \"9ltZSxN1RgSqyn2@kQrTOnCszNAIUBxQjofNpaRyGRPrgJLE.pn\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"http://VjhJvykBuMDkVFWcxbFWPsWcPicNRWTR.ozgcYQBz-ceUL+mXaczDpASpPQpnQZn1vOgpR0zbW9Y4ynJ71PGx\",\n        \"website\": \"https://TnRCJCWdCDii.drtHRr2qU.9w\",\n        \"admin\": true\n      }\n    ]\n  },\n  {\n    \"id\": 7765,\n    \"url\": \"http://EnLrHeSsLtzlbOOkbwe.nrhea93qElt6xUZ2SceuMaxYAZiIvKI2zIhBbmK\",\n    \"name\": \"string\",\n    \"open\": true,\n    \"activity\": {\n      \"inbox\": false,\n      \"mentions\": 9972,\n      \"chat\": false\n    },\n    \"users\": [\n      {\n        \"id\": 1929,\n        \"email\": \"qXvEcA@cWL.jt\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"http://PBESClia.rklt9YSQxRKUEN-sN+5e92Dyl3poeVVWM5T1zX8HltTtUF4W\",\n        \"website\": \"https://UyhHlDAjIFrbtGAtJmAChXcUplmG.jarIc\",\n        \"admin\": false\n      },\n      {\n        \"id\": 4323,\n        \"email\": \"K3v@lcRbUksTicst.hf\",\n        \"name\": \"string\",\n        \"nick\": \"string\",\n        \"avatar\": \"https://JRgTrmoJcxmrymG.phsmwtjvgUMR6xl5JmXR\",\n        \"website\": \"http://BicOyqcvJABBZcVhCFujZqxjyTzp.ebymnzwMYyOfVCy9HcCSWFxo1NctawwRG0us1WL2OZHxIcJcYREjn\",\n        \"admin\": true\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c26b49c8-2942-45c7-9c8c-066e30a3a3d3",
+          "name": "Get Private Conversation",
+          "request": {
+            "name": "Get Private Conversation",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9e026b1-da5c-4f99-97d6-a9e1f434d82f",
+              "name": "Private conversation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4045,\n  \"url\": \"https://aDyoUzOPtlMbGZnARjWzOuN.ichMsGBOsPcR,7tsBpIoxTER79xg+uxC+VAZHwab64BNqfDI+WSzVa1mQ5KKGKW7YhKq\",\n  \"name\": \"string\",\n  \"open\": false,\n  \"activity\": {\n    \"inbox\": true,\n    \"mentions\": 6094,\n    \"chat\": true\n  },\n  \"users\": [\n    {\n      \"id\": 2421,\n      \"email\": \"0xcju@gYCqBgCKoSyoEzwxBkDiQzpLpD.ov\",\n      \"name\": \"string\",\n      \"nick\": \"string\",\n      \"avatar\": \"https://OdHagrsmsUCUjeRsTV.uaiX9NMT\",\n      \"website\": \"http://kRPpjuBQzdfRammQu.esccPVtqsMPqBwoiO4pAUQEeIeJTJR6TjLnQh\",\n      \"admin\": true\n    },\n    {\n      \"id\": 1375,\n      \"email\": \"JoNHjRu-zsisl@qFRDZNvqsEqeCmXZ.ttkc\",\n      \"name\": \"string\",\n      \"nick\": \"string\",\n      \"avatar\": \"http://Nq.ciDx4XcoCdkhujeelYGkN9Tq,\",\n      \"website\": \"http://CWBqnvtMJl.cxcxNU8hQC9akktSVYWc+RA3FFnRZ7fZ3oI39X.O2T\",\n      \"admin\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ae53aa7-0d1c-41a9-b19f-7eacfc30f2df",
+          "name": "Update Private Conversation",
+          "request": {
+            "name": "Update Private Conversation",
+            "description": {},
+            "url": {
+              "path": [
+                "private",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"open\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2fc47db2-65aa-49a8-a605-8740ec344b54",
+              "name": "Conversation updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "private",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"open\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "90a0bf72-f695-4ae7-9c79-03e40ef97adf",
+    "name": "Flowdock Push Authentication Private Conversations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}

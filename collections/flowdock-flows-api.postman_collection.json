@@ -1,0 +1,568 @@
+{
+  "item": [
+    {
+      "id": "c56831c7-5431-4e22-9b4e-68b23eeb2fe1",
+      "name": "Flows",
+      "description": {
+        "content": "Team workspaces combining chat and a shared team inbox.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9117b514-acc3-4bf7-b5b5-3ee042c3d36c",
+          "name": "List Flows For Authenticated User",
+          "request": {
+            "name": "List Flows For Authenticated User",
+            "description": {},
+            "url": {
+              "path": [
+                "flows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "users",
+                  "value": "<integer>",
+                  "description": "Set to 1 to include the list of users with each flow."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a728e6f0-9f04-4bc3-a160-46a87f75823b",
+              "name": "List of joined flows.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "users",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 2517,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 4534,\n      \"user_count\": 6597,\n      \"active\": true,\n      \"url\": \"https://xUBiqWa.jyxil13O7KupvD9Rj4ysD2jHhXQhEdOU2dSHO+cXiRV2d-UV57z5r7FufmFLaQm6TtH4U19xVF6g\",\n      \"subscription\": {\n        \"trial\": false,\n        \"trial_ends\": \"1958-06-23\",\n        \"billing_date\": \"1961-09-30\"\n      }\n    },\n    \"unread_mentions\": 677,\n    \"open\": true,\n    \"joined\": true,\n    \"url\": \"https://GwcDTPjcXeSnU.detEZJ1K7YOD\",\n    \"web_url\": \"http://efVeWQSU.lvbqKtP+YmOqRMTkwZDoUQ\",\n    \"join_url\": \"https://SUtVHcdTQLYhIu.pgnxJmFsmeXVa,jXao87Xlh1XrQncN9r6B\",\n    \"access_mode\": \"organization\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 2384,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 7508,\n      \"user_count\": 4009,\n      \"active\": true,\n      \"url\": \"https://SIbsuVLaqpfaaTjByyoRHQxIiTTkQkcg.pbde0imLSNtA8xVoM5VX01FZimiALIvkQkPATrD-VFmgo6LVyK\",\n      \"subscription\": {\n        \"trial\": false,\n        \"trial_ends\": \"2024-08-30\",\n        \"billing_date\": \"2004-02-12\"\n      }\n    },\n    \"unread_mentions\": 6539,\n    \"open\": true,\n    \"joined\": true,\n    \"url\": \"https://NXUSLZrTU.bprdJgt9eIE5+slksffyyHXORmbm-9pZLCBMh,RB2hv.EDKFHE\",\n    \"web_url\": \"https://Hafo.chgWOKE86Wew8IoIlOMkcvQDeVVptFV3JvpRBivhQpiy40\",\n    \"join_url\": \"http://ukzkDKKa.wfGugmdc9X9DlizUnIZ\",\n    \"access_mode\": \"link\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15a019f9-81a6-4db1-ae37-b95e078b6e50",
+          "name": "List All Flows Visible To User",
+          "request": {
+            "name": "List All Flows Visible To User",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "51957db5-88c4-49f0-86ba-d10ce9269753",
+              "name": "All flows the user can see (including organization-mode flows not joined).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 2517,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 4534,\n      \"user_count\": 6597,\n      \"active\": true,\n      \"url\": \"https://xUBiqWa.jyxil13O7KupvD9Rj4ysD2jHhXQhEdOU2dSHO+cXiRV2d-UV57z5r7FufmFLaQm6TtH4U19xVF6g\",\n      \"subscription\": {\n        \"trial\": false,\n        \"trial_ends\": \"1958-06-23\",\n        \"billing_date\": \"1961-09-30\"\n      }\n    },\n    \"unread_mentions\": 677,\n    \"open\": true,\n    \"joined\": true,\n    \"url\": \"https://GwcDTPjcXeSnU.detEZJ1K7YOD\",\n    \"web_url\": \"http://efVeWQSU.lvbqKtP+YmOqRMTkwZDoUQ\",\n    \"join_url\": \"https://SUtVHcdTQLYhIu.pgnxJmFsmeXVa,jXao87Xlh1XrQncN9r6B\",\n    \"access_mode\": \"organization\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parameterized_name\": \"string\",\n    \"organization\": {\n      \"id\": 2384,\n      \"parameterized_name\": \"string\",\n      \"name\": \"string\",\n      \"user_limit\": 7508,\n      \"user_count\": 4009,\n      \"active\": true,\n      \"url\": \"https://SIbsuVLaqpfaaTjByyoRHQxIiTTkQkcg.pbde0imLSNtA8xVoM5VX01FZimiALIvkQkPATrD-VFmgo6LVyK\",\n      \"subscription\": {\n        \"trial\": false,\n        \"trial_ends\": \"2024-08-30\",\n        \"billing_date\": \"2004-02-12\"\n      }\n    },\n    \"unread_mentions\": 6539,\n    \"open\": true,\n    \"joined\": true,\n    \"url\": \"https://NXUSLZrTU.bprdJgt9eIE5+slksffyyHXORmbm-9pZLCBMh,RB2hv.EDKFHE\",\n    \"web_url\": \"https://Hafo.chgWOKE86Wew8IoIlOMkcvQDeVVptFV3JvpRBivhQpiy40\",\n    \"join_url\": \"http://ukzkDKKa.wfGugmdc9X9DlizUnIZ\",\n    \"access_mode\": \"link\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d4ba2fb-eb74-4ebf-821c-9cd625b13f41",
+          "name": "Get Flow",
+          "request": {
+            "name": "Get Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad5bfc6c-423f-4f76-9c13-054e7a22b147",
+              "name": "Flow object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"parameterized_name\": \"string\",\n  \"organization\": {\n    \"id\": 3873,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 6012,\n    \"user_count\": 2525,\n    \"active\": false,\n    \"url\": \"http://ueAfinAxKjZb.ezuKlaA+RxQ4r5GDnvc6l\",\n    \"subscription\": {\n      \"trial\": false,\n      \"trial_ends\": \"1983-06-17\",\n      \"billing_date\": \"1957-09-01\"\n    }\n  },\n  \"unread_mentions\": 3847,\n  \"open\": true,\n  \"joined\": false,\n  \"url\": \"https://zrHqLiDzYxrHLtAmRhVnpkGaGyCOkS.oxcP0D2qsaQ\",\n  \"web_url\": \"http://wimnVONwE.mwCYF1+5c3yGbMMRu6eFg1VSCsnzm,Kbu1rt7\",\n  \"join_url\": \"http://qUBOfduhvzFQTmIYwIy.kmjGBZ9FukT5qk+eTOIpz,kVsXXtYaH\",\n  \"access_mode\": \"invitation\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1600292b-44fc-4637-8787-3be52e32da54",
+          "name": "Update Flow",
+          "request": {
+            "name": "Update Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization",
+                ":flow"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Flow parameterized name within the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"open\": \"<boolean>\",\n  \"access_mode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2684d727-7f34-41f0-979d-639681862f5d",
+              "name": "Updated flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization",
+                    ":flow"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Flow parameterized name within the organization."
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"open\": \"<boolean>\",\n  \"access_mode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dca24725-3f81-4032-99ea-2956489712db",
+          "name": "Get Flow By Id",
+          "request": {
+            "name": "Get Flow By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                "find"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bae62cd7-5734-4343-816c-96f10a7c79c0",
+              "name": "Flow object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    "find"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46859f36-f323-4977-aa47-09ae422ce49e",
+          "name": "Create Flow",
+          "request": {
+            "name": "Create Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "flows",
+                ":organization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) Organization parameterized name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a28ec6a7-297a-44fd-be46-69e56635df19",
+              "name": "Flow created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flows",
+                    ":organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) Organization parameterized name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"parameterized_name\": \"string\",\n  \"organization\": {\n    \"id\": 3873,\n    \"parameterized_name\": \"string\",\n    \"name\": \"string\",\n    \"user_limit\": 6012,\n    \"user_count\": 2525,\n    \"active\": false,\n    \"url\": \"http://ueAfinAxKjZb.ezuKlaA+RxQ4r5GDnvc6l\",\n    \"subscription\": {\n      \"trial\": false,\n      \"trial_ends\": \"1983-06-17\",\n      \"billing_date\": \"1957-09-01\"\n    }\n  },\n  \"unread_mentions\": 3847,\n  \"open\": true,\n  \"joined\": false,\n  \"url\": \"https://zrHqLiDzYxrHLtAmRhVnpkGaGyCOkS.oxcP0D2qsaQ\",\n  \"web_url\": \"http://wimnVONwE.mwCYF1+5c3yGbMMRu6eFg1VSCsnzm,Kbu1rt7\",\n  \"join_url\": \"http://qUBOfduhvzFQTmIYwIy.kmjGBZ9FukT5qk+eTOIpz,kVsXXtYaH\",\n  \"access_mode\": \"invitation\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flowdock.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5b9447c2-5002-4174-a9b2-0b175d009e5a",
+    "name": "Flowdock Push Authentication Flows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flowdock Push API was the legacy \"post-only\" integration surface for\nsending content into a Flow's Team Inbox or Chat using a per-flow API\ntoken (no user authentication). It was deprecated in favor of the\nMessages endpoint of the REST API and was retired with the rest of\nFlowdock on August 15, 2023.\n\nReconstructed from the historical https://github.com/flowdock/api-docs\nrepository (docs/push.md, docs/team-inbox.md, docs/chat.md).\n",
+      "type": "text/plain"
+    }
+  }
+}
