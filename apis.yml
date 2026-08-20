@@ -41,6 +41,13 @@ tags:
   - Team Inbox
   - Collaboration
   - Real-Time Messaging
+  - Integration
+  - Discontinued
+tags_raw:
+  - Team Chat
+  - Team Inbox
+  - Collaboration
+  - Real-Time Messaging
   - Integrations
   - Discontinued
 apis:
@@ -67,6 +74,11 @@ apis:
   - type: Examples
     url: examples/flowdock-message-event-stream.json
   tags:
+  - Streaming
+  - Real-Time
+  - Server-Sent Events
+  - Discontinued
+  tags_raw:
   - Streaming
   - Real-Time
   - Server Sent Events
@@ -213,6 +225,8 @@ apis:
   humanURL: https://github.com/flowdock/api-docs
   baseURL: https://api.flowdock.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -381,6 +395,8 @@ apis:
   humanURL: https://github.com/flowdock/api-docs
   baseURL: https://api.flowdock.com
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -437,6 +453,8 @@ apis:
   humanURL: https://github.com/flowdock/api-docs
   baseURL: https://api.flowdock.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
@@ -773,6 +791,8 @@ apis:
   humanURL: https://github.com/flowdock/api-docs
   baseURL: https://api.flowdock.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
