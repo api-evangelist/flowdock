@@ -1,15 +1,24 @@
 aid: flowdock
 name: Flowdock (Discontinued)
-description: |
-  CA Flowdock was a team chat and shared team-inbox product originally
+description: 'CA Flowdock was a team chat and shared team-inbox product originally
+
   founded as Flowdock in Helsinki / Tampere, Finland (Nodeta Oy spin-off,
+
   ~2010), acquired by CA Technologies in 2013, and operated under Broadcom
-  after Broadcom's 2018 acquisition of CA. The hosted service and all
+
+  after Broadcom''s 2018 acquisition of CA. The hosted service and all
+
   public APIs (REST, Push, Streaming, SCIM) were discontinued on
-  August 15, 2023. Broadcom's sunset notice directed customers to
+
+  August 15, 2023. Broadcom''s sunset notice directed customers to
+
   Microsoft Teams or Slack as successor products. This profile is an
+
   archival record assembled from the public api-docs repository and
+
   archived snapshots of the developer portal.
+
+  '
 type: Index
 accessModel:
   pricing: unknown
@@ -27,40 +36,41 @@ image: https://raw.githubusercontent.com/api-evangelist/flowdock/main/icon.png
 url: https://raw.githubusercontent.com/api-evangelist/flowdock/main/apis.yml
 humanURL: https://www.flowdock.com
 created: '2026-05-22'
-modified: '2026-05-22'
+modified: '2026-08-21'
 specificationVersion: '0.23'
 x-status: discontinued
 x-shutdown-date: '2023-08-15'
 x-vendor-history:
-  - '~2010: Founded as Flowdock (spin-off from Nodeta Oy), Helsinki / Tampere, Finland.'
-  - '2013: Acquired by CA Technologies; rebranded "CA Flowdock".'
-  - '2018: Broadcom acquires CA Technologies; Flowdock falls under Broadcom Enterprise Software.'
-  - '2023-08-15: Hosted service and all public APIs discontinued; customers directed to Microsoft Teams or Slack.'
+- '~2010: Founded as Flowdock (spin-off from Nodeta Oy), Helsinki / Tampere, Finland.'
+- '2013: Acquired by CA Technologies; rebranded "CA Flowdock".'
+- '2018: Broadcom acquires CA Technologies; Flowdock falls under Broadcom Enterprise Software.'
+- '2023-08-15: Hosted service and all public APIs discontinued; customers directed to Microsoft Teams or Slack.'
 tags:
-  - Team Chat
-  - Team Inbox
-  - Collaboration
-  - Real-Time Messaging
-  - Integration
-  - Discontinued
+- Team Chat
+- Team Inbox
+- Collaboration
+- Real-Time Messaging
+- Integration
+- Discontinued
 tags_raw:
-  - Team Chat
-  - Team Inbox
-  - Collaboration
-  - Real-Time Messaging
-  - Integrations
-  - Discontinued
+- Team Chat
+- Team Inbox
+- Collaboration
+- Real-Time Messaging
+- Integrations
+- Discontinued
 apis:
 - aid: flowdock:streaming-api
   name: Flowdock Streaming API
-  description: >
-    Long-lived HTTP connection to stream.flowdock.com delivering real-time
+  description: 'Long-lived HTTP connection to stream.flowdock.com delivering real-time
 
     flow events. Two content types: newline-delimited JSON
 
     (`application/json`, `\r` delimited) or HTML5 Server-Sent Events
 
     (`text/event-stream`). Now offline.
+
+    '
   humanURL: https://github.com/flowdock/api-docs/blob/master/docs/streaming.md
   baseURL: https://stream.flowdock.com
   x-status: discontinued
@@ -85,12 +95,13 @@ apis:
   - Discontinued
 - aid: flowdock:scim-api
   name: Flowdock SCIM Provisioning API
-  description: >
-    Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise
+  description: 'Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise
 
     customers with Single Sign-On configured. Bearer-token authenticated.
 
     Now offline.
+
+    '
   humanURL: https://github.com/flowdock/api-docs/blob/master/docs/scim.md
   baseURL: https://api.flowdock.com
   x-status: discontinued
@@ -844,128 +855,131 @@ apis:
   - type: Examples
     url: examples/flowdock-chat-push-request.json
 common:
-  - type: AgenticAccess
-    url: agentic-access/flowdock-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/flowdock-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/flowdock-domain-security.yml
-  - type: Authentication
-    url: authentication/flowdock-authentication.yml
-  - type: OAuthScopes
-    url: scopes/flowdock-scopes.yml
-  - type: Portal
-    url: https://web.archive.org/web/2022/https://www.flowdock.com/
-  - type: Documentation
-    url: https://github.com/flowdock/api-docs
-  - type: Blog
-    url: https://web.archive.org/web/2022/https://blog.flowdock.com/
-  - type: GitHub
-    url: https://github.com/flowdock
-  - type: Twitter
-    url: https://twitter.com/flowdock
-  - type: Facebook
-    url: https://www.facebook.com/flowdock
-  - type: ParentCompany
-    url: https://www.broadcom.com
-    title: Broadcom (via CA Technologies acquisition)
-  - type: SunsetNotice
-    url: https://www.broadcom.com
-    title: Flowdock end-of-life 2023-08-15
-  - type: Vocabulary
-    url: vocabulary/flowdock-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/flowdock-context.jsonld
-  - type: SDKs
-    url: https://github.com/flowdock/flowdock-api
-    title: Ruby gem (flowdock-api)
-  - type: SDKs
-    url: https://github.com/flowdock/node-flowdock
-    title: Node.js client (node-flowdock)
-  - type: SDKs
-    url: https://github.com/flowdock/flowdock-text
-    title: JavaScript text/tag parser (flowdock-text)
-  - type: SDKs
-    url: https://github.com/flowdock/flowdock-text-rb
-    title: Ruby text/tag parser (flowdock-text-rb)
-  - type: SDKs
-    url: https://github.com/flowdock/markdown-it-flowdock
-    title: markdown-it Flowdock
-  - type: SDKs
-    url: https://github.com/flowdock/omniauth-flowdock
-    title: Ruby OmniAuth strategy (omniauth-flowdock)
-  - type: SDKs
-    url: https://github.com/flowdock/hubot-flowdock
-    title: Hubot adapter for Flowdock
-  - type: Integrations
-    url: https://github.com/flowdock/jenkins-flowdock-plugin
-    title: Jenkins notifier
-  - type: Integrations
-    url: https://github.com/flowdock/flowdock-jira-plugin
-    title: JIRA notifier
-  - type: Integrations
-    url: https://github.com/flowdock/flowdock-git-hook
-    title: Git post-receive hook
-  - type: Integrations
-    url: https://github.com/flowdock/flowdock-svn-hook
-    title: Subversion hook
-  - type: Integrations
-    url: https://github.com/flowdock/flowdock-confluence-plugin
-    title: Confluence integration
-  - type: Integrations
-    url: https://github.com/flowdock/capistrano-flowdock
-    title: Capistrano notifier
-  - type: Integrations
-    url: https://github.com/flowdock/dropbox-flowdock
-    title: Dropbox integration
-  - type: Integrations
-    url: https://github.com/flowdock/redmine_flowdock
-    title: Redmine integration (unmaintained)
-  - type: Integrations
-    url: https://github.com/flowdock/oulu
-    title: Oulu — Flowdock IRC Gateway
-  - type: Integrations
-    url: https://github.com/flowdock/flowdock-example-integration
-    title: Example integration scaffold
-  - type: SDKs
-    url: https://github.com/RallySoftware/clj-flowdock
-    title: Clojure (clj-flowdock)
-  - type: SDKs
-    url: https://github.com/0xAX/eflowdock
-    title: Erlang (eflowdock)
-  - type: SDKs
-    url: https://github.com/wm/go-flowdock
-    title: Go (wm/go-flowdock)
-  - type: SDKs
-    url: https://github.com/njern/flowdock
-    title: Go (njern/flowdock)
-  - type: SDKs
-    url: https://hackage.haskell.org/package/flowdock
-    title: Haskell (flowdock)
-  - type: SDKs
-    url: https://hackage.haskell.org/package/flowdock-api
-    title: Haskell (flowdock-api)
-  - type: SDKs
-    url: https://github.com/mremi/Flowdock
-    title: PHP (mremi/Flowdock)
-  - type: SDKs
-    url: https://github.com/flim/PHPFlow
-    title: PHP (flim/PHPFlow)
-  - type: SDKs
-    url: https://bitbucket.org/j00bar/python-flowdock
-    title: Python (python-flowdock)
-  - type: SDKs
-    url: https://github.com/Aeron/PyFlowdock
-    title: Python (PyFlowdock)
-  - type: SDKs
-    url: https://github.com/hrbrmstr/flowdockr
-    title: R (flowdockr)
-  - type: SDKs
-    url: https://github.com/gphat/net-flowdock
-    title: Perl (Net::Flowdock)
-  - type: SDKs
-    url: https://github.com/samvtran/p5-Flowdock
-    title: Perl (p5-Flowdock)
+- type: AgenticAccess
+  url: agentic-access/flowdock-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/flowdock-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/flowdock-domain-security.yml
+- type: Authentication
+  url: authentication/flowdock-authentication.yml
+- type: OAuthScopes
+  url: scopes/flowdock-scopes.yml
+- type: Portal
+  url: https://web.archive.org/web/2022/https://www.flowdock.com/
+- type: Documentation
+  url: https://github.com/flowdock/api-docs
+- type: Blog
+  url: https://web.archive.org/web/2022/https://blog.flowdock.com/
+- type: GitHub
+  url: https://github.com/flowdock
+- type: Twitter
+  url: https://twitter.com/flowdock
+- type: Facebook
+  url: https://www.facebook.com/flowdock
+- type: ParentCompany
+  url: https://www.broadcom.com
+  title: Broadcom (via CA Technologies acquisition)
+- type: SunsetNotice
+  url: https://www.broadcom.com
+  title: Flowdock end-of-life 2023-08-15
+- type: Vocabulary
+  url: vocabulary/flowdock-vocabulary.yml
+- type: JSONLD
+  url: json-ld/flowdock-context.jsonld
+- type: SDKs
+  url: https://github.com/flowdock/flowdock-api
+  title: Ruby gem (flowdock-api)
+- type: SDKs
+  url: https://github.com/flowdock/node-flowdock
+  title: Node.js client (node-flowdock)
+- type: SDKs
+  url: https://github.com/flowdock/flowdock-text
+  title: JavaScript text/tag parser (flowdock-text)
+- type: SDKs
+  url: https://github.com/flowdock/flowdock-text-rb
+  title: Ruby text/tag parser (flowdock-text-rb)
+- type: SDKs
+  url: https://github.com/flowdock/markdown-it-flowdock
+  title: markdown-it Flowdock
+- type: SDKs
+  url: https://github.com/flowdock/omniauth-flowdock
+  title: Ruby OmniAuth strategy (omniauth-flowdock)
+- type: SDKs
+  url: https://github.com/flowdock/hubot-flowdock
+  title: Hubot adapter for Flowdock
+- type: Integrations
+  url: https://github.com/flowdock/jenkins-flowdock-plugin
+  title: Jenkins notifier
+- type: Integrations
+  url: https://github.com/flowdock/flowdock-jira-plugin
+  title: JIRA notifier
+- type: Integrations
+  url: https://github.com/flowdock/flowdock-git-hook
+  title: Git post-receive hook
+- type: Integrations
+  url: https://github.com/flowdock/flowdock-svn-hook
+  title: Subversion hook
+- type: Integrations
+  url: https://github.com/flowdock/flowdock-confluence-plugin
+  title: Confluence integration
+- type: Integrations
+  url: https://github.com/flowdock/capistrano-flowdock
+  title: Capistrano notifier
+- type: Integrations
+  url: https://github.com/flowdock/dropbox-flowdock
+  title: Dropbox integration
+- type: Integrations
+  url: https://github.com/flowdock/redmine_flowdock
+  title: Redmine integration (unmaintained)
+- type: Integrations
+  url: https://github.com/flowdock/oulu
+  title: Oulu — Flowdock IRC Gateway
+- type: Integrations
+  url: https://github.com/flowdock/flowdock-example-integration
+  title: Example integration scaffold
+- type: SDKs
+  url: https://github.com/RallySoftware/clj-flowdock
+  title: Clojure (clj-flowdock)
+- type: SDKs
+  url: https://github.com/0xAX/eflowdock
+  title: Erlang (eflowdock)
+- type: SDKs
+  url: https://github.com/wm/go-flowdock
+  title: Go (wm/go-flowdock)
+- type: SDKs
+  url: https://github.com/njern/flowdock
+  title: Go (njern/flowdock)
+- type: SDKs
+  url: https://hackage.haskell.org/package/flowdock
+  title: Haskell (flowdock)
+- type: SDKs
+  url: https://hackage.haskell.org/package/flowdock-api
+  title: Haskell (flowdock-api)
+- type: SDKs
+  url: https://github.com/mremi/Flowdock
+  title: PHP (mremi/Flowdock)
+- type: SDKs
+  url: https://github.com/flim/PHPFlow
+  title: PHP (flim/PHPFlow)
+- type: SDKs
+  url: https://bitbucket.org/j00bar/python-flowdock
+  title: Python (python-flowdock)
+- type: SDKs
+  url: https://github.com/Aeron/PyFlowdock
+  title: Python (PyFlowdock)
+- type: SDKs
+  url: https://github.com/hrbrmstr/flowdockr
+  title: R (flowdockr)
+- type: SDKs
+  url: https://github.com/gphat/net-flowdock
+  title: Perl (Net::Flowdock)
+- type: SDKs
+  url: https://github.com/samvtran/p5-Flowdock
+  title: Perl (p5-Flowdock)
 maintainers:
-  - FN: API Evangelist
-    url: https://apievangelist.com
+- FN: API Evangelist
+  url: https://apievangelist.com
+x-parent: ca
+x-relationship: acquisition
+x-acquired: 2013
