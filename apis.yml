@@ -97,7 +97,7 @@ apis:
   tags:
   - Streaming
   - Real-Time
-  - Server-Sent Events
+  - Server Sent Events
   - Discontinued
   tags_raw:
   - Streaming
