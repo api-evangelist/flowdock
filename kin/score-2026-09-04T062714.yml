@@ -1,31 +1,34 @@
-# Kin Score artifact — flowdock — 2026-08-04T083143
+# Kin Score artifact — flowdock — 2026-09-04T062714
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: flowdock
-  schema_version: 0.9
-  scored_at: '2026-08-04'
-  run_ts: 2026-08-04T083143
-  composite: 40.4
+  schema_version: 0.18.2
+  scored_at: '2026-09-04'
+  run_ts: 2026-09-04T062714
+  composite: 29.8
   band: thin
   facets:
-    discoverability: 68.5
-    contract_quality: 69.7
-    governance: 52.1
+    discoverability: 63.0
+    contract_quality: 36.6
+    governance: 28.8
     operational_transparency: 5.3
-    developer_ergonomics: 45.7
+    developer_ergonomics: 51.2
     commercial_clarity: 0.0
+    contract_governance: 28.8
+    access_clarity: 0.0
   agent_readiness:
-    score: 28.8
+    score: 19.6
     band: agent-aware
     dimensions:
       spec_presence: true
       agentic_access: derived
+      reversibility_documented: false
       mcp_server: false
-      auth_clarity: true
+      auth_clarity: bearer
       idempotency: false
       error_semantics: false
-      openapi_examples: false
+      openapi_examples: documented
       rate_limit_signal: false
       event_surface_described: derived
       agent_skills: false
@@ -33,10 +36,14 @@ kin_score:
       consent_identity: false
       agent_card: false
       dry_run_mode: false
+      delegated_identity: false
+      protected_resource_metadata: false
+      dynamic_client_registration: false
+      agentic_commerce: false
   provenance:
     agentic_access: derived
     contracts:
       total: 14
-      derived: 0
-      coverage: 0.0
+      derived: 14
+      coverage: 100.0
       callable: 100.0
