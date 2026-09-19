@@ -305,6 +305,8 @@ apis:
   humanURL: https://github.com/flowdock/api-docs
   baseURL: https://api.flowdock.com
   tags:
+  - Flow
+  tags_raw:
   - Flows
   properties:
   - type: OpenAPI
