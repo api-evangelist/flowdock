@@ -1,24 +1,14 @@
 {
   "provider": "flowdock",
   "sources": [
-    "flowdock-authentication-api-openapi.yml",
-    "flowdock-chat-api-openapi.yml",
-    "flowdock-files-api-openapi.yml",
-    "flowdock-flows-api-openapi.yml",
-    "flowdock-invitations-api-openapi.yml",
-    "flowdock-messages-api-openapi.yml",
-    "flowdock-organizations-api-openapi.yml",
-    "flowdock-private-conversations-api-openapi.yml",
-    "flowdock-private-messages-api-openapi.yml",
-    "flowdock-scim-api-openapi.yml",
-    "flowdock-sources-api-openapi.yml",
-    "flowdock-team-inbox-api-openapi.yml",
-    "flowdock-threads-api-openapi.yml",
-    "flowdock-users-api-openapi.yml"
+    "_original/flowdock-push-api-openapi.yml",
+    "_original/flowdock-rest-api-openapi.yml",
+    "flowdock-scim-api-openapi.yml"
   ],
   "outputs": [
-    "flowdock-authentication-api-openapi.yml",
     "flowdock-chat-api-openapi.yml",
+    "flowdock-team-inbox-api-openapi.yml",
+    "flowdock-authentication-api-openapi.yml",
     "flowdock-files-api-openapi.yml",
     "flowdock-flows-api-openapi.yml",
     "flowdock-invitations-api-openapi.yml",
@@ -26,15 +16,35 @@
     "flowdock-organizations-api-openapi.yml",
     "flowdock-private-conversations-api-openapi.yml",
     "flowdock-private-messages-api-openapi.yml",
-    "flowdock-scim-api-openapi.yml",
     "flowdock-sources-api-openapi.yml",
-    "flowdock-team-inbox-api-openapi.yml",
     "flowdock-threads-api-openapi.yml",
-    "flowdock-users-api-openapi.yml"
+    "flowdock-users-api-openapi.yml",
+    "flowdock-scim-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
-  "warnings": [],
-  "notes": [],
-  "skipped": []
+  "warnings": [
+    "flowdock-scim-api-openapi.yml: previously refined output kept for 6 operation(s) no archived document covers (e.g. /scim/{uid} get, /scim/{uid}/Users get, /scim/{uid}/Users post); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "flowdock-push-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "flowdock-rest-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "flowdock-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-flows-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-invitations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-private-conversations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-private-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-sources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-team-inbox-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-threads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowdock-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

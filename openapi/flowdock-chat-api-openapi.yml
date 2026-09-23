@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowdock Push Authentication Chat API
+  title: Flowdock Push Chat API
   version: '1.0'
   x-status: discontinued
   x-deprecated-by-vendor: true
@@ -18,9 +18,7 @@ info:
 
     Reconstructed from the historical https://github.com/flowdock/api-docs
 
-    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
-
-    '
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).'
 servers:
 - url: https://api.flowdock.com
   description: Historical production base URL (offline since 2023-08-15)

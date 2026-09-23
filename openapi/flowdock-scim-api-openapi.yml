@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flowdock Push Authentication SCIM API
   version: '1.0'
@@ -18,9 +18,7 @@ info:
 
     Reconstructed from the historical https://github.com/flowdock/api-docs
 
-    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
-
-    '
+    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).'
 servers:
 - url: https://api.flowdock.com
   description: Historical production base URL (offline since 2023-08-15)
@@ -149,14 +147,6 @@ paths:
         '204':
           description: User deactivated.
 components:
-  parameters:
-    Uid:
-      name: uid
-      in: path
-      required: true
-      description: SSO organization UID issued during SSO setup.
-      schema:
-        type: string
   schemas:
     ScimUser:
       type: object
@@ -197,3 +187,11 @@ components:
             lastModified:
               type: string
               format: date-time
+  parameters:
+    Uid:
+      name: uid
+      in: path
+      required: true
+      description: SSO organization UID issued during SSO setup.
+      schema:
+        type: string

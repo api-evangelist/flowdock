@@ -1,29 +1,25 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowdock Push Authentication Flows API
+  title: Flowdock REST Flows API
   version: '1.0'
   x-status: discontinued
-  x-deprecated-by-vendor: true
   x-shutdown-date: '2023-08-15'
-  description: 'The Flowdock Push API was the legacy "post-only" integration surface for
+  description: 'Historical REST API surface for CA Flowdock, a team chat and shared-inbox
 
-    sending content into a Flow''s Team Inbox or Chat using a per-flow API
+    product originally built by Flowdock (Helsinki / Tampere, Finland), acquired
 
-    token (no user authentication). It was deprecated in favor of the
-
-    Messages endpoint of the REST API and was retired with the rest of
-
-    Flowdock on August 15, 2023.
-
-
-    Reconstructed from the historical https://github.com/flowdock/api-docs
-
-    repository (docs/push.md, docs/team-inbox.md, docs/chat.md).
-
-    '
+    by CA Technologies (2013), and later operated under Broadcom.'
+  contact:
+    name: Flowdock (discontinued)
+    url: https://github.com/flowdock/api-docs
+  license:
+    name: Documentation rights held by CA / Broadcom
 servers:
 - url: https://api.flowdock.com
   description: Historical production base URL (offline since 2023-08-15)
+security:
+- oauth2: []
+- basicAuth: []
 tags:
 - name: Flows
   description: Team workspaces combining chat and a shared team inbox.
@@ -153,21 +149,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Flow'
 components:
-  parameters:
-    Organization:
-      name: organization
-      in: path
-      required: true
-      description: Organization parameterized name.
-      schema:
-        type: string
-    FlowName:
-      name: flow
-      in: path
-      required: true
-      description: Flow parameterized name within the organization.
-      schema:
-        type: string
   schemas:
     Organization:
       type: object
@@ -230,3 +211,33 @@ components:
           - invitation
           - link
           - organization
+  parameters:
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.flowdock.com/oauth/authorize
+          tokenUrl: https://api.flowdock.com/oauth/token
+          scopes:
+            flow: Read and write flow content.
+            private: Read and write private conversations.
+            profile: Read user profile.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Email + password, or personal API token as the username.
