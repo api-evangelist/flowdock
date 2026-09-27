@@ -99,42 +99,6 @@ paths:
           description: Single private message.
 components:
   schemas:
-    MessageInput:
-      type: object
-      required:
-      - event
-      - content
-      properties:
-        event:
-          type: string
-          enum:
-          - message
-          - status
-          - comment
-          - action
-          - activity
-          - discussion
-          - file
-        content:
-          oneOf:
-          - type: string
-          - type: object
-        flow:
-          type: string
-        message:
-          type: integer
-        tags:
-          type: array
-          items:
-            type: string
-        external_user_name:
-          type: string
-        uuid:
-          type: string
-        thread_id:
-          type: string
-        external_thread_id:
-          type: string
     Message:
       type: object
       properties:
@@ -209,6 +173,42 @@ components:
             avatar:
               type: string
               format: uri
+    MessageInput:
+      type: object
+      required:
+      - event
+      - content
+      properties:
+        event:
+          type: string
+          enum:
+          - message
+          - status
+          - comment
+          - action
+          - activity
+          - discussion
+          - file
+        content:
+          oneOf:
+          - type: string
+          - type: object
+        flow:
+          type: string
+        message:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+        external_user_name:
+          type: string
+        uuid:
+          type: string
+        thread_id:
+          type: string
+        external_thread_id:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

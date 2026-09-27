@@ -227,22 +227,43 @@ paths:
         '201':
           description: Message posted to thread.
 components:
-  parameters:
-    FlowName:
-      name: flow
-      in: path
-      required: true
-      description: Flow parameterized name within the organization.
-      schema:
-        type: string
-    Organization:
-      name: organization
-      in: path
-      required: true
-      description: Organization parameterized name.
-      schema:
-        type: string
   schemas:
+    MessageInput:
+      type: object
+      required:
+      - event
+      - content
+      properties:
+        event:
+          type: string
+          enum:
+          - message
+          - status
+          - comment
+          - action
+          - activity
+          - discussion
+          - file
+        content:
+          oneOf:
+          - type: string
+          - type: object
+        flow:
+          type: string
+        message:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+        external_user_name:
+          type: string
+        uuid:
+          type: string
+        thread_id:
+          type: string
+        external_thread_id:
+          type: string
     Message:
       type: object
       properties:
@@ -317,42 +338,21 @@ components:
             avatar:
               type: string
               format: uri
-    MessageInput:
-      type: object
-      required:
-      - event
-      - content
-      properties:
-        event:
-          type: string
-          enum:
-          - message
-          - status
-          - comment
-          - action
-          - activity
-          - discussion
-          - file
-        content:
-          oneOf:
-          - type: string
-          - type: object
-        flow:
-          type: string
-        message:
-          type: integer
-        tags:
-          type: array
-          items:
-            type: string
-        external_user_name:
-          type: string
-        uuid:
-          type: string
-        thread_id:
-          type: string
-        external_thread_id:
-          type: string
+  parameters:
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2
