@@ -142,42 +142,7 @@ paths:
         '204':
           description: Source deleted.
 components:
-  parameters:
-    FlowName:
-      name: flow
-      in: path
-      required: true
-      description: Flow parameterized name within the organization.
-      schema:
-        type: string
-    Organization:
-      name: organization
-      in: path
-      required: true
-      description: Organization parameterized name.
-      schema:
-        type: string
   schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-        email:
-          type: string
-          format: email
-        name:
-          type: string
-        nick:
-          type: string
-        avatar:
-          type: string
-          format: uri
-        website:
-          type: string
-          format: uri
-        admin:
-          type: boolean
     Source:
       type: object
       properties:
@@ -212,6 +177,41 @@ components:
               format: uri
         creator:
           $ref: '#/components/schemas/User'
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        nick:
+          type: string
+        avatar:
+          type: string
+          format: uri
+        website:
+          type: string
+          format: uri
+        admin:
+          type: boolean
+  parameters:
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2

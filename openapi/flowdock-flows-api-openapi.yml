@@ -150,6 +150,35 @@ paths:
                 $ref: '#/components/schemas/Flow'
 components:
   schemas:
+    Organization:
+      type: object
+      properties:
+        id:
+          type: integer
+        parameterized_name:
+          type: string
+        name:
+          type: string
+        user_limit:
+          type: integer
+        user_count:
+          type: integer
+        active:
+          type: boolean
+        url:
+          type: string
+          format: uri
+        subscription:
+          type: object
+          properties:
+            trial:
+              type: boolean
+            trial_ends:
+              type: string
+              format: date
+            billing_date:
+              type: string
+              format: date
     Flow:
       type: object
       properties:
@@ -182,35 +211,6 @@ components:
           - invitation
           - link
           - organization
-    Organization:
-      type: object
-      properties:
-        id:
-          type: integer
-        parameterized_name:
-          type: string
-        name:
-          type: string
-        user_limit:
-          type: integer
-        user_count:
-          type: integer
-        active:
-          type: boolean
-        url:
-          type: string
-          format: uri
-        subscription:
-          type: object
-          properties:
-            trial:
-              type: boolean
-            trial_ends:
-              type: string
-              format: date
-            billing_date:
-              type: string
-              format: date
   parameters:
     Organization:
       name: organization

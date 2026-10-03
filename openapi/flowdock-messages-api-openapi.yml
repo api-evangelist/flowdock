@@ -228,6 +228,40 @@ paths:
           description: Message posted to thread.
 components:
   schemas:
+    Message:
+      type: object
+      properties:
+        id:
+          type: integer
+        app:
+          type: string
+        event:
+          type: string
+        flow:
+          type: string
+        content: {}
+        sent:
+          type: integer
+          format: int64
+        user:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        tags:
+          type: array
+          items:
+            type: string
+        attachments:
+          type: array
+          items:
+            type: object
+        thread_id:
+          type: string
+        thread:
+          $ref: '#/components/schemas/Thread'
+        uuid:
+          type: string
     MessageInput:
       type: object
       required:
@@ -263,40 +297,6 @@ components:
         thread_id:
           type: string
         external_thread_id:
-          type: string
-    Message:
-      type: object
-      properties:
-        id:
-          type: integer
-        app:
-          type: string
-        event:
-          type: string
-        flow:
-          type: string
-        content: {}
-        sent:
-          type: integer
-          format: int64
-        user:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        tags:
-          type: array
-          items:
-            type: string
-        attachments:
-          type: array
-          items:
-            type: object
-        thread_id:
-          type: string
-        thread:
-          $ref: '#/components/schemas/Thread'
-        uuid:
           type: string
     Thread:
       type: object

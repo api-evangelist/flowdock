@@ -83,6 +83,26 @@ paths:
           description: Conversation updated.
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        nick:
+          type: string
+        avatar:
+          type: string
+          format: uri
+        website:
+          type: string
+          format: uri
+        admin:
+          type: boolean
     PrivateConversation:
       type: object
       properties:
@@ -108,26 +128,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/User'
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-        email:
-          type: string
-          format: email
-        name:
-          type: string
-        nick:
-          type: string
-        avatar:
-          type: string
-          format: uri
-        website:
-          type: string
-          format: uri
-        admin:
-          type: boolean
   securitySchemes:
     oauth2:
       type: oauth2
