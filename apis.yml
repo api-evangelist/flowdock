@@ -868,6 +868,9 @@ apis:
   - type: Examples
     url: examples/flowdock-chat-push-request.json
 common:
+- type: CapabilityMap
+  url: capabilities/flowdock-capability-edges.yml
+  name: Flowdock (Discontinued) Business Capability Map
 - type: AgenticAccess
   url: agentic-access/flowdock-agentic-access.yml
 - type: VulnerabilityDisclosure

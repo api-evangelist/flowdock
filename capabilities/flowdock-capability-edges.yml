@@ -1,0 +1,37 @@
+slug: flowdock
+provider: Flowdock (Discontinued)
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Messages
+  spec_file: flowdock-messages-api-openapi.yml
+  capability_id: BC-830.30
+  capability_id_l1: BC-830
+  capability_name: Knowledge Sharing & Collaboration Management
+  confidence: 0.7
+  evidence: POST /messages  sendMessage  Send Message; POST /flows/{organization}/{flow}/threads/{id}/messages  postThreadMessage  Post
+    Message To Thread
+  reason: Core team-chat messaging surface of a collaboration platform — sending, editing and threading
+    team messages maps to collaboration platform usage rather than any corporate communications or customer-facing
+    capability.
+- tag: SCIM
+  spec_file: flowdock-scim-api-openapi.yml
+  capability_id: BC-4230.50
+  capability_id_l1: BC-4230
+  capability_name: Tenant Identity Federation
+  confidence: 0.7
+  evidence: POST /scim/{uid}/Users  scimCreateUser  Provision SCIM User; DELETE /scim/{uid}/Users/{id}  scimDeleteUser  Deactivate
+    SCIM User
+  reason: SCIM user provisioning/deactivation exposed by the SaaS vendor to customer organisations matches
+    Tenant Identity Federation, which explicitly covers lifecycle of tenant user accounts via SSO and
+    SCIM. Moderate confidence because it could equally be read as the buyer's IAM capability.
