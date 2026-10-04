@@ -149,36 +149,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/Flow'
 components:
-  schemas:
+  parameters:
     Organization:
-      type: object
-      properties:
-        id:
-          type: integer
-        parameterized_name:
-          type: string
-        name:
-          type: string
-        user_limit:
-          type: integer
-        user_count:
-          type: integer
-        active:
-          type: boolean
-        url:
-          type: string
-          format: uri
-        subscription:
-          type: object
-          properties:
-            trial:
-              type: boolean
-            trial_ends:
-              type: string
-              format: date
-            billing_date:
-              type: string
-              format: date
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
+      schema:
+        type: string
+    FlowName:
+      name: flow
+      in: path
+      required: true
+      description: Flow parameterized name within the organization.
+      schema:
+        type: string
+  schemas:
     Flow:
       type: object
       properties:
@@ -211,21 +197,35 @@ components:
           - invitation
           - link
           - organization
-  parameters:
     Organization:
-      name: organization
-      in: path
-      required: true
-      description: Organization parameterized name.
-      schema:
-        type: string
-    FlowName:
-      name: flow
-      in: path
-      required: true
-      description: Flow parameterized name within the organization.
-      schema:
-        type: string
+      type: object
+      properties:
+        id:
+          type: integer
+        parameterized_name:
+          type: string
+        name:
+          type: string
+        user_limit:
+          type: integer
+        user_count:
+          type: integer
+        active:
+          type: boolean
+        url:
+          type: string
+          format: uri
+        subscription:
+          type: object
+          properties:
+            trial:
+              type: boolean
+            trial_ends:
+              type: string
+              format: date
+            billing_date:
+              type: string
+              format: date
   securitySchemes:
     oauth2:
       type: oauth2

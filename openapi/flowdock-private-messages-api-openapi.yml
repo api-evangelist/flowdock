@@ -99,6 +99,46 @@ paths:
           description: Single private message.
 components:
   schemas:
+    Thread:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        status:
+          type: object
+          properties:
+            color:
+              type: string
+            value:
+              type: string
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              value:
+                type: string
+        actions:
+          type: array
+          items:
+            type: object
+        external_url:
+          type: string
+          format: uri
+        actor:
+          type: object
+          properties:
+            name:
+              type: string
+            avatar:
+              type: string
+              format: uri
     Message:
       type: object
       properties:
@@ -169,46 +209,6 @@ components:
           type: string
         external_thread_id:
           type: string
-    Thread:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        body:
-          type: string
-        status:
-          type: object
-          properties:
-            color:
-              type: string
-            value:
-              type: string
-        fields:
-          type: array
-          items:
-            type: object
-            properties:
-              label:
-                type: string
-              value:
-                type: string
-        actions:
-          type: array
-          items:
-            type: object
-        external_url:
-          type: string
-          format: uri
-        actor:
-          type: object
-          properties:
-            name:
-              type: string
-            avatar:
-              type: string
-              format: uri
   securitySchemes:
     oauth2:
       type: oauth2

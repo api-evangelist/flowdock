@@ -174,18 +174,18 @@ components:
         admin:
           type: boolean
   parameters:
-    Organization:
-      name: organization
-      in: path
-      required: true
-      description: Organization parameterized name.
-      schema:
-        type: string
     FlowName:
       name: flow
       in: path
       required: true
       description: Flow parameterized name within the organization.
+      schema:
+        type: string
+    Organization:
+      name: organization
+      in: path
+      required: true
+      description: Organization parameterized name.
       schema:
         type: string
   securitySchemes:
