@@ -147,6 +147,14 @@ paths:
         '204':
           description: User deactivated.
 components:
+  parameters:
+    Uid:
+      name: uid
+      in: path
+      required: true
+      description: SSO organization UID issued during SSO setup.
+      schema:
+        type: string
   schemas:
     ScimUser:
       type: object
@@ -187,11 +195,3 @@ components:
             lastModified:
               type: string
               format: date-time
-  parameters:
-    Uid:
-      name: uid
-      in: path
-      required: true
-      description: SSO organization UID issued during SSO setup.
-      schema:
-        type: string
