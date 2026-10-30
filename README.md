@@ -1,4 +1,4 @@
-# Flowdock (Discontinued) (flowdock)
+# Flowdock (Discontinued)
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,207 +64,165 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-CA Flowdock was a team chat and shared team-inbox product originally
-founded as Flowdock in Helsinki / Tampere, Finland (Nodeta Oy spin-off,
-~2010), acquired by CA Technologies in 2013, and operated under Broadcom
-after Broadcom's 2018 acquisition of CA. The hosted service and all
-public APIs (REST, Push, Streaming, SCIM) were discontinued on
-August 15, 2023. Broadcom's sunset notice directed customers to
-Microsoft Teams or Slack as successor products. This profile is an
-archival record assembled from the public api-docs repository and
-archived snapshots of the developer portal.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/flowdock/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/flowdock/main/apis.yml)
+**Status:** discontinued
 
-## Scope
+CA Flowdock was a team chat and shared team-inbox product originally founded as Flowdock in Helsinki / Tampere, Finland (Nodeta Oy spin-off, ~2010), acquired by CA Technologies in 2013, and operated under Broadcom after Broadcom's 2018 acquisition of CA. The hosted service and all public APIs (REST, Push, Streaming, SCIM) were discontinued on August 15, 2023. Broadcom's sunset notice directed customers to Microsoft Teams or Slack as successor products. This profile is an archival record assembled from the public api-docs repository and archived snapshots of the developer portal.
 
-- **Type:** Index
+**Areas:** Team Chat · Team Inbox · Collaboration · Real-Time Messaging · Integration · Discontinued
 
-## Tags
+## Flowdock (Discontinued) on APIs.io (historical record)
 
-- Team Chat
-- Team Inbox
-- Collaboration
-- Real-Time Messaging
-- Integrations
-- Discontinued
+Everything profiled for Flowdock (Discontinued) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/flowdock/](https://apis.io/providers/flowdock/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (15)
 
-- **Created:** 2026-05-22
-- **Modified:** 2026-05-22
+- [Flowdock Streaming API](https://apis.io/apis/flowdock/streaming-api/) — Long-lived HTTP connection to stream.flowdock.com delivering real-time flow events. Two content types: newline-delimited JSON (`application/json`, `\r`…
+- [Flowdock SCIM Provisioning API](https://apis.io/apis/flowdock/scim-api/) — Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise customers with Single Sign-On configured. Bearer-token authenticated. Now offline.
+- [Flowdock (Discontinued) Authentication API](https://apis.io/apis/flowdock/flowdock-authentication-api/) — OAuth 2.0 authorization-code grant for user delegation.
+- [Flowdock (Discontinued) Chat API](https://apis.io/apis/flowdock/flowdock-chat-api/) — Chat-style messages posted as an external user.
+- [Flowdock (Discontinued) Files API](https://apis.io/apis/flowdock/flowdock-files-api/) — File uploads and downloads attached to messages.
+- [Flowdock (Discontinued) Flows API](https://apis.io/apis/flowdock/flowdock-flows-api/) — Team workspaces combining chat and a shared team inbox.
+- [Flowdock (Discontinued) Invitations API](https://apis.io/apis/flowdock/flowdock-invitations-api/) — Open and accepted invitations to join a flow.
+- [Flowdock (Discontinued) Messages API](https://apis.io/apis/flowdock/flowdock-messages-api/) — Chat messages, comments, status, activity, discussion, and file events posted to a flow.
+- [Flowdock (Discontinued) Organizations API](https://apis.io/apis/flowdock/flowdock-organizations-api/) — Account-level container that owns flows and bills users.
+- [Flowdock (Discontinued) Private Conversations API](https://apis.io/apis/flowdock/flowdock-private-conversations-api/) — One-to-one direct message channels between two users.
+- [Flowdock (Discontinued) Private Messages API](https://apis.io/apis/flowdock/flowdock-private-messages-api/) — Messages within a private conversation.
+- [Flowdock (Discontinued) Sources API](https://apis.io/apis/flowdock/flowdock-sources-api/) — External integrations (GitHub, Jira, Zendesk, etc.) that post into a flow.
+- [Flowdock (Discontinued) Team Inbox API](https://apis.io/apis/flowdock/flowdock-team-inbox-api/) — Mail-like messages posted into a flow's team inbox.
+- [Flowdock (Discontinued) Threads API](https://apis.io/apis/flowdock/flowdock-threads-api/) — Threaded conversations rooted on a parent message.
+- [Flowdock (Discontinued) Users API](https://apis.io/apis/flowdock/flowdock-users-api/) — User accounts that may belong to multiple organizations and flows.
 
-## APIs
+### Published properties
 
-### Flowdock REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The primary developer surface for Flowdock. Read-write JSON over HTTPS
-for flows, messages, threads, private conversations, users,
-organizations, sources, invitations, and files. Authenticated via
-OAuth 2.0 (authorization-code), HTTP Basic with email+password, or
-personal API token. Now offline.
+#### AsyncAPI (1)
 
-- **Human URL:** [https://github.com/flowdock/api-docs](https://github.com/flowdock/api-docs)
-- **Base URL:** `https://api.flowdock.com`
+Event-driven and webhook contracts.
 
-#### Tags
+- [Flowdock Streaming API](https://apis.io/asyncapis/flowdock/flowdock-streaming-api-asyncapi/)
 
-- Team Chat
-- Team Inbox
-- REST
-- Discontinued
+#### Event channels (2)
 
-#### Properties
+Individual events and webhooks the provider emits.
 
-- [Documentation](https://github.com/flowdock/api-docs)
-- [API Reference](https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/rest)
-- [Authentication](https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/authentication)
-- [OpenAPI](openapi/flowdock-rest-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/flowdock-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowdock-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Spectral Rules](rules/flowdock-rules.yml)
-- [JSON Schema](json-schema/flowdock-flow-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/flowdock-message-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/flowdock-user-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/flowdock-organization-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/flowdock-source-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/flowdock-thread-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/flowdock-invitation-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/flowdock-flow-structure.json)
-- [JSON Structure](json-structure/flowdock-message-structure.json)
-- [JSON Structure](json-structure/flowdock-organization-structure.json)
-- [Example](examples/flowdock-list-flows-response.json)
-- [Example](examples/flowdock-send-message-request.json)
-- [Example](examples/flowdock-list-sources-response.json)
-- [Example](examples/flowdock-private-conversation-response.json)
-- [Example](examples/flowdock-invitation-response.json)
+- [/flows](https://apis.io/channels/flowdock/flows/)
+- [/flows/{organization}/{flow}](https://apis.io/channels/flowdock/flows-organization-flow/)
 
-### Flowdock Push API (Deprecated)
+#### Agentic access (1)
 
-Legacy write-only HTTP API for posting content into a Flow's Team
-Inbox or Chat using a per-flow API token (no user authentication).
-Deprecated by the vendor in favor of the REST Messages endpoint
-well before the 2023-08-15 shutdown.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://github.com/flowdock/api-docs/blob/master/docs/push.md](https://github.com/flowdock/api-docs/blob/master/docs/push.md)
-- **Base URL:** `https://api.flowdock.com`
+- [Flowdock Agentic Access](https://apis.io/agentic-access/flowdock/flowdock-agentic-access/)
 
-#### Tags
+#### JSON Schema (7)
 
-- Push
-- Webhook
-- Team Inbox
-- Discontinued
+The data models the API reads and writes.
 
-#### Properties
+- [Flowdock Flow](https://apis.io/schemas/flowdock/flowdock-flow/)
+- [Flowdock Invitation](https://apis.io/schemas/flowdock/flowdock-invitation/)
+- [Flowdock Message](https://apis.io/schemas/flowdock/flowdock-message/)
+- [Flowdock Organization](https://apis.io/schemas/flowdock/flowdock-organization/)
+- [Flowdock Source](https://apis.io/schemas/flowdock/flowdock-source/)
+- [Flowdock Thread](https://apis.io/schemas/flowdock/flowdock-thread/)
+- [Flowdock User](https://apis.io/schemas/flowdock/flowdock-user/)
 
-- [Documentation](https://github.com/flowdock/api-docs/blob/master/docs/push.md)
-- [API Reference](https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/push)
-- [OpenAPI](openapi/flowdock-push-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/flowdock-push-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowdock-push-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Example](examples/flowdock-team-inbox-push-request.json)
-- [Example](examples/flowdock-chat-push-request.json)
+#### JSON Structure (3)
 
-### Flowdock Streaming API
+Data models expressed in JSON Structure.
 
-Long-lived HTTP connection to stream.flowdock.com delivering real-time
-flow events. Two content types: newline-delimited JSON
-(`application/json`, `\r` delimited) or HTML5 Server-Sent Events
-(`text/event-stream`). Now offline.
+- [Flowdock Flow Structure](https://apis.io/json-structure/flowdock/flowdock-flow-structure/)
+- [Flowdock Message Structure](https://apis.io/json-structure/flowdock/flowdock-message-structure/)
+- [Flowdock Organization Structure](https://apis.io/json-structure/flowdock/flowdock-organization-structure/)
 
-- **Human URL:** [https://github.com/flowdock/api-docs/blob/master/docs/streaming.md](https://github.com/flowdock/api-docs/blob/master/docs/streaming.md)
-- **Base URL:** `https://stream.flowdock.com`
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- Streaming
-- Real-Time
-- Server Sent Events
-- Discontinued
+- [Flowdock Context](https://apis.io/jsonld/flowdock/flowdock-context/)
 
-#### Properties
+#### Vocabulary (1)
 
-- [Documentation](https://github.com/flowdock/api-docs/blob/master/docs/streaming.md)
-- [API Reference](https://web.archive.org/web/20211206180655/https://www.flowdock.com/api/streaming)
-- [AsyncAPI](asyncapi/flowdock-streaming-api-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Example](examples/flowdock-message-event-stream.json)
-- [Postman Collection](collections/flowdock-push-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowdock-push-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/flowdock-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowdock-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/flowdock-scim-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowdock-scim-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The provider's domain terms, defined.
 
-### Flowdock SCIM Provisioning API
+- [Flowdock Vocabulary](https://apis.io/vocabularies/flowdock/flowdock-vocabulary/)
 
-Partial SCIM 1.x user provisioning API for CA Flowdock Enterprise
-customers with Single Sign-On configured. Bearer-token authenticated.
-Now offline.
+#### Examples (7)
 
-- **Human URL:** [https://github.com/flowdock/api-docs/blob/master/docs/scim.md](https://github.com/flowdock/api-docs/blob/master/docs/scim.md)
-- **Base URL:** `https://api.flowdock.com`
+Example requests and responses.
 
-#### Tags
+- [Flowdock Chat Push Request](https://apis.io/examples/flowdock/flowdock-chat-push-request/)
+- [Flowdock Invitation Response](https://apis.io/examples/flowdock/flowdock-invitation-response/)
+- [Flowdock Message Event Stream](https://apis.io/examples/flowdock/flowdock-message-event-stream/)
+- [Flowdock Private Conversation Response](https://apis.io/examples/flowdock/flowdock-private-conversation-response/)
+- [Flowdock Scim User Response](https://apis.io/examples/flowdock/flowdock-scim-user-response/)
+- [Flowdock Send Message Request](https://apis.io/examples/flowdock/flowdock-send-message-request/)
+- [Flowdock Team Inbox Push Request](https://apis.io/examples/flowdock/flowdock-team-inbox-push-request/)
 
-- SCIM
-- SSO
-- Provisioning
-- Enterprise
-- Discontinued
+#### Collections (16)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://github.com/flowdock/api-docs/blob/master/docs/scim.md)
-- [OpenAPI](openapi/flowdock-scim-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/flowdock-scim-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowdock-scim-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Example](examples/flowdock-scim-user-response.json)
+- [Flowdock Push Authentication API](https://apis.io/collections/flowdock/open-flowdock-authentication-api/)
+- [Flowdock Push Authentication Chat API](https://apis.io/collections/flowdock/open-flowdock-chat-api/)
+- [Flowdock Push Authentication Files API](https://apis.io/collections/flowdock/open-flowdock-files-api/)
+- [Flowdock Push Authentication Flows API](https://apis.io/collections/flowdock/open-flowdock-flows-api/)
+- [Flowdock Push Authentication Invitations API](https://apis.io/collections/flowdock/open-flowdock-invitations-api/)
+- [Flowdock Push Authentication Messages API](https://apis.io/collections/flowdock/open-flowdock-messages-api/)
+- [Flowdock Push Authentication Organizations API](https://apis.io/collections/flowdock/open-flowdock-organizations-api/)
+- [Flowdock Push Authentication Private Conversations API](https://apis.io/collections/flowdock/open-flowdock-private-conversations-api/)
+- [Flowdock Push Authentication Private Messages API](https://apis.io/collections/flowdock/open-flowdock-private-messages-api/)
+- [Flowdock Push API](https://apis.io/collections/flowdock/open-flowdock-push-api/)
+- [Flowdock REST API](https://apis.io/collections/flowdock/open-flowdock-rest-api/)
+- [Flowdock Push Authentication SCIM API](https://apis.io/collections/flowdock/open-flowdock-scim-api/)
+- [Flowdock Push Authentication Sources API](https://apis.io/collections/flowdock/open-flowdock-sources-api/)
+- [Flowdock Push Authentication Team Inbox API](https://apis.io/collections/flowdock/open-flowdock-team-inbox-api/)
+- [Flowdock Push Authentication Threads API](https://apis.io/collections/flowdock/open-flowdock-threads-api/)
+- [Flowdock Push Authentication Users API](https://apis.io/collections/flowdock/open-flowdock-users-api/)
 
-## Common Properties
+#### Governance rules (3)
 
-- [Portal](https://web.archive.org/web/2022/https://www.flowdock.com/)
+Spectral rulesets for the provider's contracts.
+
+- [Flowdock (Discontinued) — asyncapi rules](https://apis.io/rules/flowdock/flowdock-asyncapi-spectral-rules/)
+- [Flowdock (Discontinued) — jsonschema rules](https://apis.io/rules/flowdock/flowdock-jsonschema-spectral-rules/)
+- [Flowdock (Discontinued) API Rules](https://apis.io/rules/flowdock/flowdock-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Flowdock Authentication](https://apis.io/security/flowdock/flowdock-authentication/)
+- [Flowdock Domain Security](https://apis.io/security/flowdock/flowdock-domain-security/)
+- [Flowdock Vulnerability Disclosure](https://apis.io/security/flowdock/flowdock-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Flowdock Scopes](https://apis.io/scopes/flowdock/flowdock-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Documentation](https://github.com/flowdock/api-docs)
 - [Blog](https://web.archive.org/web/2022/https://blog.flowdock.com/)
-- [Git Hub](https://github.com/flowdock)
-- [Twitter](https://twitter.com/flowdock)
-- [Facebook](https://www.facebook.com/flowdock)
-- [Parent Company](https://www.broadcom.com)
-- [Sunset Notice](https://www.broadcom.com)
-- [Vocabulary](vocabulary/flowdock-vocabulary.yml)
-- [JSON-LD](json-ld/flowdock-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [SDK](https://github.com/flowdock/flowdock-api)
-- [SDK](https://github.com/flowdock/node-flowdock)
-- [SDK](https://github.com/flowdock/flowdock-text)
-- [SDK](https://github.com/flowdock/flowdock-text-rb)
-- [SDK](https://github.com/flowdock/markdown-it-flowdock)
-- [SDK](https://github.com/flowdock/omniauth-flowdock)
-- [SDK](https://github.com/flowdock/hubot-flowdock)
-- [Integration](https://github.com/flowdock/jenkins-flowdock-plugin)
-- [Integration](https://github.com/flowdock/flowdock-jira-plugin)
-- [Integration](https://github.com/flowdock/flowdock-git-hook)
-- [Integration](https://github.com/flowdock/flowdock-svn-hook)
-- [Integration](https://github.com/flowdock/flowdock-confluence-plugin)
-- [Integration](https://github.com/flowdock/capistrano-flowdock)
-- [Integration](https://github.com/flowdock/dropbox-flowdock)
-- [Integration](https://github.com/flowdock/redmine_flowdock)
-- [Integration](https://github.com/flowdock/oulu)
-- [Integration](https://github.com/flowdock/flowdock-example-integration)
-- [SDK](https://github.com/RallySoftware/clj-flowdock)
-- [SDK](https://github.com/0xAX/eflowdock)
-- [SDK](https://github.com/wm/go-flowdock)
-- [SDK](https://github.com/njern/flowdock)
-- [SDK](https://hackage.haskell.org/package/flowdock)
-- [SDK](https://hackage.haskell.org/package/flowdock-api)
-- [SDK](https://github.com/mremi/Flowdock)
-- [SDK](https://github.com/flim/PHPFlow)
-- [SDK](https://bitbucket.org/j00bar/python-flowdock)
-- [SDK](https://github.com/Aeron/PyFlowdock)
-- [SDK](https://github.com/hrbrmstr/flowdockr)
-- [SDK](https://github.com/gphat/net-flowdock)
-- [SDK](https://github.com/samvtran/p5-Flowdock)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** API Evangelist
-**URL:** https://apievangelist.com
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Flowdock (Discontinued): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/flowdock/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
